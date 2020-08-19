@@ -1,0 +1,46 @@
+{% extends 'looms/base.html' %}
+{% block content %}
+<h1 align="center">توزيع الخطة على الانوال</h1>
+     <div class="col-lg-12 table-responsive fontsize" >
+              <table  id="mytable" class="table table-bordred table-striped">
+         <thead class="thcolor">
+                            <th width="10%"style="text-align: center">تعديل</th>
+                              <th width="10%"style="text-align: center">ملاحظات</th>
+                            <th width="10%"style="text-align: center">تاريخ النهاية</th>
+                              <th width="10%"style="text-align: center">تاريخ البداية</th>
+                             <th width="7%" style="text-align: center">الكمية المطلوبة</th>
+                            <th width="7%" style="text-align: center">رقم النول</th>
+                             <th width="7%" style="text-align: center">رقم المجموعة</th>
+                             <th width="4%" style="text-align: center">رقم الطلب الداخلي</th>
+                               <th width="4%" style="text-align: center">رقم الطلب </th>
+                   </thead>
+    <tbody>
+{% for part in parts %}
+    <tr>
+  <td><p style="text-align: center" data-placement="top" data-toggle="tooltip" title="Edit"><button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" ><span class="glyphicon glyphicon-pencil"></span></button></p></td>
+             <td style="text-align: center">{{ part.notes}}</td>
+          <td style="text-align: center">{{ part.end_time}}</td>
+             <td style="text-align: center">{{ part.start_time}}</td>
+            <td style="text-align: center">{{ part.amount}}</td>
+          <td style="text-align: center">{{ part.loom_id}}</td>
+          <td style="text-align: center">{{ part.group_id}}</td>
+          <td  style="text-align: center">{{ part.inte_id }}</td>
+          <td width="5%"style="text-align: center">{{ part.parting_id}}</td>
+    </tr>
+{% endfor %}
+<form method="post" action="{% url 'part_internal_order_between_loomers_view'  %} ">
+    {% csrf_token %}
+          <td style="text-align: center">-----</td>
+     <td style="text-align: center">{{ form.notes}}</td>
+          <td style="text-align: center">{{ form.end_time}}</td>
+            <td style="text-align: center">{{ form.start_time}}</td>
+      <td style="text-align: center">{{ form.amount}}</td>
+          <td style="text-align: center">{{ form.loom_id}}</td>
+              <td style="text-align: center">{{ form.group_id}}</td>
+          <td  style="text-align: center">{{ form.inte_id }}</td>
+          <td width="5%"style="text-align: center"><input type="submit" class="btn btn-primary" value="اضافة"> </td>
+</form>
+    </tbody>
+              </table>
+                    </div>
+{% endblock %}

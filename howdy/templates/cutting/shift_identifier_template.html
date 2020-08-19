@@ -1,0 +1,35 @@
+{% extends 'cutting/testBase.html' %}
+{% block content %}
+        <h1 align="center" ><font color="#cd5c5c">اضافة وردية جديدة </font> </h1>
+    </br>
+    </br>
+   <div class="container" align="center">
+     <div class="col-lg-8 table-responsive fontsize" >
+              <table  id="mytable" class="table-striped" border="2">
+         <thead class="thcolor">
+                            <th width="45%" style="text-align: center">التاريخ</th>
+                            <th width="15%"style="text-align: center">رئيس الوردية</th>
+                            <th width="15%" style="text-align: center">الوردية</th>
+                             <th width="15%" style="text-align: center">رقم الوردية</th>
+                   </thead>
+    <tbody>
+{% for sh in shifts %}
+    <tr>
+          <td style="text-align: center">{{ sh.shift_date}}</td>
+          <td style="text-align: center">{{ sh.shift_supervisor_id}}</td>
+          <td  style="text-align: center">{{ sh.shift}}</td>
+          <td width="5%"style="text-align: center">{{ sh.shift_id}}</td>
+    </tr>
+{% endfor %}
+<form method="post" action="{% url 'shift_identifier_cutting_view'  %} ">
+    {% csrf_token %}
+          <td style="text-align: center">الان</td>
+          <td style="text-align: center">{{ form.shift_supervisor_id}}</td>
+          <td  style="text-align: center">{{ form.shift }}</td>
+          <td width="5%"style="text-align: center"><input type="submit" class="btn btn-primary" value="اضافة"> </td>
+</form>
+    </tbody>
+              </table>
+                    </div>
+</div>
+{% endblock %}

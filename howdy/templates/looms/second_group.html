@@ -1,0 +1,1450 @@
+{% extends 'looms/testBase.html' %}
+{% block content %}
+    <h1 align="center">متابعة طلبيات المجموعة الثانية</h1>
+         <div class="col-lg-12 table-responsive fontsize" >
+              <table  id="mytable" class="  table-striped" border="2">
+         <thead class="thcolor">
+          <th style="text-align: center">تعديل</th>
+                           <th  style="text-align: center">حالة النول</th>
+                            <th  style="text-align: center">الوردية</th>
+                            <th  style="text-align: center">الكمية المتبقية</th>
+                              <th  style="text-align: center">الكمية المنتجة</th>
+                              <th  style="text-align: center">كثافة</th>
+                               <th  style="text-align: center">طول</th>
+                              <th  style="text-align: center">وزن</th>
+                              <th  style="text-align: center">عرض</th>
+                           <th  style="text-align: center">دنيير السيب</th>
+                            <th  style="text-align: center">دنيير المكوك</th>
+                           <th  style="text-align: center">رقم الطلب</th>
+                            <th  style="text-align: center">اسم العامل</th>
+                             <th  style="text-align: center">البند</th>
+                             <th  style="text-align: center">رقم الطلبية</th>
+                               <th  style="text-align: center">رقم النول </th>
+                   </thead>
+                  <tbody>
+                  <tr>
+<form method="post">
+    {% csrf_token %}
+                                   <th  style="text-align: center"><button type="submit" id="one" name="one">تعديل</button> </th>
+                            <th  style="text-align: center">
+                            <select name="stat" id="stat" required>
+                                    <option > {{ one.state }}</option>
+                                <option name="work" id="work"> يعمل</option>
+                                <option name="not_work"  id="not_work">لا يعمل</option>
+                            </select>
+                            </th>
+                              <th  style="text-align: center"><input  style="width: 100px" type="number" name="shif" id="shif" value="{{ one.shift_id }}"required></th>
+                              <th  style="text-align: center"></th>
+                              <th  style="text-align: center"><input style="width: 100px"  type="number" name="amot" id="amot" value="{{ one.current_produced_amount }}"required></th>
+                                <th  style="text-align: center"><input style="width: 100px"  type="number" name="thick" id="thick" value="{{ one.thickness }}"required></th>
+                              <th  style="text-align: center">{{ one.get_item.item_height}}</th>
+                            <th  style="text-align: center">{{ one.get_item.item_weight}}</th>
+                              <th  style="text-align: center">{{ one.get_item.item_width}}</th>
+                                <th  style="text-align: center">{{ one.get_internal_order.sebh_fiber_id }}</th>
+                            <th  style="text-align: center">{{ one.get_internal_order.makok_fiber_id }}</th>
+                           <th  style="text-align: center">{{ one.get_internal_order.inte_id }}</th>
+                            <th  style="text-align: center"><input style="width: 100px"  type="text" name="worker" id="worker" value="{{ one.worker_id }}"required></th>
+                             <th  style="text-align: center"><input  style="width: 100px" type="number" name="item" id="item" value="{{ one.item_id }}"required></th>
+                             <th  style="text-align: center"><input  style="width: 100px" type="number" name="order" id="order" value="{{ one.order_id_id }}"required></th>
+                               <th  style="text-align: center"><input style="width: 100px"  type="number" name="loom" id="loom" value=1 readonly></th>
+</form>   </tr>
+                                    <tr>
+<form method="post">
+    {% csrf_token %}
+                                   <th style="text-align: center"><button type="submit" id="one2
+" name="one2">تعديل</button> </th>
+                            <th style="text-align: center">
+                            <select name="stat" id="stat" required >
+                                    <option > {{ one2.state }}</option>
+                                <option name="work" id="work"> يعمل</option>
+                                <option name="not_work"  id="not_work">لا يعمل</option>
+                            </select>
+                            </th>
+                              <th style="text-align: center"><input  style="width: 100px" type="number" name="shif" id="shif" value="{{ one2.shift_id }}" required></th>
+                              <th style="text-align: center"></th>
+                              <th style="text-align: center"><input  style="width: 100px" type="number" name="amot" id="amot" value="{{ one2.current_produced_amount }}" required></th>
+                                    <th  style="text-align: center"><input style="width: 100px"  type="number" name="thick" id="thick" value="{{ one2.thickness }}"required></th>
+                              <th  style="text-align: center">{{ one2.get_item.item_height}}</th>
+                            <th style="text-align: center">{{ one2.get_item.item_weight}}</th>
+                              <th style="text-align: center">{{ one2.get_item.item_width}}</th>
+                                <th style="text-align: center">{{ one2.get_internal_order.sebh_fiber_id }}</th>
+                            <th style="text-align: center">{{ one2.get_internal_order.makok_fiber_id }}</th>
+                           <th style="text-align: center">{{ one2.get_internal_order.inte_id }}</th>
+                            <th style="text-align: center"><input style="width: 100px"  type="text" name="worker" id="worker" value="{{ one2.worker_id }}" required></th>
+                             <th style="text-align: center"><input style="width: 100px"  type="number" name="item" id="item" value="{{ one2.item_id }}" required></th>
+                             <th style="text-align: center"><input  style="width: 100px" type="number" name="order" id="order" value="{{ one2.order_id_id }}" required></th>
+                               <th style="text-align: center"><input style="width: 100px"  type="number" name="loom" id="loom" value=2 readonly></th>
+</form>   </tr>
+<tr>
+<form method="post">
+    {% csrf_token %}
+                                   <th  style="text-align: center"><button type="submit" id="one3" name="one3">تعديل</button> </th>
+                            <th  style="text-align: center">
+                            <select name="stat" id="stat" required >
+                                    <option > {{ one3.state }}</option>
+                                <option name="work" id="work"> يعمل</option>
+                                <option name="not_work"  id="not_work">لا يعمل</option>
+                            </select>
+                            </th>
+                              <th  style="text-align: center"><input  style="width: 100px" type="number" name="shif" id="shif" value="{{ one3.shift_id }}" required></th>
+                              <th  style="text-align: center"></th>
+                              <th  style="text-align: center"><input style="width: 100px"  type="number" name="amot" id="amot" value="{{ one3.current_produced_amount }}" required></th>
+                                    <th  style="text-align: center"><input style="width: 100px"  type="number" name="thick" id="thick" value="{{ one3.thickness }}"required></th>
+                              <th  style="text-align: center">{{ one3.get_item.item_height}}</th>
+                            <th  style="text-align: center">{{ one3.get_item.item_weight}}</th>
+                              <th  style="text-align: center">{{ one3.get_item.item_width}}</th>
+                                <th  style="text-align: center">{{ one3.get_internal_order.sebh_fiber_id }}</th>
+                            <th  style="text-align: center">{{ one3.get_internal_order.makok_fiber_id }}</th>
+                           <th  style="text-align: center">{{ one3.get_internal_order.inte_id }}</th>
+                            <th  style="text-align: center"><input style="width: 100px"  type="text" name="worker" id="worker" value="{{ one3.worker_id }}" required></th>
+                             <th  style="text-align: center"><input  style="width: 100px" type="number" name="item" id="item" value="{{ one3.item_id }}" required></th>
+                             <th  style="text-align: center"><input  style="width: 100px" type="number" name="order" id="order" value="{{ one3.order_id_id }}" required></th>
+                               <th  style="text-align: center"><input   style="width: 100px" type="number" name="loom" id="loom" value=3 readonly></th>
+</form>   </tr>
+                  <tr><form method="post">
+    {% csrf_token %}
+                                   <th style="text-align: center"><button type="submit" id="one4" name="one4">تعديل</button> </th>
+                            <th style="text-align: center">
+                            <select name="stat" id="stat"  required>
+                                    <option > {{ one4.state }}</option>
+                                <option name="work" id="work"> يعمل</option>
+                                <option name="not_work"  id="not_work">لا يعمل</option>
+                            </select>
+                            </th>
+                              <th style="text-align: center"><input  style="width: 100px" type="number" name="shif" id="shif" value="{{ one4.shift_id }}" required></th>
+                              <th style="text-align: center"></th>
+                              <th style="text-align: center"><input  style="width: 100px" type="number" name="amot" id="amot" value="{{ one4.current_produced_amount }}" required></th>
+                                                      <th  style="text-align: center"><input style="width: 100px"  type="number" name="thick" id="thick" value="{{ one4.thickness }}"required></th>
+                              <th  style="text-align: center">{{ one4.get_item.item_height}}</th>
+                            <th style="text-align: center">{{ one4.get_item.item_weight}}</th>
+                              <th style="text-align: center">{{ one4.get_item.item_width}}</th>
+                                <th style="text-align: center">{{ one4.get_internal_order.sebh_fiber_id }}</th>
+                            <th style="text-align: center">{{ one4.get_internal_order.makok_fiber_id }}</th>
+                           <th style="text-align: center">{{ one4.get_internal_order.inte_id }}</th>
+                            <th   style="text-align: center"><input style="width: 100px"  type="text" name="worker" id="worker" value="{{ one4.worker_id }}" required></th>
+                             <th   style="text-align: center"><input style="width: 100px"  type="number" name="item" id="item" value="{{ one4.item_id }}" required></th>
+                             <th   style="text-align: center"><input  style="width: 100px" type="number" name="order" id="order" value="{{ one4.order_id_id }}" required></th>
+                               <th   style="text-align: center"><input  style="width: 100px" type="number" name="loom" id="loom" value=4 readonly></th>
+</form>   </tr>
+                  <tr><form method="post">
+    {% csrf_token %}
+                                   <th style="text-align: center"><button type="submit" id="one5" name="one5">تعديل</button> </th>
+                            <th style="text-align: center">
+                            <select name="stat" id="stat"  required>
+                                    <option > {{ one5.state }}</option>
+                                <option name="work" id="work"> يعمل</option>
+                                <option name="not_work"  id="not_work">لا يعمل</option>
+                            </select>
+                            </th>
+                              <th style="text-align: center"><input  style="width: 100px" type="number" name="shif" id="shif" value="{{ one5.shift_id }}" required></th>
+                              <th style="text-align: center"></th>
+                              <th style="text-align: center"><input  style="width: 100px" type="number" name="amot" id="amot" value="{{ one5.current_produced_amount }}" required></th>
+                                                      <th  style="text-align: center"><input style="width: 100px"  type="number" name="thick" id="thick" value="{{ one5.thickness }}"required></th>
+                              <th  style="text-align: center">{{ one5.get_item.item_height}}</th>
+                            <th style="text-align: center">{{ one5.get_item.item_weight}}</th>
+                              <th style="text-align: center">{{ one5.get_item.item_width}}</th>
+                                <th style="text-align: center">{{ one5.get_internal_order.sebh_fiber_id }}</th>
+                            <th style="text-align: center">{{ one5.get_internal_order.makok_fiber_id }}</th>
+                           <th style="text-align: center">{{ one5.get_internal_order.inte_id }}</th>
+                            <th   style="text-align: center"><input style="width: 100px"  type="text" name="worker" id="worker" value="{{ one5.worker_id }}" required></th>
+                             <th   style="text-align: center"><input  style="width: 100px" type="number" name="item" id="item" value="{{ one5.item_id }}" required></th>
+                             <th   style="text-align: center"><input  style="width: 100px" type="number" name="order" id="order" value="{{ one5.order_id_id }}" required></th>
+                               <th   style="text-align: center"><input  style="width: 100px" type="number" name="loom" id="loom" value=5 readonly></th>
+</form>   </tr>
+                            <tr> <form method="post">
+                                   {% csrf_token %}
+                                   <th style="text-align: center"><button type="submit" id="one6" name="one6">تعديل</button> </th>
+                            <th style="text-align: center">
+                            <select name="stat" id="stat"  required>
+                                    <option > {{ one6.state }}</option>
+                                <option name="work" id="work"> يعمل</option>
+                                <option name="not_work"  id="not_work">لا يعمل</option>
+                            </select>
+                            </th>
+                              <th style="text-align: center"><input  style="width: 100px" type="number" name="shif" id="shif" value="{{ one6.shift_id }}" required></th>
+                              <th  style="text-align: center"></th>
+                              <th  style="text-align: center"><input style="width: 100px"  type="number" name="amot" id="amot" value="{{ one6.current_produced_amount }}" required></th>
+                                                                <th  style="text-align: center"><input style="width: 100px"  type="number" name="thick" id="thick" value="{{ one6.thickness }}"required></th>
+                              <th  style="text-align: center">{{ one6.get_item.item_height}}</th>
+                            <th  style="text-align: center">{{ one6.get_item.item_weight}}</th>
+                              <th  style="text-align: center">{{ one6.get_item.item_width}}</th>
+                                <th  style="text-align: center">{{ one6.get_internal_order.sebh_fiber_id }}</th>
+                            <th  style="text-align: center">{{ one6.get_internal_order.makok_fiber_id }}</th>
+                           <th  style="text-align: center">{{ one6.get_internal_order.inte_id }}</th>
+                            <th  style="text-align: center"><input  style="width: 100px" type="text" name="worker" id="worker" value="{{ one6.worker_id }}" required></th>
+                             <th  style="text-align: center"><input style="width: 100px"  type="number" name="item" id="item" value="{{ one6.item_id }}" required></th>
+                             <th  style="text-align: center"><input style="width: 100px"  type="number" name="order" id="order" value="{{ one6.order_id_id }}" required></th>
+                               <th  style="text-align: center"><input style="width: 100px"  type="number" name="loom" id="loom" value=6 readonly></th>
+</form>   </tr>
+                                              <tr> <form method="post">
+                                   {% csrf_token %}
+                                   <th  style="text-align: center"><button type="submit" id="one7" name="one7">تعديل</button> </th>
+                            <th  style="text-align: center">
+                            <select name="stat" id="stat"  required>
+                                    <option > {{ one7.state }}</option>
+                                <option name="work" id="work"> يعمل</option>
+                                <option name="not_work"  id="not_work">لا يعمل</option>
+                            </select>
+                              <th  style="text-align: center"><input style="width: 100px" type="number" name="shif" id="shif" value="{{ one7.shift_id }}" required></th>
+                              <th  style="text-align: center"></th>
+                              <th  style="text-align: center"><input  style="width: 100px" type="number" name="amot" id="amot" value="{{ one7.current_produced_amount }}" required></th>
+                                                              <th  style="text-align: center"><input style="width: 100px"  type="number" name="thick" id="thick" value="{{ one7.thickness }}"required></th>
+                              <th  style="text-align: center">{{ one7.get_item.item_height}}</th>
+                            <th  style="text-align: center">{{ one7.get_item.item_weight}}</th>
+                              <th  style="text-align: center">{{ one7.get_item.item_width}}</th>
+                                <th  style="text-align: center">{{ one7.get_internal_order.sebh_fiber_id }}</th>
+                            <th  style="text-align: center">{{ one7.get_internal_order.makok_fiber_id }}</th>
+                           <th  style="text-align: center">{{ one7.get_internal_order.inte_id }}</th>
+                            <th  style="text-align: center"><input type="text"  style="width: 100px" name="worker" id="worker" value="{{ one7.worker_id }}" required></th>
+                             <th  style="text-align: center"><input type="number" style="width: 100px" name="item" id="item" value="{{ one7.item_id }}" required></th>
+                             <th  style="text-align: center"><input style="width: 100px" type="number" name="order" id="order" value="{{ one7.order_id_id }}" required></th>
+                               <th  style="text-align: center"><input style="width: 100px" type="number" name="loom" id="loom" value=7 readonly></th>
+</form>   </tr>
+                                              <tr> <form method="post">
+                                   {% csrf_token %}
+                                   <th style="text-align: center"><button type="submit" id="one8" name="one8">تعديل</button> </th>
+                            <th style="text-align: center">
+                            <select name="stat" id="stat" required >
+                                    <option > {{ one8.state }}</option>
+                                <option name="work" id="work"> يعمل</option>
+                                <option name="not_work"  id="not_work">لا يعمل</option>
+                            </select>
+                            </th>
+                              <th style="text-align: center"><input style="width: 100px" type="number" name="shif" id="shif" value="{{ one8.shift_id }}" required></th>
+                              <th style="text-align: center"></th>
+                              <th style="text-align: center"><input style="width: 100px" type="number" name="amot" id="amot" value="{{ one8.current_produced_amount }}" required></th>
+                                                                                  <th  style="text-align: center"><input style="width: 100px"  type="number" name="thick" id="thick" value="{{ one8.thickness }}"required></th>
+                              <th  style="text-align: center">{{ one8.get_item.item_height}}</th>
+                            <th style="text-align: center">{{ one8.get_item.item_weight}}</th>
+                              <th style="text-align: center">{{ one8.get_item.item_width}}</th>
+                                <th style="text-align: center">{{ one8.get_internal_order.sebh_fiber_id }}</th>
+                            <th style="text-align: center">{{ one8.get_internal_order.makok_fiber_id }}</th>
+                           <th style="text-align: center">{{ one8.get_internal_order.inte_id }}</th>
+                            <th style="text-align: center"><input style="width: 100px" type="text" name="worker" id="worker" value="{{ one8.worker_id }}" required></th>
+                             <th style="text-align: center"><input style="width: 100px" type="number" name="item" id="item" value="{{ one8.item_id }}" required></th>
+                             <th style="text-align: center"><input style="width: 100px" type="number" name="order" id="order" value="{{ one8.order_id_id }}" required></th>
+                               <th style="text-align: center"><input style="width: 100px" type="number" name="loom" id="loom" value=8 readonly></th>
+</form>   </tr>
+                                              <tr> <form method="post">
+                                   {% csrf_token %}
+                                   <th style="text-align: center"><button type="submit" id="one9" name="one9">تعديل</button> </th>
+                            <th style="text-align: center">
+                            <select name="stat" id="stat" required >
+                                    <option > {{ one9.state }}</option>
+                                <option name="work" id="work"> يعمل</option>
+                                <option name="not_work"  id="not_work">لا يعمل</option>
+                            </select>
+                            </th>
+                              <th style="text-align: center"><input  style="width: 100px" type="number" name="shif" id="shif" value="{{ one9.shift_id }}" required></th>
+                              <th style="text-align: center"></th>
+                              <th style="text-align: center"><input style="width: 100px" type="number" name="amot" id="amot" value="{{ one9.current_produced_amount }}" required></th>
+                                                                                  <th  style="text-align: center"><input style="width: 100px"  type="number" name="thick" id="thick" value="{{ one9.thickness }}"required></th>
+                              <th  style="text-align: center">{{ one9.get_item.item_height}}</th>
+                            <th style="text-align: center">{{ one9.get_item.item_weight}}</th>
+                              <th style="text-align: center">{{ one9.get_item.item_width}}</th>
+                                <th style="text-align: center">{{ one9.get_internal_order.sebh_fiber_id }}</th>
+                            <th style="text-align: center">{{ one9.get_internal_order.makok_fiber_id }}</th>
+                           <th style="text-align: center">{{ one9.get_internal_order.inte_id }}</th>
+                            <th style="text-align: center"><input style="width: 100px" type="text" name="worker" id="worker" value="{{ one9.worker_id }}" required></th>
+                             <th style="text-align: center"><input  style="width: 100px" type="number" name="item" id="item" value="{{ one9.item_id }}" required></th>
+                             <th style="text-align: center"><input  style="width: 100px" type="number" name="order" id="order" value="{{ one9.order_id_id }}" required></th>
+                               <th style="text-align: center"><input  style="width: 100px" type="number" name="loom" id="loom" value=9 readonly></th>
+</form>   </tr>
+                                              <tr> <form method="post">
+                                   {% csrf_token %}
+                                   <th style="text-align: center"><button type="submit" id="one10" name="one10">تعديل</button> </th>
+                            <th style="text-align: center">
+                            <select name="stat" id="stat"  required >
+                                    <option > {{ one10.state }}</option>
+                                <option name="work" id="work"> يعمل</option>
+                                <option name="not_work"  id="not_work">لا يعمل</option>
+                            </select>
+                            </th>
+                              <th style="text-align: center"><input  style="width: 100px" type="number" name="shif" id="shif" value="{{ one10.shift_id }}"  required></th>
+                              <th style="text-align: center"></th>
+                              <th style="text-align: center"><input  style="width: 100px" type="number" name="amot" id="amot" value="{{ one10.current_produced_amount }}"  required></th>
+                                                                                  <th  style="text-align: center"><input style="width: 100px"  type="number" name="thick" id="thick" value="{{ one10.thickness }}"required></th>
+                              <th  style="text-align: center">{{ one10.get_item.item_height}}</th>
+                            <th style="text-align: center">{{ one10.get_item.item_weight}}</th>
+                              <th style="text-align: center">{{ one10.get_item.item_width}}</th>
+                                <th style="text-align: center">{{ one10.get_internal_order.sebh_fiber_id }}</th>
+                            <th style="text-align: center">{{ one10.get_internal_order.makok_fiber_id }}</th>
+                           <th style="text-align: center">{{ one10.get_internal_order.inte_id }}</th>
+                            <th style="text-align: center"><input  style="width: 100px" type="text" name="worker" id="worker" value="{{ one10.worker_id }}"  required></th>
+                             <th style="text-align: center"><input  style="width: 100px" type="number" name="item" id="item" value="{{ one10.item_id }}"  required></th>
+                             <th style="text-align: center"><input  style="width: 100px" type="number" name="order" id="order" value="{{ one10.order_id_id }}"  required></th>
+                               <th style="text-align: center"><input style="width: 100px" type="number" name="loom" id="loom" value=10 readonly></th>
+</form>   </tr>
+                                              <tr> <form method="post">
+                                   {% csrf_token %}
+                                   <th  style="text-align: center"><button type="submit" id="one11" name="one11">تعديل</button> </th>
+                            <th  style="text-align: center">
+                            <select name="stat" id="stat"  required>
+                                    <option > {{ one11.state }}</option>
+                                <option name="work" id="work"> يعمل</option>
+                                <option name="not_work"  id="not_work">لا يعمل</option>
+                            </select>
+                            </th>
+                              <th  style="text-align: center"><input style="width: 100px" type="number" name="shif" id="shif" value="{{ one11.shift_id }}" required></th>
+                              <th  style="text-align: center"></th>
+                              <th  style="text-align: center"><input style="width: 100px" type="number" name="amot" id="amot" value="{{ one11.current_produced_amount }}" required></th>
+                                                                                  <th  style="text-align: center"><input style="width: 100px"  type="number" name="thick" id="thick" value="{{ one11.thickness }}"required></th>
+                              <th  style="text-align: center">{{ one11.get_item.item_height}}</th>
+                            <th  style="text-align: center">{{ one11.get_item.item_weight}}</th>
+                              <th  style="text-align: center">{{ one11.get_item.item_width}}</th>
+                                <th  style="text-align: center">{{ one11.get_internal_order.sebh_fiber_id }}</th>
+                            <th  style="text-align: center">{{ one11.get_internal_order.makok_fiber_id }}</th>
+                           <th  style="text-align: center">{{ one11.get_internal_order.inte_id }}</th>
+                            <th  style="text-align: center"><input  style="width: 100px" type="text" name="worker" id="worker" value="{{ one11.worker_id }}" required></th>
+                             <th  style="text-align: center"><input  style="width: 100px" type="number" name="item" id="item" value="{{ one11.item_id }}" required></th>
+                             <th  style="text-align: center"><input  style="width: 100px" type="number" name="order" id="order" value="{{ one11.order_id_id }}" required></th>
+                               <th  style="text-align: center"><input  style="width: 100px" type="number" name="loom" id="loom" value=11 readonly></th>
+     </form>   </tr>
+          <tr> <form method="post">
+               {% csrf_token %}
+               <th style="text-align: center"><button type="submit" id="one12" name="one1">تعديل</button> </th>
+               <th style="text-align: center">
+               <select name="stat" id="stat" required>
+               <option > {{ one12.state }}</option>
+               <option name="work" id="work"> يعمل</option>
+               <option name="not_work"  id="not_work">لا يعمل</option>
+               </select>
+               </th>
+               <th style="text-align: center"><input  style="width: 100px" type="number" name="shif" id="shif" value="{{ one12.shift_id }}" required></th>
+               <th style="text-align: center"></th>
+               <th style="text-align: center"><input style="width: 100px" type="number" name="amot" id="amot" value="{{ one12.current_produced_amount }}" required></th>
+                                              <th  style="text-align: center"><input style="width: 100px"  type="number" name="thick" id="thick" value="{{ one12.thickness }}"required></th>
+                              <th  style="text-align: center">{{ one12.get_item.item_height}}</th>
+               <th style="text-align: center">{{ one12.get_item.item_weight}}</th>
+               <th style="text-align: center">{{ one12.get_item.item_width}}</th>
+               <th style="text-align: center">{{ one12.get_internal_order.sebh_fiber_id }}</th>
+               <th style="text-align: center">{{ one12.get_internal_order.makok_fiber_id }}</th>
+               <th style="text-align: center">{{ one12.get_internal_order.inte_id }}</th>
+               <th style="text-align: center"><input  style="width: 100px" type="text" name="worker" id="worker" value="{{ one12.worker_id }}" required></th>
+               <th style="text-align: center"><input  style="width: 100px" type="number" name="item" id="item" value="{{ one12.item_id }}" required></th>
+               <th style="text-align: center"><input  style="width: 100px" type="number" name="order" id="order" value="{{ one12.order_id_id }}" required></th>
+               <th style="text-align: center"><input  style="width: 100px" type="number" name="loom" id="loom" value=12 readonly></th>
+        </form>
+       </tr>
+       <tr> <form method="post">
+               {% csrf_token %}
+               <th style="text-align: center"><button type="submit" id="one13" name="one13">تعديل</button> </th>
+               <th style="text-align: center">
+               <select name="stat" id="stat" required>
+               <option > {{ one13.state }}</option>
+               <option name="work" id="work"> يعمل</option>
+               <option name="not_work"  id="not_work">لا يعمل</option>
+               </select>
+               </th>
+               <th style="text-align: center"><input  style="width: 100px" type="number" name="shif" id="shif" value="{{ one13.shift_id }}" required></th>
+               <th style="text-align: center"></th>
+               <th style="text-align: center"><input style="width: 100px" type="number" name="amot" id="amot" value="{{ one13.current_produced_amount }}" required></th>
+                                           <th  style="text-align: center"><input style="width: 100px"  type="number" name="thick" id="thick" value="{{ one13.thickness }}"required></th>
+                              <th  style="text-align: center">{{ one13.get_item.item_height}}</th>
+               <th style="text-align: center">{{ one13.get_item.item_weight}}</th>
+               <th style="text-align: center">{{ one13.get_item.item_width}}</th>
+               <th style="text-align: center">{{ one13.get_internal_order.sebh_fiber_id }}</th>
+               <th style="text-align: center">{{ one13.get_internal_order.makok_fiber_id }}</th>
+               <th style="text-align: center">{{ one13.get_internal_order.inte_id }}</th>
+               <th style="text-align: center"><input  style="width: 100px" type="text" name="worker" id="worker" value="{{ one13.worker_id }}" required></th>
+               <th style="text-align: center"><input  style="width: 100px" type="number" name="item" id="item" value="{{ one13.item_id }}" required></th>
+               <th style="text-align: center"><input  style="width: 100px" type="number" name="order" id="order" value="{{ one13.order_id_id }}" required></th>
+               <th style="text-align: center"><input  style="width: 100px" type="number" name="loom" id="loom" value=13 readonly></th>
+        </form>
+       </tr>
+       <tr> <form method="post">
+               {% csrf_token %}
+               <th style="text-align: center"><button type="submit" id="one14" name="one14">تعديل</button> </th>
+               <th style="text-align: center">
+               <select name="stat" id="stat"  required>
+               <option > {{ one14.state }}</option>
+               <option name="work" id="work"> يعمل</option>
+               <option name="not_work"  id="not_work">لا يعمل</option>
+               </select>
+               </th>
+               <th style="text-align: center"><input  style="width: 100px" type="number" name="shif" id="shif" value="{{ one14.shift_id }}" required></th>
+               <th style="text-align: center"></th>
+               <th style="text-align: center"><input style="width: 100px" type="number" name="amot" id="amot" value="{{ one14.current_produced_amount }}" required></th>
+                                           <th  style="text-align: center"><input style="width: 100px"  type="number" name="thick" id="thick" value="{{ one14.thickness }}"required></th>
+                              <th  style="text-align: center">{{ one14.get_item.item_height}}</th>
+               <th style="text-align: center">{{ one14.get_item.item_weight}}</th>
+               <th style="text-align: center">{{ one14.get_item.item_width}}</th>
+               <th style="text-align: center">{{ one14.get_internal_order.sebh_fiber_id }}</th>
+               <th style="text-align: center">{{ one14.get_internal_order.makok_fiber_id }}</th>
+               <th style="text-align: center">{{ one14.get_internal_order.inte_id }}</th>
+               <th style="text-align: center"><input  style="width: 100px" type="text" name="worker" id="worker" value="{{ one14.worker_id }}" required></th>
+               <th style="text-align: center"><input  style="width: 100px" type="number" name="item" id="item" value="{{ one14.item_id }}" required></th>
+               <th style="text-align: center"><input  style="width: 100px" type="number" name="order" id="order" value="{{ one14.order_id_id }}" required></th>
+               <th style="text-align: center"><input  style="width: 100px" type="number" name="loom" id="loom" value=14 readonly></th>
+        </form>
+       </tr>
+        <tr> <form method="post">
+               {% csrf_token %}
+               <th style="text-align: center"><button type="submit" id="one15" name="one15">تعديل</button> </th>
+               <th style="text-align: center">
+               <select name="stat" id="stat" required >
+               <option > {{ one15.state }}</option>
+               <option name="work" id="work"> يعمل</option>
+               <option name="not_work"  id="not_work">لا يعمل</option>
+               </select>
+               </th>
+               <th style="text-align: center"><input  style="width: 100px" type="number" name="shif" id="shif" value="{{ one15.shift_id }}" required></th>
+               <th style="text-align: center"></th>
+               <th style="text-align: center"><input style="width: 100px" type="number" name="amot" id="amot" value="{{ one15.current_produced_amount }}" required></th>
+                                            <th  style="text-align: center"><input style="width: 100px"  type="number" name="thick" id="thick" value="{{ one15.thickness }}"required></th>
+                              <th  style="text-align: center">{{ one15.get_item.item_height}}</th>
+               <th style="text-align: center">{{ one15.get_item.item_weight}}</th>
+               <th style="text-align: center">{{ one15.get_item.item_width}}</th>
+               <th style="text-align: center">{{ one15.get_internal_order.sebh_fiber_id }}</th>
+               <th style="text-align: center">{{ one15.get_internal_order.makok_fiber_id }}</th>
+               <th style="text-align: center">{{ one15.get_internal_order.inte_id }}</th>
+               <th style="text-align: center"><input  style="width: 100px" type="text" name="worker" id="worker" value="{{ one15.worker_id }}" required></th>
+               <th style="text-align: center"><input  style="width: 100px" type="number" name="item" id="item" value="{{ one15.item_id }}" required></th>
+               <th style="text-align: center"><input  style="width: 100px" type="number" name="order" id="order" value="{{ one15.order_id_id }}" required></th>
+               <th style="text-align: center"><input  style="width: 100px" type="number" name="loom" id="loom" value=15 readonly></th>
+        </form>
+       </tr>
+        <tr> <form method="post">
+               {% csrf_token %}
+               <th style="text-align: center"><button type="submit" id="one16" name="one16">تعديل</button> </th>
+               <th style="text-align: center">
+               <select name="stat" id="stat"  required>
+               <option > {{ one16.state }}</option>
+               <option name="work" id="work"> يعمل</option>
+               <option name="not_work"  id="not_work">لا يعمل</option>
+               </select>
+               </th>
+               <th style="text-align: center"><input  style="width: 100px" type="number" name="shif" id="shif" value="{{ one16.shift_id }}" required></th>
+               <th style="text-align: center"></th>
+               <th style="text-align: center"><input style="width: 100px" type="number" name="amot" id="amot" value="{{ one16.current_produced_amount }}" required></th>
+                                            <th  style="text-align: center"><input style="width: 100px"  type="number" name="thick" id="thick" value="{{ one16.thickness }}"required></th>
+                              <th  style="text-align: center">{{ one16.get_item.item_height}}</th>
+               <th style="text-align: center">{{ one16.get_item.item_weight}}</th>
+               <th style="text-align: center">{{ one16.get_item.item_width}}</th>
+               <th style="text-align: center">{{ one16.get_internal_order.sebh_fiber_id }}</th>
+               <th style="text-align: center">{{ one16.get_internal_order.makok_fiber_id }}</th>
+               <th style="text-align: center">{{ one16.get_internal_order.inte_id }}</th>
+               <th style="text-align: center"><input  style="width: 100px" type="text" name="worker" id="worker" value="{{ one16.worker_id }}" required></th>
+               <th style="text-align: center"><input  style="width: 100px" type="number" name="item" id="item" value="{{ one16.item_id }}" required></th>
+               <th style="text-align: center"><input  style="width: 100px" type="number" name="order" id="order" value="{{ one16.order_id_id }}" required></th>
+               <th style="text-align: center"><input  style="width: 100px" type="number" name="loom" id="loom" value=16 readonly></th>
+        </form>
+       </tr>
+        <tr> <form method="post">
+               {% csrf_token %}
+               <th style="text-align: center"><button type="submit" id="one17" name="one17">تعديل</button> </th>
+               <th style="text-align: center">
+               <select name="stat" id="stat" required >
+               <option > {{ one17.state }}</option>
+               <option name="work" id="work"> يعمل</option>
+               <option name="not_work"  id="not_work">لا يعمل</option>
+               </select>
+               </th>
+               <th style="text-align: center"><input  style="width: 100px" type="number" name="shif" id="shif" value="{{ one17.shift_id }}" required></th>
+               <th style="text-align: center"></th>
+               <th style="text-align: center"><input style="width: 100px" type="number" name="amot" id="amot" value="{{ one17.current_produced_amount }}" required></th>
+                                            <th  style="text-align: center"><input style="width: 100px"  type="number" name="thick" id="thick" value="{{ one17.thickness }}"required></th>
+                              <th  style="text-align: center">{{ one17.get_item.item_height}}</th>
+               <th style="text-align: center">{{ one17.get_item.item_weight}}</th>
+               <th style="text-align: center">{{ one17.get_item.item_width}}</th>
+               <th style="text-align: center">{{ one17.get_internal_order.sebh_fiber_id }}</th>
+               <th style="text-align: center">{{ one17.get_internal_order.makok_fiber_id }}</th>
+               <th style="text-align: center">{{ one17.get_internal_order.inte_id }}</th>
+               <th style="text-align: center"><input  style="width: 100px" type="text" name="worker" id="worker" value="{{ one17.worker_id }}" required></th>
+               <th style="text-align: center"><input  style="width: 100px" type="number" name="item" id="item" value="{{ one17.item_id }}" required></th>
+               <th style="text-align: center"><input  style="width: 100px" type="number" name="order" id="order" value="{{ one17.order_id_id }}" required></th>
+               <th style="text-align: center"><input  style="width: 100px" type="number" name="loom" id="loom" value=17 readonly></th>
+        </form>
+       </tr>
+        <tr> <form method="post">
+               {% csrf_token %}
+               <th style="text-align: center"><button type="submit" id="one18" name="one18">تعديل</button> </th>
+               <th style="text-align: center">
+               <select name="stat" id="stat" required >
+               <option > {{ one18.state }}</option>
+               <option name="work" id="work"> يعمل</option>
+               <option name="not_work"  id="not_work">لا يعمل</option>
+               </select>
+               </th>
+               <th style="text-align: center"><input  style="width: 100px" type="number" name="shif" id="shif" value="{{ one18.shift_id }}" required></th>
+               <th style="text-align: center"></th>
+               <th style="text-align: center"><input style="width: 100px" type="number" name="amot" id="amot" value="{{ one18.current_produced_amount }}" required></th>
+                                            <th  style="text-align: center"><input style="width: 100px"  type="number" name="thick" id="thick" value="{{ one18.thickness }}"required></th>
+                              <th  style="text-align: center">{{ one18.get_item.item_height}}</th>
+               <th style="text-align: center">{{ one18.get_item.item_weight}}</th>
+               <th style="text-align: center">{{ one18.get_item.item_width}}</th>
+               <th style="text-align: center">{{ one18.get_internal_order.sebh_fiber_id }}</th>
+               <th style="text-align: center">{{ one18.get_internal_order.makok_fiber_id }}</th>
+               <th style="text-align: center">{{ one18.get_internal_order.inte_id }}</th>
+               <th style="text-align: center"><input  style="width: 100px" type="text" name="worker" id="worker" value="{{ one18.worker_id }}" required></th>
+               <th style="text-align: center"><input  style="width: 100px" type="number" name="item" id="item" value="{{ one18.item_id }}" required></th>
+               <th style="text-align: center"><input  style="width: 100px" type="number" name="order" id="order" value="{{ one18.order_id_id }}" required></th>
+               <th style="text-align: center"><input  style="width: 100px" type="number" name="loom" id="loom" value=18 readonly></th>
+        </form>
+       </tr>
+        <tr> <form method="post">
+               {% csrf_token %}
+               <th style="text-align: center"><button type="submit" id="one19" name="one19">تعديل</button> </th>
+               <th style="text-align: center">
+               <select name="stat" id="stat"  required>
+               <option > {{ one19.state }}</option>
+               <option name="work" id="work"> يعمل</option>
+               <option name="not_work"  id="not_work">لا يعمل</option>
+               </select>
+               </th>
+               <th style="text-align: center"><input  style="width: 100px" type="number" name="shif" id="shif" value="{{ one19.shift_id }}" required></th>
+               <th style="text-align: center"></th>
+               <th style="text-align: center"><input style="width: 100px" type="number" name="amot" id="amot" value="{{ one19.current_produced_amount }}" required></th>
+                                            <th  style="text-align: center"><input style="width: 100px"  type="number" name="thick" id="thick" value="{{ one19.thickness }}"required></th>
+                              <th  style="text-align: center">{{ one19.get_item.item_height}}</th>
+               <th style="text-align: center">{{ one19.get_item.item_weight}}</th>
+               <th style="text-align: center">{{ one19.get_item.item_width}}</th>
+               <th style="text-align: center">{{ one19.get_internal_order.sebh_fiber_id }}</th>
+               <th style="text-align: center">{{ one19.get_internal_order.makok_fiber_id }}</th>
+               <th style="text-align: center">{{ one19.get_internal_order.inte_id }}</th>
+               <th style="text-align: center"><input  style="width: 100px" type="text" name="worker" id="worker" value="{{ one19.worker_id }}" required></th>
+               <th style="text-align: center"><input  style="width: 100px" type="number" name="item" id="item" value="{{ one19.item_id }}" required></th>
+               <th style="text-align: center"><input  style="width: 100px" type="number" name="order" id="order" value="{{ one19.order_id_id }}" required></th>
+               <th style="text-align: center"><input  style="width: 100px" type="number" name="loom" id="loom" value=19 readonly></th>
+        </form>
+       </tr>
+        <tr> <form method="post">
+               {% csrf_token %}
+               <th style="text-align: center"><button type="submit" id="one11" name="one11">تعديل</button> </th>
+               <th style="text-align: center">
+               <select name="stat" id="stat"  required>
+               <option > {{ one20.state }}</option>
+               <option name="work" id="work"> يعمل</option>
+               <option name="not_work"  id="not_work">لا يعمل</option>
+               </select>
+               </th>
+               <th style="text-align: center"><input  style="width: 100px" type="number" name="shif" id="shif" value="{{ one20.shift_id }}" required></th>
+               <th style="text-align: center"></th>
+               <th style="text-align: center"><input style="width: 100px" type="number" name="amot" id="amot" value="{{ one20.current_produced_amount }}" required></th>
+                                            <th  style="text-align: center"><input style="width: 100px"  type="number" name="thick" id="thick" value="{{ one20.thickness }}"required></th>
+                              <th  style="text-align: center">{{ one20.get_item.item_height}}</th>
+               <th style="text-align: center">{{ one20.get_item.item_weight}}</th>
+               <th style="text-align: center">{{ one20.get_item.item_width}}</th>
+               <th style="text-align: center">{{ one20.get_internal_order.sebh_fiber_id }}</th>
+               <th style="text-align: center">{{ one20.get_internal_order.makok_fiber_id }}</th>
+               <th style="text-align: center">{{ one20.get_internal_order.inte_id }}</th>
+               <th style="text-align: center"><input  style="width: 100px" type="text" name="worker" id="worker" value="{{ one20.worker_id }}" required></th>
+               <th style="text-align: center"><input  style="width: 100px" type="number" name="item" id="item" value="{{ one20.item_id }}" required></th>
+               <th style="text-align: center"><input  style="width: 100px" type="number" name="order" id="order" value="{{ one20.order_id_id }}" required></th>
+               <th style="text-align: center"><input  style="width: 100px" type="number" name="loom" id="loom" value=20 readonly></th>
+        </form>
+       </tr>
+        <tr> <form method="post">
+               {% csrf_token %}
+               <th style="text-align: center"><button type="submit" id="one11" name="one11">تعديل</button> </th>
+               <th style="text-align: center">
+               <select name="stat" id="stat" required >
+               <option > {{ one21.state }}</option>
+               <option name="work" id="work"> يعمل</option>
+               <option name="not_work"  id="not_work">لا يعمل</option>
+               </select>
+               </th>
+               <th style="text-align: center"><input  style="width: 100px" type="number" name="shif" id="shif" value="{{ one21.shift_id }}" required></th>
+               <th style="text-align: center"></th>
+               <th style="text-align: center"><input style="width: 100px" type="number" name="amot" id="amot" value="{{ one21.current_produced_amount }}" required></th>
+                                            <th  style="text-align: center"><input style="width: 100px"  type="number" name="thick" id="thick" value="{{ one21.thickness }}"required></th>
+                              <th  style="text-align: center">{{ one21.get_item.item_height}}</th>
+               <th style="text-align: center">{{ one21.get_item.item_weight}}</th>
+               <th style="text-align: center">{{ one21.get_item.item_width}}</th>
+               <th style="text-align: center">{{ one21.get_internal_order.sebh_fiber_id }}</th>
+               <th style="text-align: center">{{ one21.get_internal_order.makok_fiber_id }}</th>
+               <th style="text-align: center">{{ one21.get_internal_order.inte_id }}</th>
+               <th style="text-align: center"><input  style="width: 100px" type="text" name="worker" id="worker" value="{{ one21.worker_id }}" required></th>
+               <th style="text-align: center"><input  style="width: 100px" type="number" name="item" id="item" value="{{ one21.item_id }}" required></th>
+               <th style="text-align: center"><input  style="width: 100px" type="number" name="order" id="order" value="{{ one21.order_id_id }}" required></th>
+               <th style="text-align: center"><input  style="width: 100px" type="number" name="loom" id="loom" value=21 readonly></th>
+        </form>
+       </tr>
+        <tr> <form method="post">
+               {% csrf_token %}
+               <th style="text-align: center"><button type="submit" id="one11" name="one11">تعديل</button> </th>
+               <th style="text-align: center">
+               <select name="stat" id="stat"  required>
+               <option > {{ one22.state }}</option>
+               <option name="work" id="work"> يعمل</option>
+               <option name="not_work"  id="not_work">لا يعمل</option>
+               </select>
+               </th>
+               <th style="text-align: center"><input  style="width: 100px" type="number" name="shif" id="shif" value="{{ one22.shift_id }}" required></th>
+               <th style="text-align: center"></th>
+               <th style="text-align: center"><input style="width: 100px" type="number" name="amot" id="amot" value="{{ one22.current_produced_amount }}" required></th>
+                                            <th  style="text-align: center"><input style="width: 100px"  type="number" name="thick" id="thick" value="{{ one22.thickness }}"required></th>
+                              <th  style="text-align: center">{{ one22.get_item.item_height}}</th>
+               <th style="text-align: center">{{ one22.get_item.item_weight}}</th>
+               <th style="text-align: center">{{ one22.get_item.item_width}}</th>
+               <th style="text-align: center">{{ one22.get_internal_order.sebh_fiber_id }}</th>
+               <th style="text-align: center">{{ one22.get_internal_order.makok_fiber_id }}</th>
+               <th style="text-align: center">{{ one22.get_internal_order.inte_id }}</th>
+               <th style="text-align: center"><input  style="width: 100px" type="text" name="worker" id="worker" value="{{ one22.worker_id }}" required></th>
+               <th style="text-align: center"><input  style="width: 100px" type="number" name="item" id="item" value="{{ one22.item_id }}" required> </th>
+               <th style="text-align: center"><input  style="width: 100px" type="number" name="order" id="order" value="{{ one22.order_id_id }}" required></th>
+               <th style="text-align: center"><input  style="width: 100px" type="number" name="loom" id="loom" value=22 readonly></th>
+        </form>
+       </tr>
+        <tr> <form method="post">
+               {% csrf_token %}
+               <th style="text-align: center"><button type="submit" id="one11" name="one11">تعديل</button> </th>
+               <th style="text-align: center">
+               <select name="stat" id="stat"  required>
+               <option > {{ one23.state }}</option>
+               <option name="work" id="work"> يعمل</option>
+               <option name="not_work"  id="not_work">لا يعمل</option>
+               </select>
+               </th>
+               <th style="text-align: center"><input  style="width: 100px" type="number" name="shif" id="shif" value="{{ one23.shift_id }}" required></th>
+               <th style="text-align: center"></th>
+               <th style="text-align: center"><input style="width: 100px" type="number" name="amot" id="amot" value="{{ one23.current_produced_amount }}" required></th>
+                                            <th  style="text-align: center"><input style="width: 100px"  type="number" name="thick" id="thick" value="{{ one23.thickness }}"required></th>
+                              <th  style="text-align: center">{{ one23.get_item.item_height}}</th>
+               <th style="text-align: center">{{ one23.get_item.item_weight}}</th>
+               <th style="text-align: center">{{ one23.get_item.item_width}}</th>
+               <th style="text-align: center">{{ one23.get_internal_order.sebh_fiber_id }}</th>
+               <th style="text-align: center">{{ one23.get_internal_order.makok_fiber_id }}</th>
+               <th style="text-align: center">{{ one23.get_internal_order.inte_id }}</th>
+               <th style="text-align: center"><input  style="width: 100px" type="text" name="worker" id="worker" value="{{ one23.worker_id }}" required></th>
+               <th style="text-align: center"><input  style="width: 100px" type="number" name="item" id="item" value="{{ one23.item_id }}" required></th>
+               <th style="text-align: center"><input  style="width: 100px" type="number" name="order" id="order" value="{{ one23.order_id_id }}" required></th>
+               <th style="text-align: center"><input  style="width: 100px" type="number" name="loom" id="loom" value=23 readonly></th>
+        </form>
+       </tr>
+        <tr> <form method="post">
+               {% csrf_token %}
+               <th style="text-align: center"><button type="submit" id="one11" name="one11">تعديل</button> </th>
+               <th style="text-align: center">
+               <select name="stat" id="stat"  required>
+               <option > {{ one24.state }}</option>
+               <option name="work" id="work"> يعمل</option>
+               <option name="not_work"  id="not_work">لا يعمل</option>
+               </select>
+               </th>
+               <th style="text-align: center"><input  style="width: 100px" type="number" name="shif" id="shif" value="{{ one24.shift_id }}" required></th>
+               <th style="text-align: center"></th>
+               <th style="text-align: center"><input style="width: 100px" type="number" name="amot" id="amot" value="{{ one24.current_produced_amount }}" required></th>
+                                            <th  style="text-align: center"><input style="width: 100px"  type="number" name="thick" id="thick" value="{{ one24.thickness }}"required></th>
+                              <th  style="text-align: center">{{ one24.get_item.item_height}}</th>
+               <th style="text-align: center">{{ one24.get_item.item_weight}}</th>
+               <th style="text-align: center">{{ one24.get_item.item_width}}</th>
+               <th style="text-align: center">{{ one24.get_internal_order.sebh_fiber_id }}</th>
+               <th style="text-align: center">{{ one24.get_internal_order.makok_fiber_id }}</th>
+               <th style="text-align: center">{{ one24.get_internal_order.inte_id }}</th>
+               <th style="text-align: center"><input  style="width: 100px" type="text" name="worker" id="worker" value="{{ one24.worker_id }}" required></th>
+               <th style="text-align: center"><input  style="width: 100px" type="number" name="item" id="item" value="{{ one24.item_id }}" required></th>
+               <th style="text-align: center"><input  style="width: 100px" type="number" name="order" id="order" value="{{ one24.order_id_id }}" required></th>
+               <th style="text-align: center"><input  style="width: 100px" type="number" name="loom" id="loom" value=24 readonly></th>
+        </form>
+       </tr>
+        <tr> <form method="post">
+               {% csrf_token %}
+               <th style="text-align: center"><button type="submit" id="one11" name="one11">تعديل</button> </th>
+               <th style="text-align: center">
+               <select name="stat" id="stat"  required>
+               <option > {{ one25.state }}</option>
+               <option name="work" id="work"> يعمل</option>
+               <option name="not_work"  id="not_work">لا يعمل</option>
+               </select>
+               </th>
+               <th style="text-align: center"><input  style="width: 100px" type="number" name="shif" id="shif" value="{{ one25.shift_id }}" required></th>
+               <th style="text-align: center"></th>
+               <th style="text-align: center"><input style="width: 100px" type="number" name="amot" id="amot" value="{{ one25.current_produced_amount }}" required></th>
+                                            <th  style="text-align: center"><input style="width: 100px"  type="number" name="thick" id="thick" value="{{ one25.thickness }}"required></th>
+                              <th  style="text-align: center">{{ one25.get_item.item_height}}</th>
+               <th style="text-align: center">{{ one25.get_item.item_weight}}</th>
+               <th style="text-align: center">{{ one25.get_item.item_width}}</th>
+               <th style="text-align: center">{{ one25.get_internal_order.sebh_fiber_id }}</th>
+               <th style="text-align: center">{{ one25.get_internal_order.makok_fiber_id }}</th>
+               <th style="text-align: center">{{ one25.get_internal_order.inte_id }}</th>
+               <th style="text-align: center"><input  style="width: 100px" type="text" name="worker" id="worker" value="{{ one25.worker_id }}" required></th>
+               <th style="text-align: center"><input  style="width: 100px" type="number" name="item" id="item" value="{{ one25.item_id }}" required></th>
+               <th style="text-align: center"><input  style="width: 100px" type="number" name="order" id="order" value="{{ one25.order_id_id }}" required></th>
+               <th style="text-align: center"><input  style="width: 100px" type="number" name="loom" id="loom" value=25 readonly></th>
+        </form>
+       </tr>
+        <tr> <form method="post">
+               {% csrf_token %}
+               <th style="text-align: center"><button type="submit" id="one11" name="one11">تعديل</button> </th>
+               <th style="text-align: center">
+               <select name="stat" id="stat" required>
+               <option > {{ one26.state }}</option>
+               <option name="work" id="work"> يعمل</option>
+               <option name="not_work"  id="not_work">لا يعمل</option>
+               </select>
+               </th>
+               <th style="text-align: center"><input  style="width: 100px" type="number" name="shif" id="shif" value="{{ one26.shift_id }}"required></th>
+               <th style="text-align: center"></th>
+               <th style="text-align: center"><input style="width: 100px" type="number" name="amot" id="amot" value="{{ one26.current_produced_amount }}"required></th>
+                                            <th  style="text-align: center"><input style="width: 100px"  type="number" name="thick" id="thick" value="{{ one26.thickness }}"required></th>
+                              <th  style="text-align: center">{{ one26.get_item.item_height}}</th>
+               <th style="text-align: center">{{ one26.get_item.item_weight}}</th>
+               <th style="text-align: center">{{ one26.get_item.item_width}}</th>
+               <th style="text-align: center">{{ one26.get_internal_order.sebh_fiber_id }}</th>
+               <th style="text-align: center">{{ one26.get_internal_order.makok_fiber_id }}</th>
+               <th style="text-align: center">{{ one26.get_internal_order.inte_id }}</th>
+               <th style="text-align: center"><input  style="width: 100px" type="text" name="worker" id="worker" value="{{ one26.worker_id }}"required></th>
+               <th style="text-align: center"><input  style="width: 100px" type="number" name="item" id="item" value="{{ one26.item_id }}"required></th>
+               <th style="text-align: center"><input  style="width: 100px" type="number" name="order" id="order" value="{{ one26.order_id_id }}"required></th>
+               <th style="text-align: center"><input  style="width: 100px" type="number" name="loom" id="loom" value=26 readonly></th>
+        </form>
+       </tr>
+        <tr> <form method="post">
+               {% csrf_token %}
+               <th style="text-align: center"><button type="submit" id="one11" name="one11">تعديل</button> </th>
+               <th style="text-align: center">
+               <select name="stat" id="stat"  required>
+               <option > {{ one27.state }}</option>
+               <option name="work" id="work"> يعمل</option>
+               <option name="not_work"  id="not_work">لا يعمل</option>
+               </select>
+               </th>
+               <th style="text-align: center"><input  style="width: 100px" type="number" name="shif" id="shif" value="{{ one27.shift_id }}" required></th>
+               <th style="text-align: center"></th>
+               <th style="text-align: center"><input style="width: 100px" type="number" name="amot" id="amot" value="{{ one27.current_produced_amount }}" required></th>
+                                            <th  style="text-align: center"><input style="width: 100px"  type="number" name="thick" id="thick" value="{{ one27.thickness }}"required></th>
+                              <th  style="text-align: center">{{ one27.get_item.item_height}}</th>
+               <th style="text-align: center">{{ one27.get_item.item_weight}}</th>
+               <th style="text-align: center">{{ one27.get_item.item_width}}</th>
+               <th style="text-align: center">{{ one27.get_internal_order.sebh_fiber_id }}</th>
+               <th style="text-align: center">{{ one27.get_internal_order.makok_fiber_id }}</th>
+               <th style="text-align: center">{{ one27.get_internal_order.inte_id }}</th>
+               <th style="text-align: center"><input  style="width: 100px" type="text" name="worker" id="worker" value="{{ one27.worker_id }}" required></th>
+               <th style="text-align: center"><input  style="width: 100px" type="number" name="item" id="item" value="{{ one27.item_id }}" required></th>
+               <th style="text-align: center"><input  style="width: 100px" type="number" name="order" id="order" value="{{ one27.order_id_id }}" required></th>
+               <th style="text-align: center"><input  style="width: 100px" type="number" name="loom" id="loom" value=27 readonly></th>
+        </form>
+       </tr>
+        <tr> <form method="post">
+               {% csrf_token %}
+               <th style="text-align: center"><button type="submit" id="one11" name="one11">تعديل</button> </th>
+               <th style="text-align: center">
+               <select name="stat" id="stat"  required>
+               <option > {{ one28.state }}</option>
+               <option name="work" id="work"> يعمل</option>
+               <option name="not_work"  id="not_work">لا يعمل</option>
+               </select>
+               </th>
+               <th style="text-align: center"><input  style="width: 100px" type="number" name="shif" id="shif" value="{{ one28.shift_id }}" required></th>
+               <th style="text-align: center"></th>
+               <th style="text-align: center"><input style="width: 100px" type="number" name="amot" id="amot" value="{{ one28.current_produced_amount }}" required></th>
+                                            <th  style="text-align: center"><input style="width: 100px"  type="number" name="thick" id="thick" value="{{ one28.thickness }}"required></th>
+                              <th  style="text-align: center">{{ one28.get_item.item_height}}</th>
+               <th style="text-align: center">{{ one28.get_item.item_weight}}</th>
+               <th style="text-align: center">{{ one28.get_item.item_width}}</th>
+               <th style="text-align: center">{{ one28.get_internal_order.sebh_fiber_id }}</th>
+               <th style="text-align: center">{{ one28.get_internal_order.makok_fiber_id }}</th>
+               <th style="text-align: center">{{ one28.get_internal_order.inte_id }}</th>
+               <th style="text-align: center"><input  style="width: 100px" type="text" name="worker" id="worker" value="{{ one28.worker_id }}" required></th>
+               <th style="text-align: center"><input  style="width: 100px" type="number" name="item" id="item" value="{{ one28.item_id }}" required></th>
+               <th style="text-align: center"><input  style="width: 100px" type="number" name="order" id="order" value="{{ one28.order_id_id }}" required></th>
+               <th style="text-align: center"><input  style="width: 100px" type="number" name="loom" id="loom" value=28 readonly></th>
+        </form>
+       </tr>
+        <tr> <form method="post">
+               {% csrf_token %}
+               <th style="text-align: center"><button type="submit" id="one11" name="one11">تعديل</button> </th>
+               <th style="text-align: center">
+               <select name="stat" id="stat" required >
+               <option > {{ one29.state }}</option>
+               <option name="work" id="work"> يعمل</option>
+               <option name="not_work"  id="not_work">لا يعمل</option>
+               </select>
+               </th>
+               <th style="text-align: center"><input  style="width: 100px" type="number" name="shif" id="shif" value="{{ one29.shift_id }}" required></th>
+               <th style="text-align: center"></th>
+               <th style="text-align: center"><input style="width: 100px" type="number" name="amot" id="amot" value="{{ one29.current_produced_amount }}" required></th>
+                                            <th  style="text-align: center"><input style="width: 100px"  type="number" name="thick" id="thick" value="{{ one29.thickness }}"required></th>
+                              <th  style="text-align: center">{{ one29.get_item.item_height}}</th>
+               <th style="text-align: center">{{ one29.get_item.item_weight}}</th>
+               <th style="text-align: center">{{ one29.get_item.item_width}}</th>
+               <th style="text-align: center">{{ one29.get_internal_order.sebh_fiber_id }}</th>
+               <th style="text-align: center">{{ one29.get_internal_order.makok_fiber_id }}</th>
+               <th style="text-align: center">{{ one29.get_internal_order.inte_id }}</th>
+               <th style="text-align: center"><input  style="width: 100px" type="text" name="worker" id="worker" value="{{ one29.worker_id }}" required></th>
+               <th style="text-align: center"><input  style="width: 100px" type="number" name="item" id="item" value="{{ one29.item_id }}" required></th>
+               <th style="text-align: center"><input  style="width: 100px" type="number" name="order" id="order" value="{{ one29.order_id_id }}" required></th>
+               <th style="text-align: center"><input  style="width: 100px" type="number" name="loom" id="loom" value=29 readonly></th>
+        </form>
+       </tr>
+        <tr> <form method="post">
+               {% csrf_token %}
+               <th style="text-align: center"><button type="submit" id="one11" name="one11">تعديل</button> </th>
+               <th style="text-align: center">
+               <select name="stat" id="stat"  required>
+               <option > {{ one30.state }}</option>
+               <option name="work" id="work"> يعمل</option>
+               <option name="not_work"  id="not_work">لا يعمل</option>
+               </select>
+               </th>
+               <th style="text-align: center"><input  style="width: 100px" type="number" name="shif" id="shif" value="{{ one30.shift_id }}" required></th>
+               <th style="text-align: center"></th>
+               <th style="text-align: center"><input style="width: 100px" type="number" name="amot" id="amot" value="{{ one30.current_produced_amount }}" required></th>
+                                            <th  style="text-align: center"><input style="width: 100px"  type="number" name="thick" id="thick" value="{{ one30.thickness }}"required></th>
+                              <th  style="text-align: center">{{ one30.get_item.item_height}}</th>
+               <th style="text-align: center">{{ one30.get_item.item_weight}}</th>
+               <th style="text-align: center">{{ one30.get_item.item_width}}</th>
+               <th style="text-align: center">{{ one30.get_internal_order.sebh_fiber_id }}</th>
+               <th style="text-align: center">{{ one30.get_internal_order.makok_fiber_id }}</th>
+               <th style="text-align: center">{{ one30.get_internal_order.inte_id }}</th>
+               <th style="text-align: center"><input  style="width: 100px" type="text" name="worker" id="worker" value="{{ one30.worker_id }}" required></th>
+               <th style="text-align: center"><input  style="width: 100px" type="number" name="item" id="item" value="{{ one30.item_id }}" required></th>
+               <th style="text-align: center"><input  style="width: 100px" type="number" name="order" id="order" value="{{ one30.order_id_id }}" required></th>
+               <th style="text-align: center"><input  style="width: 100px" type="number" name="loom" id="loom" value=30 readonly></th>
+        </form>
+       </tr>
+        <tr> <form method="post">
+               {% csrf_token %}
+               <th style="text-align: center"><button type="submit" id="one11" name="one11">تعديل</button> </th>
+               <th style="text-align: center">
+               <select name="stat" id="stat"  required>
+               <option > {{ one31.state }}</option>
+               <option name="work" id="work"> يعمل</option>
+               <option name="not_work"  id="not_work">لا يعمل</option>
+               </select>
+               </th>
+               <th style="text-align: center"><input  style="width: 100px" type="number" name="shif" id="shif" value="{{ one31.shift_id }}" required></th>
+               <th style="text-align: center"></th>
+               <th style="text-align: center"><input style="width: 100px" type="number" name="amot" id="amot" value="{{ one31.current_produced_amount }}" required></th>
+                                            <th  style="text-align: center"><input style="width: 100px"  type="number" name="thick" id="thick" value="{{ one31.thickness }}"required></th>
+                              <th  style="text-align: center">{{ one31.get_item.item_height}}</th>
+               <th style="text-align: center">{{ one31.get_item.item_weight}}</th>
+               <th style="text-align: center">{{ one31.get_item.item_width}}</th>
+               <th style="text-align: center">{{ one31.get_internal_order.sebh_fiber_id }}</th>
+               <th style="text-align: center">{{ one31.get_internal_order.makok_fiber_id }}</th>
+               <th style="text-align: center">{{ one31.get_internal_order.inte_id }}</th>
+               <th style="text-align: center"><input  style="width: 100px" type="text" name="worker" id="worker" value="{{ one31.worker_id }}" required></th>
+               <th style="text-align: center"><input  style="width: 100px" type="number" name="item" id="item" value="{{ one31.item_id }}" required></th>
+               <th style="text-align: center"><input  style="width: 100px" type="number" name="order" id="order" value="{{ one31.order_id_id }}" required></th>
+               <th style="text-align: center"><input  style="width: 100px" type="number" name="loom" id="loom" value=31 readonly></th>
+        </form>
+       </tr>
+        <tr> <form method="post">
+               {% csrf_token %}
+               <th style="text-align: center"><button type="submit" id="one11" name="one11">تعديل</button> </th>
+               <th style="text-align: center">
+               <select name="stat" id="stat"  required>
+               <option > {{ one32.state }}</option>
+               <option name="work" id="work"> يعمل</option>
+               <option name="not_work"  id="not_work">لا يعمل</option>
+               </select>
+               </th>
+               <th style="text-align: center"><input  style="width: 100px" type="number" name="shif" id="shif" value="{{ one32.shift_id }}" required></th>
+               <th style="text-align: center"></th>
+               <th style="text-align: center"><input style="width: 100px" type="number" name="amot" id="amot" value="{{ one32.current_produced_amount }}" required></th>
+                                            <th  style="text-align: center"><input style="width: 100px"  type="number" name="thick" id="thick" value="{{ one32.thickness }}"required></th>
+                              <th  style="text-align: center">{{ one32.get_item.item_height}}</th>
+               <th style="text-align: center">{{ one32.get_item.item_weight}}</th>
+               <th style="text-align: center">{{ one32.get_item.item_width}}</th>
+               <th style="text-align: center">{{ one32.get_internal_order.sebh_fiber_id }}</th>
+               <th style="text-align: center">{{ one32.get_internal_order.makok_fiber_id }}</th>
+               <th style="text-align: center">{{ one32.get_internal_order.inte_id }}</th>
+               <th style="text-align: center"><input  style="width: 100px" type="text" name="worker" id="worker" value="{{ one32.worker_id }}" required></th>
+               <th style="text-align: center"><input  style="width: 100px" type="number" name="item" id="item" value="{{ one32.item_id }}" required></th>
+               <th style="text-align: center"><input  style="width: 100px" type="number" name="order" id="order" value="{{ one32.order_id_id }}" required></th>
+               <th style="text-align: center"><input  style="width: 100px" type="number" name="loom" id="loom" value=32 readonly></th>
+        </form>
+       </tr>
+        <tr> <form method="post">
+               {% csrf_token %}
+               <th style="text-align: center"><button type="submit" id="one11" name="one11">تعديل</button> </th>
+               <th style="text-align: center">
+               <select name="stat" id="stat"  required>
+               <option > {{ one33.state }}</option>
+               <option name="work" id="work"> يعمل</option>
+               <option name="not_work"  id="not_work">لا يعمل</option>
+               </select>
+               </th>
+               <th style="text-align: center"><input  style="width: 100px" type="number" name="shif" id="shif" value="{{ one33.shift_id }}" required></th>
+               <th style="text-align: center"></th>
+               <th style="text-align: center"><input style="width: 100px" type="number" name="amot" id="amot" value="{{ one33.current_produced_amount }}" required></th>
+                                            <th  style="text-align: center"><input style="width: 100px"  type="number" name="thick" id="thick" value="{{ one33.thickness }}"required></th>
+                              <th  style="text-align: center">{{ one33.get_item.item_height}}</th>
+               <th style="text-align: center">{{ one33.get_item.item_weight}}</th>
+               <th style="text-align: center">{{ one33.get_item.item_width}}</th>
+               <th style="text-align: center">{{ one33.get_internal_order.sebh_fiber_id }}</th>
+               <th style="text-align: center">{{ one33.get_internal_order.makok_fiber_id }}</th>
+               <th style="text-align: center">{{ one33.get_internal_order.inte_id }}</th>
+               <th style="text-align: center"><input  style="width: 100px" type="text" name="worker" id="worker" value="{{ one33.worker_id }}" required></th>
+               <th style="text-align: center"><input  style="width: 100px" type="number" name="item" id="item" value="{{ one33.item_id }}" required></th>
+               <th style="text-align: center"><input  style="width: 100px" type="number" name="order" id="order" value="{{ one33.order_id_id }}" required></th>
+               <th style="text-align: center"><input  style="width: 100px" type="number" name="loom" id="loom" value=33 readonly></th>
+        </form>
+       </tr>
+        <tr> <form method="post">
+               {% csrf_token %}
+               <th style="text-align: center"><button type="submit" id="one11" name="one11">تعديل</button> </th>
+               <th style="text-align: center">
+               <select name="stat" id="stat"  required>
+               <option > {{ one34.state }}</option>
+               <option name="work" id="work"> يعمل</option>
+               <option name="not_work"  id="not_work">لا يعمل</option>
+               </select>
+               </th>
+               <th style="text-align: center"><input  style="width: 100px" type="number" name="shif" id="shif" value="{{ one34.shift_id }}" required></th>
+               <th style="text-align: center"></th>
+               <th style="text-align: center"><input style="width: 100px" type="number" name="amot" id="amot" value="{{ one34.current_produced_amount }}" required></th>
+                                            <th  style="text-align: center"><input style="width: 100px"  type="number" name="thick" id="thick" value="{{ one34.thickness }}"required></th>
+                              <th  style="text-align: center">{{ one34.get_item.item_height}}</th>
+               <th style="text-align: center">{{ one34.get_item.item_weight}}</th>
+               <th style="text-align: center">{{ one34.get_item.item_width}}</th>
+               <th style="text-align: center">{{ one34.get_internal_order.sebh_fiber_id }}</th>
+               <th style="text-align: center">{{ one34.get_internal_order.makok_fiber_id }}</th>
+               <th style="text-align: center">{{ one34.get_internal_order.inte_id }}</th>
+               <th style="text-align: center"><input  style="width: 100px" type="text" name="worker" id="worker" value="{{ one34.worker_id }}" required></th>
+               <th style="text-align: center"><input  style="width: 100px" type="number" name="item" id="item" value="{{ one34.item_id }}" required></th>
+               <th style="text-align: center"><input  style="width: 100px" type="number" name="order" id="order" value="{{ one34.order_id_id }}" required></th>
+               <th style="text-align: center"><input  style="width: 100px" type="number" name="loom" id="loom" value=34 readonly></th>
+        </form>
+       </tr>
+        <tr> <form method="post">
+               {% csrf_token %}
+               <th style="text-align: center"><button type="submit" id="one11" name="one11">تعديل</button> </th>
+               <th style="text-align: center">
+               <select name="stat" id="stat" required >
+               <option > {{ one35.state }}</option>
+               <option name="work" id="work"> يعمل</option>
+               <option name="not_work"  id="not_work">لا يعمل</option>
+               </select>
+               </th>
+               <th style="text-align: center"><input  style="width: 100px" type="number" name="shif" id="shif" value="{{ one35.shift_id }}" required></th>
+               <th style="text-align: center"></th>
+               <th style="text-align: center"><input style="width: 100px" type="number" name="amot" id="amot" value="{{ one35.current_produced_amount }}" required></th>
+                                            <th  style="text-align: center"><input style="width: 100px"  type="number" name="thick" id="thick" value="{{ one35.thickness }}"required></th>
+                              <th  style="text-align: center">{{ one35.get_item.item_height}}</th>
+               <th style="text-align: center">{{ one35.get_item.item_weight}}</th>
+               <th style="text-align: center">{{ one35.get_item.item_width}}</th>
+               <th style="text-align: center">{{ one35.get_internal_order.sebh_fiber_id }}</th>
+               <th style="text-align: center">{{ one35.get_internal_order.makok_fiber_id }}</th>
+               <th style="text-align: center">{{ one35.get_internal_order.inte_id }}</th>
+               <th style="text-align: center"><input  style="width: 100px" type="text" name="worker" id="worker" value="{{ one35.worker_id }}" required></th>
+               <th style="text-align: center"><input  style="width: 100px" type="number" name="item" id="item" value="{{ one35.item_id }}" required></th>
+               <th style="text-align: center"><input  style="width: 100px" type="number" name="order" id="order" value="{{ one35.order_id_id }}" required></th>
+               <th style="text-align: center"><input  style="width: 100px" type="number" name="loom" id="loom" value=35 readonly></th>
+        </form>
+       </tr>
+        <tr> <form method="post">
+               {% csrf_token %}
+               <th style="text-align: center"><button type="submit" id="one11" name="one11">تعديل</button> </th>
+               <th style="text-align: center">
+               <select name="stat" id="stat"  required>
+               <option > {{ one36.state }}</option>
+               <option name="work" id="work"> يعمل</option>
+               <option name="not_work"  id="not_work">لا يعمل</option>
+               </select>
+               </th>
+               <th style="text-align: center"><input  style="width: 100px" type="number" name="shif" id="shif" value="{{ one36.shift_id }}" required></th>
+               <th style="text-align: center"></th>
+               <th style="text-align: center"><input style="width: 100px" type="number" name="amot" id="amot" value="{{ one36.current_produced_amount }}" required></th>
+                                            <th  style="text-align: center"><input style="width: 100px"  type="number" name="thick" id="thick" value="{{ one36.thickness }}"required></th>
+                              <th  style="text-align: center">{{ one36.get_item.item_height}}</th>
+               <th style="text-align: center">{{ one36.get_item.item_weight}}</th>
+               <th style="text-align: center">{{ one36.get_item.item_width}}</th>
+               <th style="text-align: center">{{ one36.get_internal_order.sebh_fiber_id }}</th>
+               <th style="text-align: center">{{ one36.get_internal_order.makok_fiber_id }}</th>
+               <th style="text-align: center">{{ one36.get_internal_order.inte_id }}</th>
+               <th style="text-align: center"><input  style="width: 100px" type="text" name="worker" id="worker" value="{{ one36.worker_id }}" required></th>
+               <th style="text-align: center"><input  style="width: 100px" type="number" name="item" id="item" value="{{ one36.item_id }}" required></th>
+               <th style="text-align: center"><input  style="width: 100px" type="number" name="order" id="order" value="{{ one36.order_id_id }}" required></th>
+               <th style="text-align: center"><input  style="width: 100px" type="number" name="loom" id="loom" value=36 readonly></th>
+        </form>
+       </tr>
+        <tr> <form method="post">
+               {% csrf_token %}
+               <th style="text-align: center"><button type="submit" id="one11" name="one11">تعديل</button> </th>
+               <th style="text-align: center">
+               <select name="stat" id="stat"  required>
+               <option > {{ one37.state }}</option>
+               <option name="work" id="work"> يعمل</option>
+               <option name="not_work"  id="not_work">لا يعمل</option>
+               </select>
+               </th>
+               <th style="text-align: center"><input  style="width: 100px" type="number" name="shif" id="shif" value="{{ one37.shift_id }}" required></th>
+               <th style="text-align: center"></th>
+               <th style="text-align: center"><input style="width: 100px" type="number" name="amot" id="amot" value="{{ one37.current_produced_amount }}" required></th>
+                                            <th  style="text-align: center"><input style="width: 100px"  type="number" name="thick" id="thick" value="{{ one37.thickness }}"required></th>
+                              <th  style="text-align: center">{{ one37.get_item.item_height}}</th>
+               <th style="text-align: center">{{ one37.get_item.item_weight}}</th>
+               <th style="text-align: center">{{ one37.get_item.item_width}}</th>
+               <th style="text-align: center">{{ one37.get_internal_order.sebh_fiber_id }}</th>
+               <th style="text-align: center">{{ one37.get_internal_order.makok_fiber_id }}</th>
+               <th style="text-align: center">{{ one37.get_internal_order.inte_id }}</th>
+               <th style="text-align: center"><input  style="width: 100px" type="text" name="worker" id="worker" value="{{ one37.worker_id }}" required></th>
+               <th style="text-align: center"><input  style="width: 100px" type="number" name="item" id="item" value="{{ one37.item_id }}" required></th>
+               <th style="text-align: center"><input  style="width: 100px" type="number" name="order" id="order" value="{{ one37.order_id_id }}" required></th>
+               <th style="text-align: center"><input  style="width: 100px" type="number" name="loom" id="loom" value=37 readonly></th>
+        </form>
+       </tr>
+        <tr> <form method="post">
+               {% csrf_token %}
+               <th style="text-align: center"><button type="submit" id="one11" name="one11">تعديل</button> </th>
+               <th style="text-align: center">
+               <select name="stat" id="stat"  required>
+               <option > {{ one38.state }}</option>
+               <option name="work" id="work"> يعمل</option>
+               <option name="not_work"  id="not_work">لا يعمل</option>
+               </select>
+               </th>
+               <th style="text-align: center"><input  style="width: 100px" type="number" name="shif" id="shif" value="{{ one38.shift_id }}" required></th>
+               <th style="text-align: center"></th>
+               <th style="text-align: center"><input style="width: 100px" type="number" name="amot" id="amot" value="{{ one38.current_produced_amount }}" required></th>
+                                            <th  style="text-align: center"><input style="width: 100px"  type="number" name="thick" id="thick" value="{{ one38.thickness }}"required></th>
+                              <th  style="text-align: center">{{ one38.get_item.item_height}}</th>
+               <th style="text-align: center">{{ one38.get_item.item_weight}}</th>
+               <th style="text-align: center">{{ one38.get_item.item_width}}</th>
+               <th style="text-align: center">{{ one38.get_internal_order.sebh_fiber_id }}</th>
+               <th style="text-align: center">{{ one38.get_internal_order.makok_fiber_id }}</th>
+               <th style="text-align: center">{{ one38.get_internal_order.inte_id }}</th>
+               <th style="text-align: center"><input  style="width: 100px" type="text" name="worker" id="worker" value="{{ one38.worker_id }}" required></th>
+               <th style="text-align: center"><input  style="width: 100px" type="number" name="item" id="item" value="{{ one38.item_id }}" required></th>
+               <th style="text-align: center"><input  style="width: 100px" type="number" name="order" id="order" value="{{ one38.order_id_id }}" required></th>
+               <th style="text-align: center"><input  style="width: 100px" type="number" name="loom" id="loom" value=38 readonly></th>
+        </form>
+       </tr>
+        <tr> <form method="post">
+               {% csrf_token %}
+               <th style="text-align: center"><button type="submit" id="one11" name="one11">تعديل</button> </th>
+               <th style="text-align: center">
+               <select name="stat" id="stat"  required>
+               <option > {{ one39.state }}</option>
+               <option name="work" id="work"> يعمل</option>
+               <option name="not_work"  id="not_work">لا يعمل</option>
+               </select>
+               </th>
+               <th style="text-align: center"><input  style="width: 100px" type="number" name="shif" id="shif" value="{{ one39.shift_id }}" required></th>
+               <th style="text-align: center"></th>
+               <th style="text-align: center"><input style="width: 100px" type="number" name="amot" id="amot" value="{{ one39.current_produced_amount }}" required></th>
+                                            <th  style="text-align: center"><input style="width: 100px"  type="number" name="thick" id="thick" value="{{ one39.thickness }}"required></th>
+                              <th  style="text-align: center">{{ one39.get_item.item_height}}</th>
+               <th style="text-align: center">{{ one39.get_item.item_weight}}</th>
+               <th style="text-align: center">{{ one39.get_item.item_width}}</th>
+               <th style="text-align: center">{{ one39.get_internal_order.sebh_fiber_id }}</th>
+               <th style="text-align: center">{{ one39.get_internal_order.makok_fiber_id }}</th>
+               <th style="text-align: center">{{ one39.get_internal_order.inte_id }}</th>
+               <th style="text-align: center"><input  style="width: 100px" type="text" name="worker" id="worker" value="{{ one39.worker_id }}" required></th>
+               <th style="text-align: center"><input  style="width: 100px" type="number" name="item" id="item" value="{{ one39.item_id }}" required></th>
+               <th style="text-align: center"><input  style="width: 100px" type="number" name="order" id="order" value="{{ one39.order_id_id }}" required></th>
+               <th style="text-align: center"><input  style="width: 100px" type="number" name="loom" id="loom" value=39 readonly></th>
+        </form>
+       </tr>
+        <tr> <form method="post">
+               {% csrf_token %}
+               <th style="text-align: center"><button type="submit" id="one11" name="one11">تعديل</button> </th>
+               <th style="text-align: center">
+               <select name="stat" id="stat" required >
+               <option > {{ one40.state }}</option>
+               <option name="work" id="work"> يعمل</option>
+               <option name="not_work"  id="not_work">لا يعمل</option>
+               </select>
+               </th>
+               <th style="text-align: center"><input  style="width: 100px" type="number" name="shif" id="shif" value="{{ one40.shift_id }}" required></th>
+               <th style="text-align: center"></th>
+               <th style="text-align: center"><input style="width: 100px" type="number" name="amot" id="amot" value="{{ one40.current_produced_amount }}" required></th>
+                                            <th  style="text-align: center"><input style="width: 100px"  type="number" name="thick" id="thick" value="{{ one40.thickness }}"required></th>
+                              <th  style="text-align: center">{{ one40.get_item.item_height}}</th>
+               <th style="text-align: center">{{ one40.get_item.item_weight}}</th>
+               <th style="text-align: center">{{ one40.get_item.item_width}}</th>
+               <th style="text-align: center">{{ one40.get_internal_order.sebh_fiber_id }}</th>
+               <th style="text-align: center">{{ one40.get_internal_order.makok_fiber_id }}</th>
+               <th style="text-align: center">{{ one40.get_internal_order.inte_id }}</th>
+               <th style="text-align: center"><input  style="width: 100px" type="text" name="worker" id="worker" value="{{ one40.worker_id }}" required></th>
+               <th style="text-align: center"><input  style="width: 100px" type="number" name="item" id="item" value="{{ one40.item_id }}" required></th>
+               <th style="text-align: center"><input  style="width: 100px" type="number" name="order" id="order" value="{{ one40.order_id_id }}" required></th>
+               <th style="text-align: center"><input  style="width: 100px" type="number" name="loom" id="loom" value=40 readonly></th>
+        </form>
+       </tr>
+        <tr> <form method="post">
+               {% csrf_token %}
+               <th style="text-align: center"><button type="submit" id="one11" name="one11">تعديل</button> </th>
+               <th style="text-align: center">
+               <select name="stat" id="stat"  required>
+               <option > {{ one41.state }}</option>
+               <option name="work" id="work"> يعمل</option>
+               <option name="not_work"  id="not_work">لا يعمل</option>
+               </select>
+               </th>
+               <th style="text-align: center"><input  style="width: 100px" type="number" name="shif" id="shif" value="{{ one41.shift_id }}" required></th>
+               <th style="text-align: center"></th>
+               <th style="text-align: center"><input style="width: 100px" type="number" name="amot" id="amot" value="{{ one41.current_produced_amount }}" required>
+                                            <th  style="text-align: center"><input style="width: 100px"  type="number" name="thick" id="thick" value="{{ one41.thickness }}"required></th>
+                              <th  style="text-align: center">{{ one41.get_item.item_height}}</th>
+               <th style="text-align: center">{{ one41.get_item.item_weight}}</th>
+               <th style="text-align: center">{{ one41.get_item.item_width}}</th>
+               <th style="text-align: center">{{ one41.get_internal_order.sebh_fiber_id }}</th>
+               <th style="text-align: center">{{ one41.get_internal_order.makok_fiber_id }}</th>
+               <th style="text-align: center">{{ one41.get_internal_order.inte_id }}</th>
+               <th style="text-align: center"><input  style="width: 100px" type="text" name="worker" id="worker" value="{{ one41.worker_id }}" required></th>
+               <th style="text-align: center"><input  style="width: 100px" type="number" name="item" id="item" value="{{ one41.item_id }}" required></th>
+               <th style="text-align: center"><input  style="width: 100px" type="number" name="order" id="order" value="{{ one41.order_id_id }}" required></th>
+               <th style="text-align: center"><input  style="width: 100px" type="number" name="loom" id="loom" value=41 readonly></th>
+        </form>
+       </tr>
+        <tr> <form method="post">
+               {% csrf_token %}
+               <th style="text-align: center"><button type="submit" id="one11" name="one11">تعديل</button> </th>
+               <th style="text-align: center">
+               <select name="stat" id="stat"  required>
+               <option > {{ one42.state }}</option>
+               <option name="work" id="work"> يعمل</option>
+               <option name="not_work"  id="not_work">لا يعمل</option>
+               </select>
+               </th>
+               <th style="text-align: center"><input  style="width: 100px" type="number" name="shif" id="shif" value="{{ one42.shift_id }}" required></th>
+               <th style="text-align: center"></th>
+               <th style="text-align: center"><input style="width: 100px" type="number" name="amot" id="amot" value="{{ one42.current_produced_amount }}" required></th>
+                                            <th  style="text-align: center"><input style="width: 100px"  type="number" name="thick" id="thick" value="{{ one42.thickness }}"required></th>
+                              <th  style="text-align: center">{{ one42.get_item.item_height}}</th>
+               <th style="text-align: center">{{ one42.get_item.item_weight}}</th>
+               <th style="text-align: center">{{ one42.get_item.item_width}}</th>
+               <th style="text-align: center">{{ one42.get_internal_order.sebh_fiber_id }}</th>
+               <th style="text-align: center">{{ one42.get_internal_order.makok_fiber_id }}</th>
+               <th style="text-align: center">{{ one42.get_internal_order.inte_id }}</th>
+               <th style="text-align: center"><input  style="width: 100px" type="text" name="worker" id="worker" value="{{ one42.worker_id }}" required></th>
+               <th style="text-align: center"><input  style="width: 100px" type="number" name="item" id="item" value="{{ one42.item_id }}" required></th>
+               <th style="text-align: center"><input  style="width: 100px" type="number" name="order" id="order" value="{{ one42.order_id_id }}" required></th>
+               <th style="text-align: center"><input  style="width: 100px" type="number" name="loom" id="loom" value=42 readonly></th>
+        </form>
+       </tr>
+        <tr> <form method="post">
+               {% csrf_token %}
+               <th style="text-align: center"><button type="submit" id="one11" name="one11">تعديل</button> </th>
+               <th style="text-align: center">
+               <select name="stat" id="stat"  required>
+               <option > {{ one43.state }}</option>
+               <option name="work" id="work"> يعمل</option>
+               <option name="not_work"  id="not_work">لا يعمل</option>
+               </select>
+               </th>
+               <th style="text-align: center"><input  style="width: 100px" type="number" name="shif" id="shif" value="{{ one43.shift_id }}" required></th>
+               <th style="text-align: center"></th>
+               <th style="text-align: center"><input style="width: 100px" type="number" name="amot" id="amot" value="{{ one43.current_produced_amount }}" required></th>
+                                            <th  style="text-align: center"><input style="width: 100px"  type="number" name="thick" id="thick" value="{{ one43.thickness }}"required></th>
+                              <th  style="text-align: center">{{ one43.get_item.item_height}}</th>
+               <th style="text-align: center">{{ one43.get_item.item_weight}}</th>
+               <th style="text-align: center">{{ one43.get_item.item_width}}</th>
+               <th style="text-align: center">{{ one43.get_internal_order.sebh_fiber_id }}</th>
+               <th style="text-align: center">{{ one43.get_internal_order.makok_fiber_id }}</th>
+               <th style="text-align: center">{{ one43.get_internal_order.inte_id }}</th>
+               <th style="text-align: center"><input  style="width: 100px" type="text" name="worker" id="worker" value="{{ one43.worker_id }}" required></th>
+               <th style="text-align: center"><input  style="width: 100px" type="number" name="item" id="item" value="{{ one43.item_id }}" required></th>
+               <th style="text-align: center"><input  style="width: 100px" type="number" name="order" id="order" value="{{ one43.order_id_id }}" required></th>
+               <th style="text-align: center"><input  style="width: 100px" type="number" name="loom" id="loom" value=43 readonly></th>
+        </form>
+       </tr>
+        <tr> <form method="post">
+               {% csrf_token %}
+               <th style="text-align: center"><button type="submit" id="one11" name="one11">تعديل</button> </th>
+               <th style="text-align: center">
+               <select name="stat" id="stat"  required>
+               <option > {{ one44.state }}</option>
+               <option name="work" id="work"> يعمل</option>
+               <option name="not_work"  id="not_work">لا يعمل</option>
+               </select>
+               </th>
+               <th style="text-align: center"><input  style="width: 100px" type="number" name="shif" id="shif" value="{{ one44.shift_id }}" required></th>
+               <th style="text-align: center"></th>
+               <th style="text-align: center"><input style="width: 100px" type="number" name="amot" id="amot" value="{{ one44.current_produced_amount }}" required></th>
+                                            <th  style="text-align: center"><input style="width: 100px"  type="number" name="thick" id="thick" value="{{ one44.thickness }}"required></th>
+                              <th  style="text-align: center">{{ one44.get_item.item_height}}</th>
+               <th style="text-align: center">{{ one44.get_item.item_weight}}</th>
+               <th style="text-align: center">{{ one44.get_item.item_width}}</th>
+               <th style="text-align: center">{{ one44.get_internal_order.sebh_fiber_id }}</th>
+               <th style="text-align: center">{{ one44.get_internal_order.makok_fiber_id }}</th>
+               <th style="text-align: center">{{ one44.get_internal_order.inte_id }}</th>
+               <th style="text-align: center"><input  style="width: 100px" type="text" name="worker" id="worker" value="{{ one44.worker_id }}" required></th>
+               <th style="text-align: center"><input  style="width: 100px" type="number" name="item" id="item" value="{{ one44.item_id }}" required></th>
+               <th style="text-align: center"><input  style="width: 100px" type="number" name="order" id="order" value="{{ one44.order_id_id }}" required></th>
+               <th style="text-align: center"><input  style="width: 100px" type="number" name="loom" id="loom" value=44 readonly></th>
+        </form>
+       </tr>
+        <tr> <form method="post">
+               {% csrf_token %}
+               <th style="text-align: center"><button type="submit" id="one11" name="one11">تعديل</button> </th>
+               <th style="text-align: center">
+               <select name="stat" id="stat"  required>
+               <option > {{ one45.state }}</option>
+               <option name="work" id="work"> يعمل</option>
+               <option name="not_work"  id="not_work">لا يعمل</option>
+               </select>
+               </th>
+               <th style="text-align: center"><input  style="width: 100px" type="number" name="shif" id="shif" value="{{ one45.shift_id }}" required></th>
+               <th style="text-align: center"></th>
+               <th style="text-align: center"><input style="width: 100px" type="number" name="amot" id="amot" value="{{ one45.current_produced_amount }}" required></th>
+                                            <th  style="text-align: center"><input style="width: 100px"  type="number" name="thick" id="thick" value="{{ one45.thickness }}"required></th>
+                              <th  style="text-align: center">{{ one45.get_item.item_height}}</th>
+               <th style="text-align: center">{{ one45.get_item.item_weight}}</th>
+               <th style="text-align: center">{{ one45.get_item.item_width}}</th>
+               <th style="text-align: center">{{ one45.get_internal_order.sebh_fiber_id }}</th>
+               <th style="text-align: center">{{ one45.get_internal_order.makok_fiber_id }}</th>
+               <th style="text-align: center">{{ one45.get_internal_order.inte_id }}</th>
+               <th style="text-align: center"><input  style="width: 100px" type="text" name="worker" id="worker" value="{{ one45.worker_id }}" required></th>
+               <th style="text-align: center"><input  style="width: 100px" type="number" name="item" id="item" value="{{ one45.item_id }}" required></th>
+               <th style="text-align: center"><input  style="width: 100px" type="number" name="order" id="order" value="{{ one45.order_id_id }}" required></th>
+               <th style="text-align: center"><input  style="width: 100px" type="number" name="loom" id="loom" value=45 readonly></th>
+        </form>
+       </tr>
+        <tr> <form method="post">
+               {% csrf_token %}
+               <th style="text-align: center"><button type="submit" id="one11" name="one11">تعديل</button> </th>
+               <th style="text-align: center">
+               <select name="stat" id="stat"  required>
+               <option > {{ one46.state }}</option>
+               <option name="work" id="work"> يعمل</option>
+               <option name="not_work"  id="not_work">لا يعمل</option>
+               </select>
+               </th>
+               <th style="text-align: center"><input  style="width: 100px" type="number" name="shif" id="shif" value="{{ one46.shift_id }}" required></th>
+               <th style="text-align: center"></th>
+               <th style="text-align: center"><input style="width: 100px" type="number" name="amot" id="amot" value="{{ one46.current_produced_amount }}" required></th>
+                                            <th  style="text-align: center"><input style="width: 100px"  type="number" name="thick" id="thick" value="{{ one46.thickness }}"required></th>
+                              <th  style="text-align: center">{{ one46.get_item.item_height}}</th>
+               <th style="text-align: center">{{ one46.get_item.item_weight}}</th>
+               <th style="text-align: center">{{ one46.get_item.item_width}}</th>
+               <th style="text-align: center">{{ one46.get_internal_order.sebh_fiber_id }}</th>
+               <th style="text-align: center">{{ one46.get_internal_order.makok_fiber_id }}</th>
+               <th style="text-align: center">{{ one46.get_internal_order.inte_id }}</th>
+               <th style="text-align: center"><input  style="width: 100px" type="text" name="worker" id="worker" value="{{ one46.worker_id }}" required></th>
+               <th style="text-align: center"><input  style="width: 100px" type="number" name="item" id="item" value="{{ one46.item_id }}" required></th>
+               <th style="text-align: center"><input  style="width: 100px" type="number" name="order" id="order" value="{{ one46.order_id_id }}" required></th>
+               <th style="text-align: center"><input  style="width: 100px" type="number" name="loom" id="loom" value=46 readonly></th>
+        </form>
+       </tr>
+        <tr> <form method="post">
+               {% csrf_token %}
+               <th style="text-align: center"><button type="submit" id="one11" name="one11">تعديل</button> </th>
+               <th style="text-align: center">
+               <select name="stat" id="stat" required>
+               <option > {{ one47.state }}</option>
+               <option name="work" id="work"> يعمل</option>
+               <option name="not_work"  id="not_work">لا يعمل</option>
+               </select>
+               </th>
+               <th style="text-align: center"><input  style="width: 100px" type="number" name="shif" id="shif" value="{{ one47.shift_id }}"required></th>
+               <th style="text-align: center"></th>
+               <th style="text-align: center"><input style="width: 100px" type="number" name="amot" id="amot" value="{{ one47.current_produced_amount }}"required></th>
+                                            <th  style="text-align: center"><input style="width: 100px"  type="number" name="thick" id="thick" value="{{ one47.thickness }}"required></th>
+                              <th  style="text-align: center">{{ one47.get_item.item_height}}</th>
+               <th style="text-align: center">{{ one47.get_item.item_weight}}</th>
+               <th style="text-align: center">{{ one47.get_item.item_width}}</th>
+               <th style="text-align: center">{{ one47.get_internal_order.sebh_fiber_id }}</th>
+               <th style="text-align: center">{{ one47.get_internal_order.makok_fiber_id }}</th>
+               <th style="text-align: center">{{ one47.get_internal_order.inte_id }}</th>
+               <th style="text-align: center"><input  style="width: 100px" type="text" name="worker" id="worker" value="{{ one47.worker_id }}"required></th>
+               <th style="text-align: center"><input  style="width: 100px" type="number" name="item" id="item" value="{{ one47.item_id }}"required></th>
+               <th style="text-align: center"><input  style="width: 100px" type="number" name="order" id="order" value="{{ one47.order_id_id }}"required></th>
+               <th style="text-align: center"><input  style="width: 100px" type="number" name="loom" id="loom" value=47 readonly></th>
+        </form>
+       </tr>
+        <tr> <form method="post">
+               {% csrf_token %}
+               <th style="text-align: center"><button type="submit" id="one11" name="one11">تعديل</button> </th>
+               <th style="text-align: center">
+               <select name="stat" id="stat"  required>
+               <option > {{ one48.state }}</option>
+               <option name="work" id="work"> يعمل</option>
+               <option name="not_work"  id="not_work">لا يعمل</option>
+               </select>
+               </th>
+               <th style="text-align: center"><input  style="width: 100px" type="number" name="shif" id="shif" value="{{ one48.shift_id }}" required></th>
+               <th style="text-align: center"></th>
+               <th style="text-align: center"><input style="width: 100px" type="number" name="amot" id="amot" value="{{ one48.current_produced_amount }}" required></th>
+                                            <th  style="text-align: center"><input style="width: 100px"  type="number" name="thick" id="thick" value="{{ one48.thickness }}"required></th>
+                              <th  style="text-align: center">{{ one48.get_item.item_height}}</th>
+               <th style="text-align: center">{{ one48.get_item.item_weight}}</th>
+               <th style="text-align: center">{{ one48.get_item.item_width}}</th>
+               <th style="text-align: center">{{ one48.get_internal_order.sebh_fiber_id }}</th>
+               <th style="text-align: center">{{ one48.get_internal_order.makok_fiber_id }}</th>
+               <th style="text-align: center">{{ one48.get_internal_order.inte_id }}</th>
+               <th style="text-align: center"><input  style="width: 100px" type="text" name="worker" id="worker" value="{{ one48.worker_id }}" required></th>
+               <th style="text-align: center"><input  style="width: 100px" type="number" name="item" id="item" value="{{ one48.item_id }}" required></th>
+               <th style="text-align: center"><input  style="width: 100px" type="number" name="order" id="order" value="{{ one48.order_id_id }}" required></th>
+               <th style="text-align: center"><input  style="width: 100px" type="number" name="loom" id="loom" value=48 readonly></th>
+        </form>
+       </tr>
+        <tr> <form method="post">
+               {% csrf_token %}
+               <th style="text-align: center"><button type="submit" id="one11" name="one11">تعديل</button> </th>
+               <th style="text-align: center">
+               <select name="stat" id="stat"  required>
+               <option > {{ one49.state }}</option>
+               <option name="work" id="work"> يعمل</option>
+               <option name="not_work"  id="not_work">لا يعمل</option>
+               </select>
+               </th>
+               <th style="text-align: center"><input  style="width: 100px" type="number" name="shif" id="shif" value="{{ one49.shift_id }}" required></th>
+               <th style="text-align: center"></th>
+               <th style="text-align: center"><input style="width: 100px" type="number" name="amot" id="amot" value="{{ one49.current_produced_amount }}" required></th>
+                                            <th  style="text-align: center"><input style="width: 100px"  type="number" name="thick" id="thick" value="{{ one49.thickness }}"required></th>
+                              <th  style="text-align: center">{{ one49.get_item.item_height}}</th>
+               <th style="text-align: center">{{ one49.get_item.item_weight}}</th>
+               <th style="text-align: center">{{ one49.get_item.item_width}}</th>
+               <th style="text-align: center">{{ one49.get_internal_order.sebh_fiber_id }}</th>
+               <th style="text-align: center">{{ one49.get_internal_order.makok_fiber_id }}</th>
+               <th style="text-align: center">{{ one49.get_internal_order.inte_id }}</th>
+               <th style="text-align: center"><input  style="width: 100px" type="text" name="worker" id="worker" value="{{ one49.worker_id }}" required></th>
+               <th style="text-align: center"><input  style="width: 100px" type="number" name="item" id="item" value="{{ one49.item_id }}" required></th>
+               <th style="text-align: center"><input  style="width: 100px" type="number" name="order" id="order" value="{{ one49.order_id_id }}" required></th>
+               <th style="text-align: center"><input  style="width: 100px" type="number" name="loom" id="loom" value=49 readonly></th>
+        </form>
+       </tr>
+        <tr> <form method="post">
+               {% csrf_token %}
+               <th style="text-align: center"><button type="submit" id="one11" name="one11">تعديل</button> </th>
+               <th style="text-align: center">
+               <select name="stat" id="stat"  required>
+               <option > {{ one50.state }}</option>
+               <option name="work" id="work"> يعمل</option>
+               <option name="not_work"  id="not_work">لا يعمل</option>
+               </select>
+               </th>
+               <th style="text-align: center"><input  style="width: 100px" type="number" name="shif" id="shif" value="{{ one50.shift_id }}" required></th>
+               <th style="text-align: center"></th>
+               <th style="text-align: center"><input style="width: 100px" type="number" name="amot" id="amot" value="{{ one50.current_produced_amount }}" required></th>
+                                            <th  style="text-align: center"><input style="width: 100px"  type="number" name="thick" id="thick" value="{{ one50.thickness }}"required></th>
+                              <th  style="text-align: center">{{ one50.get_item.item_height}}</th>
+               <th style="text-align: center">{{ one50.get_item.item_weight}}</th>
+               <th style="text-align: center">{{ one50.get_item.item_width}}</th>
+               <th style="text-align: center">{{ one50.get_internal_order.sebh_fiber_id }}</th>
+               <th style="text-align: center">{{ one50.get_internal_order.makok_fiber_id }}</th>
+               <th style="text-align: center">{{ one50.get_internal_order.inte_id }}</th>
+               <th style="text-align: center"><input  style="width: 100px" type="text" name="worker" id="worker" value="{{ one50.worker_id }}" required></th>
+               <th style="text-align: center"><input  style="width: 100px" type="number" name="item" id="item" value="{{ one50.item_id }}" required></th>
+               <th style="text-align: center"><input  style="width: 100px" type="number" name="order" id="order" value="{{ one50.order_id_id }}" required></th>
+               <th style="text-align: center"><input  style="width: 100px" type="number" name="loom" id="loom" value=50 readonly></th>
+        </form>
+       </tr>
+                          <tr> <form method="post">
+               {% csrf_token %}
+               <th style="text-align: center"><button type="submit" id="one11" name="one11">تعديل</button> </th>
+               <th style="text-align: center">
+               <select name="stat" id="stat"  required>
+               <option > {{ one51.state }}</option>
+               <option name="work" id="work"> يعمل</option>
+               <option name="not_work"  id="not_work">لا يعمل</option>
+               </select>
+               </th>
+               <th style="text-align: center"><input  style="width: 100px" type="number" name="shif" id="shif" value="{{ one51.shift_id }}" required></th>
+               <th style="text-align: center"></th>
+               <th style="text-align: center"><input style="width: 100px" type="number" name="amot" id="amot" value="{{ one51.current_produced_amount }}" required></th>
+                                            <th  style="text-align: center"><input style="width: 100px"  type="number" name="thick" id="thick" value="{{ one51.thickness }}"required></th>
+                              <th  style="text-align: center">{{ one51.get_item.item_height}}</th>
+               <th style="text-align: center">{{ one51.get_item.item_weight}}</th>
+               <th style="text-align: center">{{ one51.get_item.item_width}}</th>
+               <th style="text-align: center">{{ one51.get_internal_order.sebh_fiber_id }}</th>
+               <th style="text-align: center">{{ one51.get_internal_order.makok_fiber_id }}</th>
+               <th style="text-align: center">{{ one51.get_internal_order.inte_id }}</th>
+               <th style="text-align: center"><input  style="width: 100px" type="text" name="worker" id="worker" value="{{ one51.worker_id }}" required></th>
+               <th style="text-align: center"><input  style="width: 100px" type="number" name="item" id="item" value="{{ one51.item_id }}" required></th>
+               <th style="text-align: center"><input  style="width: 100px" type="number" name="order" id="order" value="{{ one51.order_id_id }}" required></th>
+               <th style="text-align: center"><input  style="width: 100px" type="number" name="loom" id="loom" value=51 readonly></th>
+        </form>
+       </tr>
+        <tr> <form method="post">
+               {% csrf_token %}
+               <th style="text-align: center"><button type="submit" id="one11" name="one11">تعديل</button> </th>
+               <th style="text-align: center">
+               <select name="stat" id="stat"  required>
+               <option > {{ one52.state }}</option>
+               <option name="work" id="work"> يعمل</option>
+               <option name="not_work"  id="not_work">لا يعمل</option>
+               </select>
+               </th>
+               <th style="text-align: center"><input  style="width: 100px" type="number" name="shif" id="shif" value="{{ one52.shift_id }}" required></th>
+               <th style="text-align: center"></th>
+               <th style="text-align: center"><input style="width: 100px" type="number" name="amot" id="amot" value="{{ one52.current_produced_amount }}" required></th>
+                                            <th  style="text-align: center"><input style="width: 100px"  type="number" name="thick" id="thick" value="{{ one52.thickness }}"required></th>
+                              <th  style="text-align: center">{{ one52.get_item.item_height}}</th>
+               <th style="text-align: center">{{ one52.get_item.item_weight}}</th>
+               <th style="text-align: center">{{ one52.get_item.item_width}}</th>
+               <th style="text-align: center">{{ one52.get_internal_order.sebh_fiber_id }}</th>
+               <th style="text-align: center">{{ one52.get_internal_order.makok_fiber_id }}</th>
+               <th style="text-align: center">{{ one52.get_internal_order.inte_id }}</th>
+               <th style="text-align: center"><input  style="width: 100px" type="text" name="worker" id="worker" value="{{ one52.worker_id }}" required></th>
+               <th style="text-align: center"><input  style="width: 100px" type="number" name="item" id="item" value="{{ one52.item_id }}" required></th>
+               <th style="text-align: center"><input  style="width: 100px" type="number" name="order" id="order" value="{{ one52.order_id_id }}" required></th>
+               <th style="text-align: center"><input  style="width: 100px" type="number" name="loom" id="loom" value=52 readonly></th>
+        </form>
+       </tr>
+        <tr> <form method="post">
+               {% csrf_token %}
+               <th style="text-align: center"><button type="submit" id="one11" name="one11">تعديل</button> </th>
+               <th style="text-align: center">
+               <select name="stat" id="stat"  required>
+               <option > {{ one53.state }}</option>
+               <option name="work" id="work"> يعمل</option>
+               <option name="not_work"  id="not_work">لا يعمل</option>
+               </select>
+               </th>
+               <th style="text-align: center"><input  style="width: 100px" type="number" name="shif" id="shif" value="{{ one53.shift_id }}" required></th>
+               <th style="text-align: center"></th>
+               <th style="text-align: center"><input style="width: 100px" type="number" name="amot" id="amot" value="{{ one53.current_produced_amount }}" required></th>
+                                            <th  style="text-align: center"><input style="width: 100px"  type="number" name="thick" id="thick" value="{{ one53.thickness }}"required></th>
+                              <th  style="text-align: center">{{ one53.get_item.item_height}}</th>
+               <th style="text-align: center">{{ one53.get_item.item_weight}}</th>
+               <th style="text-align: center">{{ one53.get_item.item_width}}</th>
+               <th style="text-align: center">{{ one53.get_internal_order.sebh_fiber_id }}</th>
+               <th style="text-align: center">{{ one53.get_internal_order.makok_fiber_id }}</th>
+               <th style="text-align: center">{{ one53.get_internal_order.inte_id }}</th>
+               <th style="text-align: center"><input  style="width: 100px" type="text" name="worker" id="worker" value="{{ one53.worker_id }}" required></th>
+               <th style="text-align: center"><input  style="width: 100px" type="number" name="item" id="item" value="{{ one53.item_id }}" required></th>
+               <th style="text-align: center"><input  style="width: 100px" type="number" name="order" id="order" value="{{ one53.order_id_id }}" required></th>
+               <th style="text-align: center"><input  style="width: 100px" type="number" name="loom" id="loom" value=53 readonly></th>
+        </form>
+       </tr>
+                          <tr> <form method="post">
+               {% csrf_token %}
+               <th style="text-align: center"><button type="submit" id="one11" name="one11">تعديل</button> </th>
+               <th style="text-align: center">
+               <select name="stat" id="stat"  required>
+               <option > {{ one54.state }}</option>
+               <option name="work" id="work"> يعمل</option>
+               <option name="not_work"  id="not_work">لا يعمل</option>
+               </select>
+               </th>
+               <th style="text-align: center"><input  style="width: 100px" type="number" name="shif" id="shif" value="{{ one54.shift_id }}" required></th>
+               <th style="text-align: center"></th>
+               <th style="text-align: center"><input style="width: 100px" type="number" name="amot" id="amot" value="{{ one54.current_produced_amount }}" required></th>
+                                            <th  style="text-align: center"><input style="width: 100px"  type="number" name="thick" id="thick" value="{{ one54.thickness }}"required></th>
+                              <th  style="text-align: center">{{ one54.get_item.item_height}}</th>
+               <th style="text-align: center">{{ one54.get_item.item_weight}}</th>
+               <th style="text-align: center">{{ one54.get_item.item_width}}</th>
+               <th style="text-align: center">{{ one54.get_internal_order.sebh_fiber_id }}</th>
+               <th style="text-align: center">{{ one54.get_internal_order.makok_fiber_id }}</th>
+               <th style="text-align: center">{{ one54.get_internal_order.inte_id }}</th>
+               <th style="text-align: center"><input  style="width: 100px" type="text" name="worker" id="worker" value="{{ one54.worker_id }}" required></th>
+               <th style="text-align: center"><input  style="width: 100px" type="number" name="item" id="item" value="{{ one54.item_id }}" required></th>
+               <th style="text-align: center"><input  style="width: 100px" type="number" name="order" id="order" value="{{ one54.order_id_id }}" required></th>
+               <th style="text-align: center"><input  style="width: 100px" type="number" name="loom" id="loom" value=54 readonly></th>
+        </form>
+       </tr>
+                          <tr> <form method="post">
+               {% csrf_token %}
+               <th style="text-align: center"><button type="submit" id="one11" name="one11">تعديل</button> </th>
+               <th style="text-align: center">
+               <select name="stat" id="stat"  required>
+               <option > {{ one55.state }}</option>
+               <option name="work" id="work"> يعمل</option>
+               <option name="not_work"  id="not_work">لا يعمل</option>
+               </select>
+               </th>
+               <th style="text-align: center"><input  style="width: 100px" type="number" name="shif" id="shif" value="{{ one55.shift_id }}" required></th>
+               <th style="text-align: center"></th>
+               <th style="text-align: center"><input style="width: 100px" type="number" name="amot" id="amot" value="{{ one55.current_produced_amount }}" required></th>
+                                            <th  style="text-align: center"><input style="width: 100px"  type="number" name="thick" id="thick" value="{{ one55.thickness }}"required></th>
+                              <th  style="text-align: center">{{ one55.get_item.item_height}}</th>
+               <th style="text-align: center">{{ one55.get_item.item_weight}}</th>
+               <th style="text-align: center">{{ one55.get_item.item_width}}</th>
+               <th style="text-align: center">{{ one55.get_internal_order.sebh_fiber_id }}</th>
+               <th style="text-align: center">{{ one55.get_internal_order.makok_fiber_id }}</th>
+               <th style="text-align: center">{{ one55.get_internal_order.inte_id }}</th>
+               <th style="text-align: center"><input  style="width: 100px" type="text" name="worker" id="worker" value="{{ one55.worker_id }}" required></th>
+               <th style="text-align: center"><input  style="width: 100px" type="number" name="item" id="item" value="{{ one55.item_id }}" required></th>
+               <th style="text-align: center"><input  style="width: 100px" type="number" name="order" id="order" value="{{ one55.order_id_id }}" required></th>
+               <th style="text-align: center"><input  style="width: 100px" type="number" name="loom" id="loom" value=55 readonly></th>
+        </form>
+       </tr>
+                  </tbody>
+              </table>
+         </div>
+{% endblock %}

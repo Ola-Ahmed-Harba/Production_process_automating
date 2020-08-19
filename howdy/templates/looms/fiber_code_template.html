@@ -1,0 +1,30 @@
+{% extends 'looms/testBase.html' %}
+{% block content %}
+    <h2 align="center">جدول الخيوط القياسي</h2>
+     <div class="container" align="center" >
+              <table  id="mytable" class="table table-bordred table-striped" border="2">
+         <thead class="thcolor">
+                            <th  style="text-align: center">نسبة الاصبغة</th>
+                           <th  style="text-align: center">نسبة الكربونات</th>
+                            <th style="text-align: center">نسبة المواد الاولية</th>
+                            <th  style="text-align: center">اللون</th>
+                            <th  style="text-align: center">عرض الخيط</th>
+                            <th  style="text-align: center">الدنيير</th>
+                             <th  style="text-align: center">الكود</th>
+                   </thead>
+    <tbody>
+{% for fiber in fibers %}
+    <tr>
+           <td style="text-align: center" >{{ fiber.stain_percent}}</td>
+           <td style="text-align: center" >{{ fiber.ca_percent}}</td>
+          <td style="text-align: center">{{ fiber.pp_percent}}</td>
+          <td style="text-align: center">{{ fiber.fiber_color}}</td>
+          <td style="text-align: center">{{ fiber.fiber_width}}</td>
+          <td  style="text-align: center">{{ fiber.denier}}</td>
+          <td width="5%"style="text-align: center">{{ fiber.fiber_id}}</td>
+    </tr>
+{% endfor %}
+    </tbody>
+              </table>
+                    </div>
+{% endblock %}

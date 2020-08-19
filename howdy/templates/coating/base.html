@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Latest compiled and minified CSS -->
+     {% load staticfiles %}
+<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}"
+      integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'sales/style.css' %}" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Satisfy' rel="stylesheet" type="text/css">
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <link href="{% static 'css/font-awesome.css' %}" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body background="{% static 'sales/images/bacc.jpg' %}">
+<nav class="navbar navbar-default nn ordersize">
+ <div class="container-fluid">
+     <!--logo-->
+     <div class="navbar-header" >
+         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#topNavbAR">
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+         </button>
+        <a class="navbar-brand" href="{% url 'logoutt' %}">
+                     <font color="black">
+                    تسجيل خروج
+                </font>
+         </a>
+     </div>
+     <!--items-->
+      <div class="collapse navbar-collapse " id="topNavbAR">
+          <ul class="nav navbar-nav">
+              <li class="">
+                  <a href="{% url 'daily_orders_coating_page' %}">
+                      <span class="glyphicon glyphicon-cd active" aria-hidden="true"></span>&nbsp;
+                      <font color="black">
+                     طلبات التصنيع
+                </font>
+                  </a>
+              </li>
+              <li class="">
+                  <a href="{% url 'internal_coating_order' %}">
+                      <span class="glyphicon glyphicon-globe" aria-hidden="true"></span>&nbsp;
+                              <font color="black">
+                     طلبات داخلية
+                </font>
+                  </a>
+              </li>
+      <li class="">
+                  <a href="{% url 'shift_identifier_coating_view' %}">
+                      <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>&nbsp;
+                              <font color="black">
+                    وردية</font>
+                  </a>
+              </li>
+                <li class="nav-item dropdown dmenu">
+                         <a data-target="#" href="#" data-toggle="dropdown" class="dropdown-toggle">
+                                      <span class="glyphicon glyphicon-search brown" aria-hidden="true"></span>&nbsp;
+                                     <font color="black">
+                                      تقارير انتاج
+                                        </font>
+                             <b class="caret"></b></a>
+                             <ul class="dropdown-menu" >
+                                 <li><a href="{% url 'first_coating_report' %}">الالة الاولى</a></li>
+                                <li><a href="{% url 'second_coating_report' %}">الالة الثانية</a></li>
+                             </ul>
+                </li>
+      <li class="">
+                  <a href="{% url 'roll_coating_view' %}">
+                      <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>&nbsp;
+                              <font color="black">
+                    باركود</font>
+                  </a>
+              </li>
+          </ul>
+      </div>
+ </div>
+</nav>
+         <div class="container">
+            {% block content %}
+            {% endblock %}
+</div>
+</body>
+</html>

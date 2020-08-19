@@ -1,0 +1,173 @@
+{% extends 'cutting/testBase.html' %}
+{% block content %}
+    {% if messages %}
+    {% for message in messages %}
+        <div class="alert {% if message.tags %}alert-{{ message.tags }}{% endif %}" role="alert"  style="width: 200px" align="center" >{{ message }}</div>
+        <script>
+          alert("{{ message }}!");
+        </script>
+    {% endfor %}
+{% endif %}
+ <h2 align="center">تعديل خطة تصنيع</h2>
+    </br>
+    {% for laste in schs %}
+        <div class="container" align="center">
+                   <table  align="center" border="2">
+                   <thead class="thcolor" align="center">
+                       <th  style="text-align: center">تاريخ التسليم</th>
+                        <th  style="text-align: center">تاريخ البدء</th>
+                              <th  style="text-align: center">اسم الزبون</th>
+                   <th   style="text-align: center">الرقم</th>
+                   </thead>
+    <tbody>
+    <td  align="center">{{ laste.getOrder.delivery_time }}</td>
+    <td align="center">{{ laste.getOrder.start_time }}</td>
+    <td  align="center">{{ laste.getOrder.customer_name }}</td>
+    <td  align="center">{{ laste.getOrder.id }}</td>
+    </tbody>
+              </table>
+</div>
+<br>
+        <div align="center">
+              <table  id="mytable" class=" able-striped" border="2">
+         <thead class="thcolor">
+                            <th  style="text-align: center">ملاحظات</th>
+                      <th style="text-align: center">الكمية</th>
+                     <th   style="text-align: center">الوزن</th>
+                     <th style="text-align: center">الطول</th>
+                      <th  style="text-align: center">العرض</th>
+                      <th   style="text-align: center">الوان الوجه الثاني</th>
+                                 <th  style="text-align: center">الوان الوجه الاول</th>
+                          <th   style="text-align: center">وجوه</th>
+                          <th  style="text-align: center">اسم الطبعة</th>
+                            <th   style="text-align: center">مدمج</th>
+                           <th   style="text-align: center">مبطن</th>
+                                <th  style="text-align: center">نوع القص</th>
+                                    <th  style="text-align: center">القص</th>
+                    <th   style="text-align: center">مطلي</th>
+                        <th  style="text-align: center">الكنار</th>
+                        <th  style="text-align: center">مكوك</th>
+                   <th  style="text-align: center">العنصر</th>
+                   </thead>
+    <tbody>
+{% for item in laste.getOrder.getItems %}
+    <tr>
+      <td style="text-align: center" >{{ item.notes }}</td>
+        <td style="text-align: center" >{{ item.quantity }}</td>
+      <td style="text-align: center">{{ item.item_weight }}</td>
+    <td width="5%" style="text-align: center">{{ item.item_height }}</td>
+      <td width="5%" style="text-align: center">{{ item.item_width }}</td>
+      <td style="text-align: center">{{ item.second_face_colors}}</td>
+        <td style="text-align: center">{{ item.first_face_colors}}</td>
+           <td style="text-align: center">{{ item.print_one_face_or_two }}</td>
+         <td style="text-align: center">{{ item.item_printing_name }}</td>
+           <td style="text-align: center" >{{ item.modmag }}</td>
+           <td style="text-align: center" >{{ item.mobatn }}</td>
+        <td style="text-align: center">{{ item.cutting_kind }}</td>
+        <td style="text-align: center">{{ item.cutting }}</td>
+          <td style="text-align: center">{{ item.coating_or_not }}</td>
+          <td style="text-align: center">{{ item.knar }}</td>
+          <td  style="text-align: center">{{ item.makok }}</td>
+     <td width="5%"style="text-align: center">{{ item.item_id }}</td>
+    </tr>
+{% endfor %}
+    </tbody>
+              </table>
+</div>
+        <table>
+<tr>
+    <td>موافقة مدير المعمل</td><td><button class="btn-danger" style="width: 50px">{{ laste.getOrder.manager_agreement }}</button></td></tr>
+   <tr> <td>موافقة مدير الانتاج</td><td> <button class="btn-danger" style="width: 50px"> {{ laste.getOrder.production_manager_agreement }}</button></td></tr>
+</table>
+<div class="container">
+              <table  id="mytable" class=" table-striped" border="2">
+         <thead class="thcolor">
+                                   <th  style="text-align: center">تم تثبيت الطلبية</th>
+                          <th  style="text-align: center">ملاحظات</th>
+                          <th  style="text-align: center">حالة الطلبية</th>
+                           <th  style="text-align: center">تاريخ نهاية الطلبية</th>
+                            <th style="text-align: center">تاريخ بداية الطلبية</th>
+                                            <th style="text-align: center">سبب التعديل</th>
+                           <th  style="text-align: center">تاريخ النهاية للقص</th>
+                            <th style="text-align: center">تاريخ البداية للقص</th>
+                           <th  style="text-align: center">تاريخ النهاية للطباعة</th>
+                            <th style="text-align: center">تاريخ البداية للطباعة</th>
+                           <th  style="text-align: center">تاريخ النهاية للطلي</th>
+                            <th style="text-align: center">تاريخ البداية للطلي</th>
+                            <th  style="text-align: center">تاريخ النهاية للنسيج</th>
+                            <th  style="text-align: center">تاريخ البداية للنسيج</th>
+                            <th  style="text-align: center">رقم الطلبية</th>
+                             <th  style="text-align: center">الكود</th>
+                   </thead>
+    <tbody>
+    <tr>
+                <td style="text-align: center" >{{ laste.fixedd}}</td>
+        <td style="text-align: center" >{{ laste.notes}}</td>
+       <td style="text-align: center" >{{ laste.state}}</td>
+           <td style="text-align: center" >{{ laste.order_end_date}}</td>
+          <td style="text-align: center">{{ laste.order_start_date}}</td>
+        <td style="text-align: center"></td>
+          <td style="text-align: center">{{ laste.end_cutting_date}}</td>
+          <td style="text-align: center">{{ laste.start_cutting_date}}</td>
+          <td  style="text-align: center">{{ laste.end_printing_date }}</td>
+           <td style="text-align: center" >{{ laste.star_printing_date}}</td>
+           <td style="text-align: center" >{{ laste.end_coating_date}}</td>
+          <td style="text-align: center">{{ laste.start_coating_date}}</td>
+          <td style="text-align: center">{{ laste.end_loom_date}}</td>
+          <td style="text-align: center">{{ laste.start_loom_date}}</td>
+          <td  style="text-align: center">{{ laste.order_id }}</td>
+        <td  style="text-align: center">{{ laste.sch_id }}</td>
+    </tr>
+    <tr>
+           <form name="ourform" action="{% url 'update_order_sch_view_cutting_two' laste.pk  %}" method="post">
+                    {% csrf_token %}
+                <td style="text-align: center" ></td>
+        <td style="text-align: center" ></td>
+       <td style="text-align: center" ></td>
+           <td style="text-align: center" ></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"><input type="text" id="reason" name="reason" placeholder="سبب التعديل" value="لا يوجد"  style="width:150px;"></td>
+          <td style="text-align: center"><input type="date" id="cei" name="cei" placeholder="عدل هنا تاريخ الانتهاء"  value="2000-11-11" style="width:150px;"></td>
+          <td style="text-align: center"><input type="date" id="csi" name="csi" placeholder="عدل هنا تاريخ البدء" value="2000-11-11" style="width:150px;"></td>
+          <td  style="text-align: center"><input type="submit" class="btn btn-primary" value="تعديل"></td>
+           <td style="text-align: center" ></td>
+           <td style="text-align: center" ></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"> </td>
+          </form>
+            <td  style="text-align: center"></td>
+        <td  style="text-align: center"></td>
+    </tr>
+         </tbody>
+              </table>
+</div>
+        <br>
+        <p align="center">**************************************************************************</p>
+        <br>
+    {% endfor %}
+<script>
+        $('#ourform').submit(function(event){
+        event.preventDefault();
+        console.log($(this).serialize());
+        var data = $(this).serialize();
+        var action = $(this).attr('action');
+        $.ajax({
+            url: action,
+            data:data,
+            dataType: 'json',
+            method: 'POST',
+            success: function(data){
+                console.log(data);
+                if (data.Success){
+                    $('.SaveState').html(data.Success);
+                }
+                else if (data.Error){
+                    $('.SaveState').html(data.Error);
+                }
+            },
+            error: function(data){
+            }
+        });
+    });
+</script>
+{% endblock %}

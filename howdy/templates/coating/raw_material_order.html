@@ -1,0 +1,101 @@
+{% extends 'coating/testBase.html' %}
+{% block content %}
+        <h3 align="center" ><font color="#cd5c5c">طلب مواد اولية من المستودع 201</font> </h3>
+    </br>
+
+<div align="center">
+     <div class="col-lg-12 table-responsive fontsize" >
+              <table  id="mytable" class="table-striped" border="2">
+         <thead class="thcolor">
+                           <th  style="text-align: center">تاريخ الطلب</th>
+                            <th style="text-align: center">رئيس القسم</th>
+                            <th style="text-align: center">اسم المستلم</th>
+                            <th style="text-align: center">امين المستودع</th>
+                            <th  style="text-align: center">القسم</th>
+                             <th  style="text-align: center">رقم الطلب</th>
+
+                   </thead>
+                  <tbody>
+{% if report %}
+    <tr>
+          <td style="text-align: center">{{ report.order_date}}</td>
+         <td style="text-align: center">{{ report.supervisor_id}}</td>
+          <td style="text-align: center">{{ report.handed }}</td>
+          <td style="text-align: center">{{ report.warehouse_worker}}</td>
+          <td  style="text-align: center">{{ report.department}}</td>
+          <td style="text-align: center">{{ report.report_id}}</td>
+    </tr>
+{% endif %}
+{% if not report %}
+<form method="post" >
+    {% csrf_token %}
+          <td style="text-align: center"> الان</td>
+          <td style="text-align: center"><input type="text" name="suid" style="width: 150px" required></td>
+          <td style="text-align: center"></td>
+    <td  style="text-align: center"></td>
+    <td  style="text-align: center"></td>
+          <td width="5%"style="text-align: center"><input type="submit" class="btn btn-primary" name="add_report" value="اضافة"> </td>
+</form>
+{% endif %}
+    </tbody>
+              </table>
+                    </div>
+</div>
+    <br>
+    {% if report %}
+<div>
+     <div class="col-lg-12 table-responsive fontsize" >
+              <table  id="mytable" class="table-striped" border="2">
+         <thead class="thcolor">
+                           <th  style="text-align: center">الكمية المستلمة</th>
+                            <th style="text-align: center">الكميةالمسلمة</th>
+                           <th  style="text-align: center">الالة</th>
+                            <th style="text-align: center">الكمية </th>
+                            <th style="text-align: center">وصف المادة </th>
+                            <th style="text-align: center">الواحدة</th>
+                            <th  style="text-align: center">المادة</th>
+                             <th  style="text-align: center">رقم الطلب</th>
+         <th  style="text-align: center"></th>
+                   </thead>
+                  <tbody>
+{% for re in report_details %}
+    <tr>
+           <td style="text-align: center">{{ re.recived_amount}}</td>
+          <td style="text-align: center">{{ re.send_amount}}</td>
+         <td style="text-align: center">{{ re.machine_id}}</td>
+          <td style="text-align: center">{{ re.amount }}</td>
+        <td style="text-align: center">{{ re.material_describtion }}</td>
+          <td style="text-align: center">{{ re.unit}}</td>
+          <td  style="text-align: center">{{ re.material_id}}</td>
+          <td style="text-align: center">{{ re.report_id}}</td>
+               <td style="text-align: center"><a href="{% url 'delete_item_from_raw_order' re.pk %}"><button class="btn btn-danger">حذف</button></a> </td>
+    </tr>
+{% endfor %}
+<form method="post" >
+    {% csrf_token %}
+           <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"> <select name="machine" required>
+              <option>1400</option>
+              <option>1500/1</option>
+              <option>1500/2</option>
+          </select></td>
+          <td style="text-align: center"><input type="number" name="amount" style="width: 100px" required></td>
+    <td style="text-align: center"><input type="text" name="material_describtion" value="لا يوجد" style="width: 100px" required></td>
+          <td style="text-align: center"><select name="unit" required>
+              <option>كغ</option>
+              <option>طن</option>
+          </select></td>
+    <td  style="text-align: center"><select name="matid" required>
+        <option>بولي بروبيلين</option>
+        <option>بولي ايتيلين</option>
+    </select></td>
+    <td  style="text-align: center"><input value="{{ report.report_id }}" name="report_id" style="width: 60px" readonly></td>
+          <td width="5%"style="text-align: center"><input type="submit" class="btn btn-primary" name="add_item" value="اضافة"> </td>
+</form>
+    </tbody>
+              </table>
+                    </div>
+</div>
+    {% endif %}
+{% endblock %}

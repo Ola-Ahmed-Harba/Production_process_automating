@@ -1,0 +1,922 @@
+{% extends 'looms/testBase.html' %}
+{% block content %}
+    <h1 align="center">متابعة طلبيات المجموعة الأولى</h1>
+         <div class="col-lg-12 table-responsive fontsize" >
+              <table  id="mytable" class="table table-bordred table-striped">
+         <thead class="thcolor">
+                            <th  style="text-align: center">حالة النول</th>
+                            <th  style="text-align: center">الوردية</th>
+                            <th style="text-align: center">الكمية المتبقية</th>
+                              <th  style="text-align: center">الكمية المنتجة</th>
+                              <th  style="text-align: center">وزن</th>
+                              <th  style="text-align: center">عرض</th>
+                            <th  style="text-align: center">اسم العامل</th>
+                             <th  style="text-align: center">البند</th>
+                             <th  style="text-align: center">رقم الطلبية</th>
+                               <th  style="text-align: center">رقم النول </th>
+                   </thead>
+                  <tbody>
+          <tr>
+          <form method="post">
+             {% csrf_token %}
+             <th  style="text-align: center"><button type="submit" id="one" name="one">تعديل</button> </th>
+             <th  style="text-align: center">{{ one.state }}</th>
+             <th  style="text-align: center"><input type="number" name="shif" id="shif" value="{{ one.shift_id }}"></th>
+             <th  style="text-align: center">الكمية المتبقية</th>
+             <th  style="text-align: center"><input type="number" name="amot" id="amot" value="{{ one.current_produced_amount }}"></th>
+             <th  style="text-align: center">{{ one.getItemOrderInfo.item_weight }}</th>
+             <th  style="text-align: center">{{ one.getItemOrderInfo.item_width }}</th>
+             <th  style="text-align: center">{{ one.getPartingInfo.end_time }}</th>
+             <th  style="text-align: center">{{ one.getPartingInfo.start_time }}</th>
+             <th  style="text-align: center">{{ one.getPartingInfo.amount }}</th>
+             <th  style="text-align: center">{{ one.getPartingInfo.parting_id }}</th>
+             <th  style="text-align: center">{{ one.getOrderInfo.id }}-({{ one.getCustomerInfo.customer_name }})</th>
+             <th  style="text-align: center"></th>
+           </form>
+           </tr>
+          <tr>
+          <form method="post">
+             {% csrf_token %}
+             <th  style="text-align: center"><button type="submit" id="one" name="one">تعديل</button> </th>
+             <th  style="text-align: center">{{ one2.state }}</th>
+             <th  style="text-align: center"><input type="number" name="shif" id="shif" value="{{ one2.shift_id }}"></th>
+             <th  style="text-align: center">الكمية المتبقية</th>
+             <th  style="text-align: center"><input type="number" name="amot" id="amot" value="{{ one2.current_produced_amount }}"></th>
+             <th  style="text-align: center">{{ one2.getItemOrderInfo.item_weight }}</th>
+             <th  style="text-align: center">{{ one2.getItemOrderInfo.item_width }}</th>
+             <th  style="text-align: center">{{ one2.getPartingInfo.end_time }}</th>
+             <th  style="text-align: center">{{ one2.getPartingInfo.start_time }}</th>
+             <th  style="text-align: center">{{ one2.getPartingInfo.amount }}</th>
+             <th  style="text-align: center">{{ one2.getPartingInfo.parting_id }}</th>
+             <th  style="text-align: center">{{ one2.getOrderInfo.id }}-({{ one2.getCustomerInfo.customer_name }})</th>
+             <th  style="text-align: center"></th>
+           </form>
+           </tr>
+          <tr>
+          <form method="post">
+             {% csrf_token %}
+             <th  style="text-align: center"><button type="submit" id="one" name="one">تعديل</button> </th>
+             <th  style="text-align: center">{{ one3.state }}</th>
+             <th  style="text-align: center"><input type="number" name="shif" id="shif" value="{{ one3.shift_id }}"></th>
+             <th  style="text-align: center">الكمية المتبقية</th>
+             <th  style="text-align: center"><input type="number" name="amot" id="amot" value="{{ one3.current_produced_amount }}"></th>
+             <th  style="text-align: center">{{ one3.getItemOrderInfo.item_weight }}</th>
+             <th  style="text-align: center">{{ one3.getItemOrderInfo.item_width }}</th>
+             <th  style="text-align: center">{{ one3.getPartingInfo.end_time }}</th>
+             <th  style="text-align: center">{{ one3.getPartingInfo.start_time }}</th>
+             <th  style="text-align: center">{{ one3.getPartingInfo.amount }}</th>
+             <th  style="text-align: center">{{ one3.getPartingInfo.parting_id }}</th>
+             <th  style="text-align: center">{{ one3.getOrderInfo.id }}-({{ one3.getCustomerInfo.customer_name }})</th>
+             <th  style="text-align: center"></th>
+           </form>
+           </tr>
+          <tr>
+          <form method="post">
+             {% csrf_token %}
+             <th  style="text-align: center"><button type="submit" id="one" name="one">تعديل</button> </th>
+             <th  style="text-align: center">{{ one4.state }}</th>
+             <th  style="text-align: center"><input type="number" name="shif" id="shif" value="{{ one4.shift_id }}"></th>
+             <th  style="text-align: center">الكمية المتبقية</th>
+             <th  style="text-align: center"><input type="number" name="amot" id="amot" value="{{ one4.current_produced_amount }}"></th>
+             <th  style="text-align: center">{{ one4.getItemOrderInfo.item_weight }}</th>
+             <th  style="text-align: center">{{ one4.getItemOrderInfo.item_width }}</th>
+             <th  style="text-align: center">{{ one4.getPartingInfo.end_time }}</th>
+             <th  style="text-align: center">{{ one4.getPartingInfo.start_time }}</th>
+             <th  style="text-align: center">{{ one4.getPartingInfo.amount }}</th>
+             <th  style="text-align: center">{{ one4.getPartingInfo.parting_id }}</th>
+             <th  style="text-align: center">{{ one4.getOrderInfo.id }}-({{ one4.getCustomerInfo.customer_name }})</th>
+             <th  style="text-align: center"></th>
+           </form>
+           </tr>
+          <tr>
+          <form method="post">
+             {% csrf_token %}
+             <th  style="text-align: center"><button type="submit" id="one" name="one">تعديل</button> </th>
+             <th  style="text-align: center">{{ one5.state }}</th>
+             <th  style="text-align: center"><input type="number" name="shif" id="shif" value="{{ one5.shift_id }}"></th>
+             <th  style="text-align: center">الكمية المتبقية</th>
+             <th  style="text-align: center"><input type="number" name="amot" id="amot" value="{{ one5.current_produced_amount }}"></th>
+             <th  style="text-align: center">{{ one5.getItemOrderInfo.item_weight }}</th>
+             <th  style="text-align: center">{{ one5.getItemOrderInfo.item_width }}</th>
+             <th  style="text-align: center">{{ one5.getPartingInfo.end_time }}</th>
+             <th  style="text-align: center">{{ one5.getPartingInfo.start_time }}</th>
+             <th  style="text-align: center">{{ one5.getPartingInfo.amount }}</th>
+             <th  style="text-align: center">{{ one5.getPartingInfo.parting_id }}</th>
+             <th  style="text-align: center">{{ one5.getOrderInfo.id }}-({{ one5.getCustomerInfo.customer_name }})</th>
+             <th  style="text-align: center"></th>
+           </form>
+           </tr>
+          <tr>
+          <form method="post">
+             {% csrf_token %}
+             <th  style="text-align: center"><button type="submit" id="one" name="one">تعديل</button> </th>
+             <th  style="text-align: center">{{ one6.state }}</th>
+             <th  style="text-align: center"><input type="number" name="shif" id="shif" value="{{ one6.shift_id }}"></th>
+             <th  style="text-align: center">الكمية المتبقية</th>
+             <th  style="text-align: center"><input type="number" name="amot" id="amot" value="{{ one6.current_produced_amount }}"></th>
+             <th  style="text-align: center">{{ one6.getItemOrderInfo.item_weight }}</th>
+             <th  style="text-align: center">{{ one6.getItemOrderInfo.item_width }}</th>
+             <th  style="text-align: center">{{ one6.getPartingInfo.end_time }}</th>
+             <th  style="text-align: center">{{ one6.getPartingInfo.start_time }}</th>
+             <th  style="text-align: center">{{ one6.getPartingInfo.amount }}</th>
+             <th  style="text-align: center">{{ one6.getPartingInfo.parting_id }}</th>
+             <th  style="text-align: center">{{ one6.getOrderInfo.id }}-({{ one6.getCustomerInfo.customer_name }})</th>
+             <th  style="text-align: center"></th>
+           </form>
+           </tr>
+          <tr>
+          <form method="post">
+             {% csrf_token %}
+             <th  style="text-align: center"><button type="submit" id="one" name="one">تعديل</button> </th>
+             <th  style="text-align: center">{{ one7.state }}</th>
+             <th  style="text-align: center"><input type="number" name="shif" id="shif" value="{{ one7.shift_id }}"></th>
+             <th  style="text-align: center">الكمية المتبقية</th>
+             <th  style="text-align: center"><input type="number" name="amot" id="amot" value="{{ one7.current_produced_amount }}"></th>
+             <th  style="text-align: center">{{ one7.getItemOrderInfo.item_weight }}</th>
+             <th  style="text-align: center">{{ one7.getItemOrderInfo.item_width }}</th>
+             <th  style="text-align: center">{{ one7.getPartingInfo.end_time }}</th>
+             <th  style="text-align: center">{{ one7.getPartingInfo.start_time }}</th>
+             <th  style="text-align: center">{{ one7.getPartingInfo.amount }}</th>
+             <th  style="text-align: center">{{ one7.getPartingInfo.parting_id }}</th>
+             <th  style="text-align: center">{{ one7.getOrderInfo.id }}-({{ one7.getCustomerInfo.customer_name }})</th>
+             <th  style="text-align: center"></th>
+           </form>
+           </tr>
+          <tr>
+          <form method="post">
+             {% csrf_token %}
+             <th  style="text-align: center"><button type="submit" id="one" name="one">تعديل</button> </th>
+             <th  style="text-align: center">{{ one8.state }}</th>
+             <th  style="text-align: center"><input type="number" name="shif" id="shif" value="{{ one8.shift_id }}"></th>
+             <th  style="text-align: center">الكمية المتبقية</th>
+             <th  style="text-align: center"><input type="number" name="amot" id="amot" value="{{ one8.current_produced_amount }}"></th>
+             <th  style="text-align: center">{{ one8.getItemOrderInfo.item_weight }}</th>
+             <th  style="text-align: center">{{ one8.getItemOrderInfo.item_width }}</th>
+             <th  style="text-align: center">{{ one8.getPartingInfo.end_time }}</th>
+             <th  style="text-align: center">{{ one8.getPartingInfo.start_time }}</th>
+             <th  style="text-align: center">{{ one8.getPartingInfo.amount }}</th>
+             <th  style="text-align: center">{{ one8.getPartingInfo.parting_id }}</th>
+             <th  style="text-align: center">{{ one8.getOrderInfo.id }}-({{ one8.getCustomerInfo.customer_name }})</th>
+             <th  style="text-align: center"></th>
+           </form>
+           </tr>
+          <tr>
+          <form method="post">
+             {% csrf_token %}
+             <th  style="text-align: center"><button type="submit" id="one" name="one">تعديل</button> </th>
+             <th  style="text-align: center">{{ one9.state }}</th>
+             <th  style="text-align: center"><input type="number" name="shif" id="shif" value="{{ one9.shift_id }}"></th>
+             <th  style="text-align: center">الكمية المتبقية</th>
+             <th  style="text-align: center"><input type="number" name="amot" id="amot" value="{{ one9.current_produced_amount }}"></th>
+             <th  style="text-align: center">{{ one9.getItemOrderInfo.item_weight }}</th>
+             <th  style="text-align: center">{{ one9.getItemOrderInfo.item_width }}</th>
+             <th  style="text-align: center">{{ one9.getPartingInfo.end_time }}</th>
+             <th  style="text-align: center">{{ one9.getPartingInfo.start_time }}</th>
+             <th  style="text-align: center">{{ one9.getPartingInfo.amount }}</th>
+             <th  style="text-align: center">{{ one9.getPartingInfo.parting_id }}</th>
+             <th  style="text-align: center">{{ one9.getOrderInfo.id }}-({{ one9.getCustomerInfo.customer_name }})</th>
+             <th  style="text-align: center"></th>
+           </form>
+           </tr>
+          <tr>
+          <form method="post">
+             {% csrf_token %}
+             <th  style="text-align: center"><button type="submit" id="one" name="one">تعديل</button> </th>
+             <th  style="text-align: center">{{ one10.state }}</th>
+             <th  style="text-align: center"><input type="number" name="shif" id="shif" value="{{ one10.shift_id }}"></th>
+             <th  style="text-align: center">الكمية المتبقية</th>
+             <th  style="text-align: center"><input type="number" name="amot" id="amot" value="{{ one10.current_produced_amount }}"></th>
+             <th  style="text-align: center">{{ one10.getItemOrderInfo.item_weight }}</th>
+             <th  style="text-align: center">{{ one10.getItemOrderInfo.item_width }}</th>
+             <th  style="text-align: center">{{ one10.getPartingInfo.end_time }}</th>
+             <th  style="text-align: center">{{ one10.getPartingInfo.start_time }}</th>
+             <th  style="text-align: center">{{ one10.getPartingInfo.amount }}</th>
+             <th  style="text-align: center">{{ one10.getPartingInfo.parting_id }}</th>
+             <th  style="text-align: center">{{ one10.getOrderInfo.id }}-({{ one10.getCustomerInfo.customer_name }})</th>
+             <th  style="text-align: center"></th>
+           </form>
+           </tr>
+          <tr>
+          <form method="post">
+             {% csrf_token %}
+             <th  style="text-align: center"><button type="submit" id="one" name="one">تعديل</button> </th>
+             <th  style="text-align: center">{{ one11.state }}</th>
+             <th  style="text-align: center"><input type="number" name="shif" id="shif" value="{{ one11.shift_id }}"></th>
+             <th  style="text-align: center">الكمية المتبقية</th>
+             <th  style="text-align: center"><input type="number" name="amot" id="amot" value="{{ one11.current_produced_amount }}"></th>
+             <th  style="text-align: center">{{ one11.getItemOrderInfo.item_weight }}</th>
+             <th  style="text-align: center">{{ one11.getItemOrderInfo.item_width }}</th>
+             <th  style="text-align: center">{{ one11.getPartingInfo.end_time }}</th>
+             <th  style="text-align: center">{{ one11.getPartingInfo.start_time }}</th>
+             <th  style="text-align: center">{{ one11.getPartingInfo.amount }}</th>
+             <th  style="text-align: center">{{ one11.getPartingInfo.parting_id }}</th>
+             <th  style="text-align: center">{{ one11.getOrderInfo.id }}-({{ one11.getCustomerInfo.customer_name }})</th>
+             <th  style="text-align: center"></th>
+           </form>
+           </tr>
+          <tr>
+          <form method="post">
+             {% csrf_token %}
+             <th  style="text-align: center"><button type="submit" id="one" name="one">تعديل</button> </th>
+             <th  style="text-align: center">{{ one12.state }}</th>
+             <th  style="text-align: center"><input type="number" name="shif" id="shif" value="{{ one12.shift_id }}"></th>
+             <th  style="text-align: center">الكمية المتبقية</th>
+             <th  style="text-align: center"><input type="number" name="amot" id="amot" value="{{ one12.current_produced_amount }}"></th>
+             <th  style="text-align: center">{{ one12.getItemOrderInfo.item_weight }}</th>
+             <th  style="text-align: center">{{ one12.getItemOrderInfo.item_width }}</th>
+             <th  style="text-align: center">{{ one12.getPartingInfo.end_time }}</th>
+             <th  style="text-align: center">{{ one12.getPartingInfo.start_time }}</th>
+             <th  style="text-align: center">{{ one12.getPartingInfo.amount }}</th>
+             <th  style="text-align: center">{{ one12.getPartingInfo.parting_id }}</th>
+             <th  style="text-align: center">{{ one12.getOrderInfo.id }}-({{ one12.getCustomerInfo.customer_name }})</th>
+             <th  style="text-align: center"></th>
+           </form>
+           </tr>
+          <tr>
+          <form method="post">
+             {% csrf_token %}
+             <th  style="text-align: center"><button type="submit" id="one" name="one">تعديل</button> </th>
+             <th  style="text-align: center">{{ one13.state }}</th>
+             <th  style="text-align: center"><input type="number" name="shif" id="shif" value="{{ one13.shift_id }}"></th>
+             <th  style="text-align: center">الكمية المتبقية</th>
+             <th  style="text-align: center"><input type="number" name="amot" id="amot" value="{{ one13.current_produced_amount }}"></th>
+             <th  style="text-align: center">{{ one13.getItemOrderInfo.item_weight }}</th>
+             <th  style="text-align: center">{{ one13.getItemOrderInfo.item_width }}</th>
+             <th  style="text-align: center">{{ one13.getPartingInfo.end_time }}</th>
+             <th  style="text-align: center">{{ one13.getPartingInfo.start_time }}</th>
+             <th  style="text-align: center">{{ one13.getPartingInfo.amount }}</th>
+             <th  style="text-align: center">{{ one13.getPartingInfo.parting_id }}</th>
+             <th  style="text-align: center">{{ one13.getOrderInfo.id }}-({{ one13.getCustomerInfo.customer_name }})</th>
+             <th  style="text-align: center"></th>
+           </form>
+           </tr>
+          <tr>
+          <form method="post">
+             {% csrf_token %}
+             <th  style="text-align: center"><button type="submit" id="one" name="one">تعديل</button> </th>
+             <th  style="text-align: center">{{ one14.state }}</th>
+             <th  style="text-align: center"><input type="number" name="shif" id="shif" value="{{ one14.shift_id }}"></th>
+             <th  style="text-align: center">الكمية المتبقية</th>
+             <th  style="text-align: center"><input type="number" name="amot" id="amot" value="{{ one14.current_produced_amount }}"></th>
+             <th  style="text-align: center">{{ one14.getItemOrderInfo.item_weight }}</th>
+             <th  style="text-align: center">{{ one14.getItemOrderInfo.item_width }}</th>
+             <th  style="text-align: center">{{ one14.getPartingInfo.end_time }}</th>
+             <th  style="text-align: center">{{ one14.getPartingInfo.start_time }}</th>
+             <th  style="text-align: center">{{ one14.getPartingInfo.amount }}</th>
+             <th  style="text-align: center">{{ one14.getPartingInfo.parting_id }}</th>
+             <th  style="text-align: center">{{ one14.getOrderInfo.id }}-({{ one14.getCustomerInfo.customer_name }})</th>
+             <th  style="text-align: center"></th>
+           </form>
+           </tr>
+          <tr>
+          <form method="post">
+             {% csrf_token %}
+             <th  style="text-align: center"><button type="submit" id="one" name="one">تعديل</button> </th>
+             <th  style="text-align: center">{{ one15.state }}</th>
+             <th  style="text-align: center"><input type="number" name="shif" id="shif" value="{{ one15.shift_id }}"></th>
+             <th  style="text-align: center">الكمية المتبقية</th>
+             <th  style="text-align: center"><input type="number" name="amot" id="amot" value="{{ one15.current_produced_amount }}"></th>
+             <th  style="text-align: center">{{ one15.getItemOrderInfo.item_weight }}</th>
+             <th  style="text-align: center">{{ one15.getItemOrderInfo.item_width }}</th>
+             <th  style="text-align: center">{{ one15.getPartingInfo.end_time }}</th>
+             <th  style="text-align: center">{{ one15.getPartingInfo.start_time }}</th>
+             <th  style="text-align: center">{{ one15.getPartingInfo.amount }}</th>
+             <th  style="text-align: center">{{ one15.getPartingInfo.parting_id }}</th>
+             <th  style="text-align: center">{{ one15.getOrderInfo.id }}-({{ one15.getCustomerInfo.customer_name }})</th>
+             <th  style="text-align: center"></th>
+           </form>
+           </tr>
+          <tr>
+          <form method="post">
+             {% csrf_token %}
+             <th  style="text-align: center"><button type="submit" id="one" name="one">تعديل</button> </th>
+             <th  style="text-align: center">{{ one16.state }}</th>
+             <th  style="text-align: center"><input type="number" name="shif" id="shif" value="{{ one16.shift_id }}"></th>
+             <th  style="text-align: center">الكمية المتبقية</th>
+             <th  style="text-align: center"><input type="number" name="amot" id="amot" value="{{ one16.current_produced_amount }}"></th>
+             <th  style="text-align: center">{{ one16.getItemOrderInfo.item_weight }}</th>
+             <th  style="text-align: center">{{ one16.getItemOrderInfo.item_width }}</th>
+             <th  style="text-align: center">{{ one16.getPartingInfo.end_time }}</th>
+             <th  style="text-align: center">{{ one16.getPartingInfo.start_time }}</th>
+             <th  style="text-align: center">{{ one16.getPartingInfo.amount }}</th>
+             <th  style="text-align: center">{{ one16.getPartingInfo.parting_id }}</th>
+             <th  style="text-align: center">{{ one16.getOrderInfo.id }}-({{ one16.getCustomerInfo.customer_name }})</th>
+             <th  style="text-align: center"></th>
+           </form>
+           </tr>
+          <tr>
+          <form method="post">
+             {% csrf_token %}
+             <th  style="text-align: center"><button type="submit" id="one" name="one">تعديل</button> </th>
+             <th  style="text-align: center">{{ one17.state }}</th>
+             <th  style="text-align: center"><input type="number" name="shif" id="shif" value="{{ one17.shift_id }}"></th>
+             <th  style="text-align: center">الكمية المتبقية</th>
+             <th  style="text-align: center"><input type="number" name="amot" id="amot" value="{{ one17.current_produced_amount }}"></th>
+             <th  style="text-align: center">{{ one17.getItemOrderInfo.item_weight }}</th>
+             <th  style="text-align: center">{{ one17.getItemOrderInfo.item_width }}</th>
+             <th  style="text-align: center">{{ one17.getPartingInfo.end_time }}</th>
+             <th  style="text-align: center">{{ one17.getPartingInfo.start_time }}</th>
+             <th  style="text-align: center">{{ one17.getPartingInfo.amount }}</th>
+             <th  style="text-align: center">{{ one17.getPartingInfo.parting_id }}</th>
+             <th  style="text-align: center">{{ one17.getOrderInfo.id }}-({{ one17.getCustomerInfo.customer_name }})</th>
+             <th  style="text-align: center"></th>
+           </form>
+           </tr>
+          <tr>
+          <form method="post">
+             {% csrf_token %}
+             <th  style="text-align: center"><button type="submit" id="one" name="one">تعديل</button> </th>
+             <th  style="text-align: center">{{ one18.state }}</th>
+             <th  style="text-align: center"><input type="number" name="shif" id="shif" value="{{ one18.shift_id }}"></th>
+             <th  style="text-align: center">الكمية المتبقية</th>
+             <th  style="text-align: center"><input type="number" name="amot" id="amot" value="{{ one18.current_produced_amount }}"></th>
+             <th  style="text-align: center">{{ one18.getItemOrderInfo.item_weight }}</th>
+             <th  style="text-align: center">{{ one18.getItemOrderInfo.item_width }}</th>
+             <th  style="text-align: center">{{ one18.getPartingInfo.end_time }}</th>
+             <th  style="text-align: center">{{ one18.getPartingInfo.start_time }}</th>
+             <th  style="text-align: center">{{ one18.getPartingInfo.amount }}</th>
+             <th  style="text-align: center">{{ one18.getPartingInfo.parting_id }}</th>
+             <th  style="text-align: center">{{ one18.getOrderInfo.id }}-({{ one18.getCustomerInfo.customer_name }})</th>
+             <th  style="text-align: center"></th>
+           </form>
+           </tr>
+          <tr>
+          <form method="post">
+             {% csrf_token %}
+             <th  style="text-align: center"><button type="submit" id="one" name="one">تعديل</button> </th>
+             <th  style="text-align: center">{{ one19.state }}</th>
+             <th  style="text-align: center"><input type="number" name="shif" id="shif" value="{{ one19.shift_id }}"></th>
+             <th  style="text-align: center">الكمية المتبقية</th>
+             <th  style="text-align: center"><input type="number" name="amot" id="amot" value="{{ one19.current_produced_amount }}"></th>
+             <th  style="text-align: center">{{ one19.getItemOrderInfo.item_weight }}</th>
+             <th  style="text-align: center">{{ one19.getItemOrderInfo.item_width }}</th>
+             <th  style="text-align: center">{{ one19.getPartingInfo.end_time }}</th>
+             <th  style="text-align: center">{{ one19.getPartingInfo.start_time }}</th>
+             <th  style="text-align: center">{{ one19.getPartingInfo.amount }}</th>
+             <th  style="text-align: center">{{ one19.getPartingInfo.parting_id }}</th>
+             <th  style="text-align: center">{{ one19.getOrderInfo.id }}-({{ one19.getCustomerInfo.customer_name }})</th>
+             <th  style="text-align: center"></th>
+           </form>
+           </tr>
+          <tr>
+          <form method="post">
+             {% csrf_token %}
+             <th  style="text-align: center"><button type="submit" id="one" name="one">تعديل</button> </th>
+             <th  style="text-align: center">{{ one20.state }}</th>
+             <th  style="text-align: center"><input type="number" name="shif" id="shif" value="{{ one20.shift_id }}"></th>
+             <th  style="text-align: center">الكمية المتبقية</th>
+             <th  style="text-align: center"><input type="number" name="amot" id="amot" value="{{ one20.current_produced_amount }}"></th>
+             <th  style="text-align: center">{{ one20.getItemOrderInfo.item_weight }}</th>
+             <th  style="text-align: center">{{ one20.getItemOrderInfo.item_width }}</th>
+             <th  style="text-align: center">{{ one20.getPartingInfo.end_time }}</th>
+             <th  style="text-align: center">{{ one20.getPartingInfo.start_time }}</th>
+             <th  style="text-align: center">{{ one20.getPartingInfo.amount }}</th>
+             <th  style="text-align: center">{{ one20.getPartingInfo.parting_id }}</th>
+             <th  style="text-align: center">{{ one20.getOrderInfo.id }}-({{ one20.getCustomerInfo.customer_name }})</th>
+             <th  style="text-align: center"></th>
+           </form>
+           </tr>
+          <tr>
+          <form method="post">
+             {% csrf_token %}
+             <th  style="text-align: center"><button type="submit" id="one" name="one">تعديل</button> </th>
+             <th  style="text-align: center">{{ one21.state }}</th>
+             <th  style="text-align: center"><input type="number" name="shif" id="shif" value="{{ one21.shift_id }}"></th>
+             <th  style="text-align: center">الكمية المتبقية</th>
+             <th  style="text-align: center"><input type="number" name="amot" id="amot" value="{{ one21.current_produced_amount }}"></th>
+             <th  style="text-align: center">{{ one21.getItemOrderInfo.item_weight }}</th>
+             <th  style="text-align: center">{{ one21.getItemOrderInfo.item_width }}</th>
+             <th  style="text-align: center">{{ one21.getPartingInfo.end_time }}</th>
+             <th  style="text-align: center">{{ one21.getPartingInfo.start_time }}</th>
+             <th  style="text-align: center">{{ one21.getPartingInfo.amount }}</th>
+             <th  style="text-align: center">{{ one21.getPartingInfo.parting_id }}</th>
+             <th  style="text-align: center">{{ one21.getOrderInfo.id }}-({{ one21.getCustomerInfo.customer_name }})</th>
+             <th  style="text-align: center"></th>
+           </form>
+           </tr>
+          <tr>
+          <form method="post">
+             {% csrf_token %}
+             <th  style="text-align: center"><button type="submit" id="one" name="one">تعديل</button> </th>
+             <th  style="text-align: center">{{ one22.state }}</th>
+             <th  style="text-align: center"><input type="number" name="shif" id="shif" value="{{ one22.shift_id }}"></th>
+             <th  style="text-align: center">الكمية المتبقية</th>
+             <th  style="text-align: center"><input type="number" name="amot" id="amot" value="{{ one22.current_produced_amount }}"></th>
+             <th  style="text-align: center">{{ one22.getItemOrderInfo.item_weight }}</th>
+             <th  style="text-align: center">{{ one22.getItemOrderInfo.item_width }}</th>
+             <th  style="text-align: center">{{ one22.getPartingInfo.end_time }}</th>
+             <th  style="text-align: center">{{ one22.getPartingInfo.start_time }}</th>
+             <th  style="text-align: center">{{ one22.getPartingInfo.amount }}</th>
+             <th  style="text-align: center">{{ one22.getPartingInfo.parting_id }}</th>
+             <th  style="text-align: center">{{ one22.getOrderInfo.id }}-({{ one22.getCustomerInfo.customer_name }})</th>
+             <th  style="text-align: center"></th>
+           </form>
+           </tr>
+          <tr>
+          <form method="post">
+             {% csrf_token %}
+             <th  style="text-align: center"><button type="submit" id="one" name="one">تعديل</button> </th>
+             <th  style="text-align: center">{{ one23.state }}</th>
+             <th  style="text-align: center"><input type="number" name="shif" id="shif" value="{{ one23.shift_id }}"></th>
+             <th  style="text-align: center">الكمية المتبقية</th>
+             <th  style="text-align: center"><input type="number" name="amot" id="amot" value="{{ one23.current_produced_amount }}"></th>
+             <th  style="text-align: center">{{ one23.getItemOrderInfo.item_weight }}</th>
+             <th  style="text-align: center">{{ one23.getItemOrderInfo.item_width }}</th>
+             <th  style="text-align: center">{{ one23.getPartingInfo.end_time }}</th>
+             <th  style="text-align: center">{{ one23.getPartingInfo.start_time }}</th>
+             <th  style="text-align: center">{{ one23.getPartingInfo.amount }}</th>
+             <th  style="text-align: center">{{ one23.getPartingInfo.parting_id }}</th>
+             <th  style="text-align: center">{{ one23.getOrderInfo.id }}-({{ one23.getCustomerInfo.customer_name }})</th>
+             <th  style="text-align: center"></th>
+           </form>
+           </tr>
+          <tr>
+          <form method="post">
+             {% csrf_token %}
+             <th  style="text-align: center"><button type="submit" id="one" name="one">تعديل</button> </th>
+             <th  style="text-align: center">{{ one24.state }}</th>
+             <th  style="text-align: center"><input type="number" name="shif" id="shif" value="{{ one24.shift_id }}"></th>
+             <th  style="text-align: center">الكمية المتبقية</th>
+             <th  style="text-align: center"><input type="number" name="amot" id="amot" value="{{ one24.current_produced_amount }}"></th>
+             <th  style="text-align: center">{{ one24.getItemOrderInfo.item_weight }}</th>
+             <th  style="text-align: center">{{ one24.getItemOrderInfo.item_width }}</th>
+             <th  style="text-align: center">{{ one24.getPartingInfo.end_time }}</th>
+             <th  style="text-align: center">{{ one24.getPartingInfo.start_time }}</th>
+             <th  style="text-align: center">{{ one24.getPartingInfo.amount }}</th>
+             <th  style="text-align: center">{{ one24.getPartingInfo.parting_id }}</th>
+             <th  style="text-align: center">{{ one24.getOrderInfo.id }}-({{ one24.getCustomerInfo.customer_name }})</th>
+             <th  style="text-align: center"></th>
+           </form>
+           </tr>
+          <tr>
+          <form method="post">
+             {% csrf_token %}
+             <th  style="text-align: center"><button type="submit" id="one" name="one">تعديل</button> </th>
+             <th  style="text-align: center">{{ one25.state }}</th>
+             <th  style="text-align: center"><input type="number" name="shif" id="shif" value="{{ one25.shift_id }}"></th>
+             <th  style="text-align: center">الكمية المتبقية</th>
+             <th  style="text-align: center"><input type="number" name="amot" id="amot" value="{{ one25.current_produced_amount }}"></th>
+             <th  style="text-align: center">{{ one25.getItemOrderInfo.item_weight }}</th>
+             <th  style="text-align: center">{{ one25.getItemOrderInfo.item_width }}</th>
+             <th  style="text-align: center">{{ one25.getPartingInfo.end_time }}</th>
+             <th  style="text-align: center">{{ one25.getPartingInfo.start_time }}</th>
+             <th  style="text-align: center">{{ one25.getPartingInfo.amount }}</th>
+             <th  style="text-align: center">{{ one25.getPartingInfo.parting_id }}</th>
+             <th  style="text-align: center">{{ one25.getOrderInfo.id }}-({{ one25.getCustomerInfo.customer_name }})</th>
+             <th  style="text-align: center"></th>
+           </form>
+           </tr>
+          <tr>
+          <form method="post">
+             {% csrf_token %}
+             <th  style="text-align: center"><button type="submit" id="one" name="one">تعديل</button> </th>
+             <th  style="text-align: center">{{ one26.state }}</th>
+             <th  style="text-align: center"><input type="number" name="shif" id="shif" value="{{ one26.shift_id }}"></th>
+             <th  style="text-align: center">الكمية المتبقية</th>
+             <th  style="text-align: center"><input type="number" name="amot" id="amot" value="{{ one26.current_produced_amount }}"></th>
+             <th  style="text-align: center">{{ one26.getItemOrderInfo.item_weight }}</th>
+             <th  style="text-align: center">{{ one26.getItemOrderInfo.item_width }}</th>
+             <th  style="text-align: center">{{ one26.getPartingInfo.end_time }}</th>
+             <th  style="text-align: center">{{ one26.getPartingInfo.start_time }}</th>
+             <th  style="text-align: center">{{ one26.getPartingInfo.amount }}</th>
+             <th  style="text-align: center">{{ one26.getPartingInfo.parting_id }}</th>
+             <th  style="text-align: center">{{ one26.getOrderInfo.id }}-({{ one26.getCustomerInfo.customer_name }})</th>
+             <th  style="text-align: center"></th>
+           </form>
+           </tr>
+          <tr>
+          <form method="post">
+             {% csrf_token %}
+             <th  style="text-align: center"><button type="submit" id="one" name="one">تعديل</button> </th>
+             <th  style="text-align: center">{{ one27.state }}</th>
+             <th  style="text-align: center"><input type="number" name="shif" id="shif" value="{{ one27.shift_id }}"></th>
+             <th  style="text-align: center">الكمية المتبقية</th>
+             <th  style="text-align: center"><input type="number" name="amot" id="amot" value="{{ one27.current_produced_amount }}"></th>
+             <th  style="text-align: center">{{ one27.getItemOrderInfo.item_weight }}</th>
+             <th  style="text-align: center">{{ one27.getItemOrderInfo.item_width }}</th>
+             <th  style="text-align: center">{{ one27.getPartingInfo.end_time }}</th>
+             <th  style="text-align: center">{{ one27.getPartingInfo.start_time }}</th>
+             <th  style="text-align: center">{{ one27.getPartingInfo.amount }}</th>
+             <th  style="text-align: center">{{ one27.getPartingInfo.parting_id }}</th>
+             <th  style="text-align: center">{{ one27.getOrderInfo.id }}-({{ one27.getCustomerInfo.customer_name }})</th>
+             <th  style="text-align: center"></th>
+           </form>
+           </tr>
+          <tr>
+          <form method="post">
+             {% csrf_token %}
+             <th  style="text-align: center"><button type="submit" id="one" name="one">تعديل</button> </th>
+             <th  style="text-align: center">{{ one28.state }}</th>
+             <th  style="text-align: center"><input type="number" name="shif" id="shif" value="{{ one28.shift_id }}"></th>
+             <th  style="text-align: center">الكمية المتبقية</th>
+             <th  style="text-align: center"><input type="number" name="amot" id="amot" value="{{ one28.current_produced_amount }}"></th>
+             <th  style="text-align: center">{{ one28.getItemOrderInfo.item_weight }}</th>
+             <th  style="text-align: center">{{ one28.getItemOrderInfo.item_width }}</th>
+             <th  style="text-align: center">{{ one28.getPartingInfo.end_time }}</th>
+             <th  style="text-align: center">{{ one28.getPartingInfo.start_time }}</th>
+             <th  style="text-align: center">{{ one28.getPartingInfo.amount }}</th>
+             <th  style="text-align: center">{{ one28.getPartingInfo.parting_id }}</th>
+             <th  style="text-align: center">{{ one28.getOrderInfo.id }}-({{ one28.getCustomerInfo.customer_name }})</th>
+             <th  style="text-align: center"></th>
+           </form>
+           </tr>
+          <tr>
+          <form method="post">
+             {% csrf_token %}
+             <th  style="text-align: center"><button type="submit" id="one" name="one">تعديل</button> </th>
+             <th  style="text-align: center">{{ one29.state }}</th>
+             <th  style="text-align: center"><input type="number" name="shif" id="shif" value="{{ one29.shift_id }}"></th>
+             <th  style="text-align: center">الكمية المتبقية</th>
+             <th  style="text-align: center"><input type="number" name="amot" id="amot" value="{{ one29.current_produced_amount }}"></th>
+             <th  style="text-align: center">{{ one29.getItemOrderInfo.item_weight }}</th>
+             <th  style="text-align: center">{{ one29.getItemOrderInfo.item_width }}</th>
+             <th  style="text-align: center">{{ one29.getPartingInfo.end_time }}</th>
+             <th  style="text-align: center">{{ one29.getPartingInfo.start_time }}</th>
+             <th  style="text-align: center">{{ one29.getPartingInfo.amount }}</th>
+             <th  style="text-align: center">{{ one29.getPartingInfo.parting_id }}</th>
+             <th  style="text-align: center">{{ one29.getOrderInfo.id }}-({{ one29.getCustomerInfo.customer_name }})</th>
+             <th  style="text-align: center"></th>
+           </form>
+           </tr>
+          <tr>
+          <form method="post">
+             {% csrf_token %}
+             <th  style="text-align: center"><button type="submit" id="one" name="one">تعديل</button> </th>
+             <th  style="text-align: center">{{ one30.state }}</th>
+             <th  style="text-align: center"><input type="number" name="shif" id="shif" value="{{ one30.shift_id }}"></th>
+             <th  style="text-align: center">الكمية المتبقية</th>
+             <th  style="text-align: center"><input type="number" name="amot" id="amot" value="{{ one30.current_produced_amount }}"></th>
+             <th  style="text-align: center">{{ one30.getItemOrderInfo.item_weight }}</th>
+             <th  style="text-align: center">{{ one30.getItemOrderInfo.item_width }}</th>
+             <th  style="text-align: center">{{ one30.getPartingInfo.end_time }}</th>
+             <th  style="text-align: center">{{ one30.getPartingInfo.start_time }}</th>
+             <th  style="text-align: center">{{ one30.getPartingInfo.amount }}</th>
+             <th  style="text-align: center">{{ one30.getPartingInfo.parting_id }}</th>
+             <th  style="text-align: center">{{ one30.getOrderInfo.id }}-({{ one30.getCustomerInfo.customer_name }})</th>
+             <th  style="text-align: center"></th>
+           </form>
+           </tr>
+          <tr>
+          <form method="post">
+             {% csrf_token %}
+             <th  style="text-align: center"><button type="submit" id="one" name="one">تعديل</button> </th>
+             <th  style="text-align: center">{{ one31.state }}</th>
+             <th  style="text-align: center"><input type="number" name="shif" id="shif" value="{{ one31.shift_id }}"></th>
+             <th  style="text-align: center">الكمية المتبقية</th>
+             <th  style="text-align: center"><input type="number" name="amot" id="amot" value="{{ one31.current_produced_amount }}"></th>
+             <th  style="text-align: center">{{ one31.getItemOrderInfo.item_weight }}</th>
+             <th  style="text-align: center">{{ one31.getItemOrderInfo.item_width }}</th>
+             <th  style="text-align: center">{{ one31.getPartingInfo.end_time }}</th>
+             <th  style="text-align: center">{{ one31.getPartingInfo.start_time }}</th>
+             <th  style="text-align: center">{{ one31.getPartingInfo.amount }}</th>
+             <th  style="text-align: center">{{ one31.getPartingInfo.parting_id }}</th>
+             <th  style="text-align: center">{{ one31.getOrderInfo.id }}-({{ one31.getCustomerInfo.customer_name }})</th>
+             <th  style="text-align: center"></th>
+           </form>
+           </tr>
+          <tr>
+          <form method="post">
+             {% csrf_token %}
+             <th  style="text-align: center"><button type="submit" id="one" name="one">تعديل</button> </th>
+             <th  style="text-align: center">{{ one32.state }}</th>
+             <th  style="text-align: center"><input type="number" name="shif" id="shif" value="{{ one32.shift_id }}"></th>
+             <th  style="text-align: center">الكمية المتبقية</th>
+             <th  style="text-align: center"><input type="number" name="amot" id="amot" value="{{ one32.current_produced_amount }}"></th>
+             <th  style="text-align: center">{{ one32.getItemOrderInfo.item_weight }}</th>
+             <th  style="text-align: center">{{ one32.getItemOrderInfo.item_width }}</th>
+             <th  style="text-align: center">{{ one32.getPartingInfo.end_time }}</th>
+             <th  style="text-align: center">{{ one32.getPartingInfo.start_time }}</th>
+             <th  style="text-align: center">{{ one32.getPartingInfo.amount }}</th>
+             <th  style="text-align: center">{{ one32.getPartingInfo.parting_id }}</th>
+             <th  style="text-align: center">{{ one32.getOrderInfo.id }}-({{ one32.getCustomerInfo.customer_name }})</th>
+             <th  style="text-align: center"></th>
+           </form>
+           </tr>
+          <tr>
+          <form method="post">
+             {% csrf_token %}
+             <th  style="text-align: center"><button type="submit" id="one" name="one">تعديل</button> </th>
+             <th  style="text-align: center">{{ one33.state }}</th>
+             <th  style="text-align: center"><input type="number" name="shif" id="shif" value="{{ one33.shift_id }}"></th>
+             <th  style="text-align: center">الكمية المتبقية</th>
+             <th  style="text-align: center"><input type="number" name="amot" id="amot" value="{{ one33.current_produced_amount }}"></th>
+             <th  style="text-align: center">{{ one33.getItemOrderInfo.item_weight }}</th>
+             <th  style="text-align: center">{{ one33.getItemOrderInfo.item_width }}</th>
+             <th  style="text-align: center">{{ one33.getPartingInfo.end_time }}</th>
+             <th  style="text-align: center">{{ one33.getPartingInfo.start_time }}</th>
+             <th  style="text-align: center">{{ one33.getPartingInfo.amount }}</th>
+             <th  style="text-align: center">{{ one33.getPartingInfo.parting_id }}</th>
+             <th  style="text-align: center">{{ one33.getOrderInfo.id }}-({{ one33.getCustomerInfo.customer_name }})</th>
+             <th  style="text-align: center"></th>
+           </form>
+           </tr>
+          <tr>
+          <form method="post">
+             {% csrf_token %}
+             <th  style="text-align: center"><button type="submit" id="one" name="one">تعديل</button> </th>
+             <th  style="text-align: center">{{ one34.state }}</th>
+             <th  style="text-align: center"><input type="number" name="shif" id="shif" value="{{ one34.shift_id }}"></th>
+             <th  style="text-align: center">الكمية المتبقية</th>
+             <th  style="text-align: center"><input type="number" name="amot" id="amot" value="{{ one34.current_produced_amount }}"></th>
+             <th  style="text-align: center">{{ one34.getItemOrderInfo.item_weight }}</th>
+             <th  style="text-align: center">{{ one34.getItemOrderInfo.item_width }}</th>
+             <th  style="text-align: center">{{ one34.getPartingInfo.end_time }}</th>
+             <th  style="text-align: center">{{ one34.getPartingInfo.start_time }}</th>
+             <th  style="text-align: center">{{ one34.getPartingInfo.amount }}</th>
+             <th  style="text-align: center">{{ one34.getPartingInfo.parting_id }}</th>
+             <th  style="text-align: center">{{ one34.getOrderInfo.id }}-({{ one34.getCustomerInfo.customer_name }})</th>
+             <th  style="text-align: center"></th>
+           </form>
+           </tr>
+          <tr>
+          <form method="post">
+             {% csrf_token %}
+             <th  style="text-align: center"><button type="submit" id="one" name="one">تعديل</button> </th>
+             <th  style="text-align: center">{{ one35.state }}</th>
+             <th  style="text-align: center"><input type="number" name="shif" id="shif" value="{{ one35.shift_id }}"></th>
+             <th  style="text-align: center">الكمية المتبقية</th>
+             <th  style="text-align: center"><input type="number" name="amot" id="amot" value="{{ one35.current_produced_amount }}"></th>
+             <th  style="text-align: center">{{ one35.getItemOrderInfo.item_weight }}</th>
+             <th  style="text-align: center">{{ one35.getItemOrderInfo.item_width }}</th>
+             <th  style="text-align: center">{{ one35.getPartingInfo.end_time }}</th>
+             <th  style="text-align: center">{{ one35.getPartingInfo.start_time }}</th>
+             <th  style="text-align: center">{{ one35.getPartingInfo.amount }}</th>
+             <th  style="text-align: center">{{ one35.getPartingInfo.parting_id }}</th>
+             <th  style="text-align: center">{{ one35.getOrderInfo.id }}-({{ one35.getCustomerInfo.customer_name }})</th>
+             <th  style="text-align: center"></th>
+           </form>
+           </tr>
+          <tr>
+          <form method="post">
+             {% csrf_token %}
+             <th  style="text-align: center"><button type="submit" id="one" name="one">تعديل</button> </th>
+             <th  style="text-align: center">{{ one36.state }}</th>
+             <th  style="text-align: center"><input type="number" name="shif" id="shif" value="{{ one36.shift_id }}"></th>
+             <th  style="text-align: center">الكمية المتبقية</th>
+             <th  style="text-align: center"><input type="number" name="amot" id="amot" value="{{ one36.current_produced_amount }}"></th>
+             <th  style="text-align: center">{{ one36.getItemOrderInfo.item_weight }}</th>
+             <th  style="text-align: center">{{ one36.getItemOrderInfo.item_width }}</th>
+             <th  style="text-align: center">{{ one36.getPartingInfo.end_time }}</th>
+             <th  style="text-align: center">{{ one36.getPartingInfo.start_time }}</th>
+             <th  style="text-align: center">{{ one36.getPartingInfo.amount }}</th>
+             <th  style="text-align: center">{{ one36.getPartingInfo.parting_id }}</th>
+             <th  style="text-align: center">{{ one36.getOrderInfo.id }}-({{ one36.getCustomerInfo.customer_name }})</th>
+             <th  style="text-align: center"></th>
+           </form>
+           </tr>
+          <tr>
+          <form method="post">
+             {% csrf_token %}
+             <th  style="text-align: center"><button type="submit" id="one" name="one">تعديل</button> </th>
+             <th  style="text-align: center">{{ one37.state }}</th>
+             <th  style="text-align: center"><input type="number" name="shif" id="shif" value="{{ one37.shift_id }}"></th>
+             <th  style="text-align: center">الكمية المتبقية</th>
+             <th  style="text-align: center"><input type="number" name="amot" id="amot" value="{{ one37.current_produced_amount }}"></th>
+             <th  style="text-align: center">{{ one37.getItemOrderInfo.item_weight }}</th>
+             <th  style="text-align: center">{{ one37.getItemOrderInfo.item_width }}</th>
+             <th  style="text-align: center">{{ one37.getPartingInfo.end_time }}</th>
+             <th  style="text-align: center">{{ one37.getPartingInfo.start_time }}</th>
+             <th  style="text-align: center">{{ one37.getPartingInfo.amount }}</th>
+             <th  style="text-align: center">{{ one37.getPartingInfo.parting_id }}</th>
+             <th  style="text-align: center">{{ one37.getOrderInfo.id }}-({{ one37.getCustomerInfo.customer_name }})</th>
+             <th  style="text-align: center"></th>
+           </form>
+           </tr>
+          <tr>
+          <form method="post">
+             {% csrf_token %}
+             <th  style="text-align: center"><button type="submit" id="one" name="one">تعديل</button> </th>
+             <th  style="text-align: center">{{ one38.state }}</th>
+             <th  style="text-align: center"><input type="number" name="shif" id="shif" value="{{ one38.shift_id }}"></th>
+             <th  style="text-align: center">الكمية المتبقية</th>
+             <th  style="text-align: center"><input type="number" name="amot" id="amot" value="{{ one38.current_produced_amount }}"></th>
+             <th  style="text-align: center">{{ one38.getItemOrderInfo.item_weight }}</th>
+             <th  style="text-align: center">{{ one38.getItemOrderInfo.item_width }}</th>
+             <th  style="text-align: center">{{ one38.getPartingInfo.end_time }}</th>
+             <th  style="text-align: center">{{ one38.getPartingInfo.start_time }}</th>
+             <th  style="text-align: center">{{ one38.getPartingInfo.amount }}</th>
+             <th  style="text-align: center">{{ one38.getPartingInfo.parting_id }}</th>
+             <th  style="text-align: center">{{ one38.getOrderInfo.id }}-({{ one38.getCustomerInfo.customer_name }})</th>
+             <th  style="text-align: center"></th>
+           </form>
+           </tr>
+          <tr>
+          <form method="post">
+             {% csrf_token %}
+             <th  style="text-align: center"><button type="submit" id="one" name="one">تعديل</button> </th>
+             <th  style="text-align: center">{{ one39.state }}</th>
+             <th  style="text-align: center"><input type="number" name="shif" id="shif" value="{{ one39.shift_id }}"></th>
+             <th  style="text-align: center">الكمية المتبقية</th>
+             <th  style="text-align: center"><input type="number" name="amot" id="amot" value="{{ one39.current_produced_amount }}"></th>
+             <th  style="text-align: center">{{ one39.getItemOrderInfo.item_weight }}</th>
+             <th  style="text-align: center">{{ one39.getItemOrderInfo.item_width }}</th>
+             <th  style="text-align: center">{{ one39.getPartingInfo.end_time }}</th>
+             <th  style="text-align: center">{{ one39.getPartingInfo.start_time }}</th>
+             <th  style="text-align: center">{{ one39.getPartingInfo.amount }}</th>
+             <th  style="text-align: center">{{ one39.getPartingInfo.parting_id }}</th>
+             <th  style="text-align: center">{{ one39.getOrderInfo.id }}-({{ one39.getCustomerInfo.customer_name }})</th>
+             <th  style="text-align: center"></th>
+           </form>
+           </tr>
+          <tr>
+          <form method="post">
+             {% csrf_token %}
+             <th  style="text-align: center"><button type="submit" id="one" name="one">تعديل</button> </th>
+             <th  style="text-align: center">{{ one40.state }}</th>
+             <th  style="text-align: center"><input type="number" name="shif" id="shif" value="{{ one40.shift_id }}"></th>
+             <th  style="text-align: center">الكمية المتبقية</th>
+             <th  style="text-align: center"><input type="number" name="amot" id="amot" value="{{ one40.current_produced_amount }}"></th>
+             <th  style="text-align: center">{{ one40.getItemOrderInfo.item_weight }}</th>
+             <th  style="text-align: center">{{ one40.getItemOrderInfo.item_width }}</th>
+             <th  style="text-align: center">{{ one40.getPartingInfo.end_time }}</th>
+             <th  style="text-align: center">{{ one40.getPartingInfo.start_time }}</th>
+             <th  style="text-align: center">{{ one40.getPartingInfo.amount }}</th>
+             <th  style="text-align: center">{{ one40.getPartingInfo.parting_id }}</th>
+             <th  style="text-align: center">{{ one40.getOrderInfo.id }}-({{ one40.getCustomerInfo.customer_name }})</th>
+             <th  style="text-align: center"></th>
+           </form>
+           </tr>
+          <tr>
+          <form method="post">
+             {% csrf_token %}
+             <th  style="text-align: center"><button type="submit" id="one" name="one">تعديل</button> </th>
+             <th  style="text-align: center">{{ one41.state }}</th>
+             <th  style="text-align: center"><input type="number" name="shif" id="shif" value="{{ one41.shift_id }}"></th>
+             <th  style="text-align: center">الكمية المتبقية</th>
+             <th  style="text-align: center"><input type="number" name="amot" id="amot" value="{{ one41.current_produced_amount }}"></th>
+             <th  style="text-align: center">{{ one41.getItemOrderInfo.item_weight }}</th>
+             <th  style="text-align: center">{{ one41.getItemOrderInfo.item_width }}</th>
+             <th  style="text-align: center">{{ one41.getPartingInfo.end_time }}</th>
+             <th  style="text-align: center">{{ one41.getPartingInfo.start_time }}</th>
+             <th  style="text-align: center">{{ one41.getPartingInfo.amount }}</th>
+             <th  style="text-align: center">{{ one41.getPartingInfo.parting_id }}</th>
+             <th  style="text-align: center">{{ one41.getOrderInfo.id }}-({{ one41.getCustomerInfo.customer_name }})</th>
+             <th  style="text-align: center"></th>
+           </form>
+           </tr>
+          <tr>
+          <form method="post">
+             {% csrf_token %}
+             <th  style="text-align: center"><button type="submit" id="one" name="one">تعديل</button> </th>
+             <th  style="text-align: center">{{ one42.state }}</th>
+             <th  style="text-align: center"><input type="number" name="shif" id="shif" value="{{ one42.shift_id }}"></th>
+             <th  style="text-align: center">الكمية المتبقية</th>
+             <th  style="text-align: center"><input type="number" name="amot" id="amot" value="{{ one42.current_produced_amount }}"></th>
+             <th  style="text-align: center">{{ one42.getItemOrderInfo.item_weight }}</th>
+             <th  style="text-align: center">{{ one42.getItemOrderInfo.item_width }}</th>
+             <th  style="text-align: center">{{ one42.getPartingInfo.end_time }}</th>
+             <th  style="text-align: center">{{ one42.getPartingInfo.start_time }}</th>
+             <th  style="text-align: center">{{ one42.getPartingInfo.amount }}</th>
+             <th  style="text-align: center">{{ one42.getPartingInfo.parting_id }}</th>
+             <th  style="text-align: center">{{ one42.getOrderInfo.id }}-({{ one42.getCustomerInfo.customer_name }})</th>
+             <th  style="text-align: center"></th>
+           </form>
+           </tr>
+          <tr>
+          <form method="post">
+             {% csrf_token %}
+             <th  style="text-align: center"><button type="submit" id="one" name="one">تعديل</button> </th>
+             <th  style="text-align: center">{{ one43.state }}</th>
+             <th  style="text-align: center"><input type="number" name="shif" id="shif" value="{{ one43.shift_id }}"></th>
+             <th  style="text-align: center">الكمية المتبقية</th>
+             <th  style="text-align: center"><input type="number" name="amot" id="amot" value="{{ one43.current_produced_amount }}"></th>
+             <th  style="text-align: center">{{ one43.getItemOrderInfo.item_weight }}</th>
+             <th  style="text-align: center">{{ one43.getItemOrderInfo.item_width }}</th>
+             <th  style="text-align: center">{{ one43.getPartingInfo.end_time }}</th>
+             <th  style="text-align: center">{{ one43.getPartingInfo.start_time }}</th>
+             <th  style="text-align: center">{{ one43.getPartingInfo.amount }}</th>
+             <th  style="text-align: center">{{ one43.getPartingInfo.parting_id }}</th>
+             <th  style="text-align: center">{{ one43.getOrderInfo.id }}-({{ one43.getCustomerInfo.customer_name }})</th>
+             <th  style="text-align: center"></th>
+           </form>
+           </tr>
+          <tr>
+          <form method="post">
+             {% csrf_token %}
+             <th  style="text-align: center"><button type="submit" id="one" name="one">تعديل</button> </th>
+             <th  style="text-align: center">{{ one44.state }}</th>
+             <th  style="text-align: center"><input type="number" name="shif" id="shif" value="{{ one44.shift_id }}"></th>
+             <th  style="text-align: center">الكمية المتبقية</th>
+             <th  style="text-align: center"><input type="number" name="amot" id="amot" value="{{ one44.current_produced_amount }}"></th>
+             <th  style="text-align: center">{{ one44.getItemOrderInfo.item_weight }}</th>
+             <th  style="text-align: center">{{ one44.getItemOrderInfo.item_width }}</th>
+             <th  style="text-align: center">{{ one44.getPartingInfo.end_time }}</th>
+             <th  style="text-align: center">{{ one44.getPartingInfo.start_time }}</th>
+             <th  style="text-align: center">{{ one44.getPartingInfo.amount }}</th>
+             <th  style="text-align: center">{{ one44.getPartingInfo.parting_id }}</th>
+             <th  style="text-align: center">{{ one44.getOrderInfo.id }}-({{ one44.getCustomerInfo.customer_name }})</th>
+             <th  style="text-align: center"></th>
+           </form>
+           </tr>
+          <tr>
+          <form method="post">
+             {% csrf_token %}
+             <th  style="text-align: center"><button type="submit" id="one" name="one">تعديل</button> </th>
+             <th  style="text-align: center">{{ one45.state }}</th>
+             <th  style="text-align: center"><input type="number" name="shif" id="shif" value="{{ one45.shift_id }}"></th>
+             <th  style="text-align: center">الكمية المتبقية</th>
+             <th  style="text-align: center"><input type="number" name="amot" id="amot" value="{{ one45.current_produced_amount }}"></th>
+             <th  style="text-align: center">{{ one45.getItemOrderInfo.item_weight }}</th>
+             <th  style="text-align: center">{{ one45.getItemOrderInfo.item_width }}</th>
+             <th  style="text-align: center">{{ one45.getPartingInfo.end_time }}</th>
+             <th  style="text-align: center">{{ one45.getPartingInfo.start_time }}</th>
+             <th  style="text-align: center">{{ one45.getPartingInfo.amount }}</th>
+             <th  style="text-align: center">{{ one45.getPartingInfo.parting_id }}</th>
+             <th  style="text-align: center">{{ one45.getOrderInfo.id }}-({{ one45.getCustomerInfo.customer_name }})</th>
+             <th  style="text-align: center"></th>
+           </form>
+           </tr>
+          <tr>
+          <form method="post">
+             {% csrf_token %}
+             <th  style="text-align: center"><button type="submit" id="one" name="one">تعديل</button> </th>
+             <th  style="text-align: center">{{ one46.state }}</th>
+             <th  style="text-align: center"><input type="number" name="shif" id="shif" value="{{ one46.shift_id }}"></th>
+             <th  style="text-align: center">الكمية المتبقية</th>
+             <th  style="text-align: center"><input type="number" name="amot" id="amot" value="{{ one46.current_produced_amount }}"></th>
+             <th  style="text-align: center">{{ one46.getItemOrderInfo.item_weight }}</th>
+             <th  style="text-align: center">{{ one46.getItemOrderInfo.item_width }}</th>
+             <th  style="text-align: center">{{ one46.getPartingInfo.end_time }}</th>
+             <th  style="text-align: center">{{ one46.getPartingInfo.start_time }}</th>
+             <th  style="text-align: center">{{ one46.getPartingInfo.amount }}</th>
+             <th  style="text-align: center">{{ one46.getPartingInfo.parting_id }}</th>
+             <th  style="text-align: center">{{ one46.getOrderInfo.id }}-({{ one46.getCustomerInfo.customer_name }})</th>
+             <th  style="text-align: center"></th>
+           </form>
+           </tr>
+          <tr>
+          <form method="post">
+             {% csrf_token %}
+             <th  style="text-align: center"><button type="submit" id="one" name="one">تعديل</button> </th>
+             <th  style="text-align: center">{{ one47.state }}</th>
+             <th  style="text-align: center"><input type="number" name="shif" id="shif" value="{{ one47.shift_id }}"></th>
+             <th  style="text-align: center">الكمية المتبقية</th>
+             <th  style="text-align: center"><input type="number" name="amot" id="amot" value="{{ one47.current_produced_amount }}"></th>
+             <th  style="text-align: center">{{ one47.getItemOrderInfo.item_weight }}</th>
+             <th  style="text-align: center">{{ one47.getItemOrderInfo.item_width }}</th>
+             <th  style="text-align: center">{{ one47.getPartingInfo.end_time }}</th>
+             <th  style="text-align: center">{{ one47.getPartingInfo.start_time }}</th>
+             <th  style="text-align: center">{{ one47.getPartingInfo.amount }}</th>
+             <th  style="text-align: center">{{ one47.getPartingInfo.parting_id }}</th>
+             <th  style="text-align: center">{{ one47.getOrderInfo.id }}-({{ one47.getCustomerInfo.customer_name }})</th>
+             <th  style="text-align: center"></th>
+           </form>
+           </tr>
+          <tr>
+          <form method="post">
+             {% csrf_token %}
+             <th  style="text-align: center"><button type="submit" id="one" name="one">تعديل</button> </th>
+             <th  style="text-align: center">{{ one48.state }}</th>
+             <th  style="text-align: center"><input type="number" name="shif" id="shif" value="{{ one48.shift_id }}"></th>
+             <th  style="text-align: center">الكمية المتبقية</th>
+             <th  style="text-align: center"><input type="number" name="amot" id="amot" value="{{ one48.current_produced_amount }}"></th>
+             <th  style="text-align: center">{{ one48.getItemOrderInfo.item_weight }}</th>
+             <th  style="text-align: center">{{ one48.getItemOrderInfo.item_width }}</th>
+             <th  style="text-align: center">{{ one48.getPartingInfo.end_time }}</th>
+             <th  style="text-align: center">{{ one48.getPartingInfo.start_time }}</th>
+             <th  style="text-align: center">{{ one48.getPartingInfo.amount }}</th>
+             <th  style="text-align: center">{{ one48.getPartingInfo.parting_id }}</th>
+             <th  style="text-align: center">{{ one48.getOrderInfo.id }}-({{ one48.getCustomerInfo.customer_name }})</th>
+             <th  style="text-align: center"></th>
+           </form>
+           </tr>
+          <tr>
+          <form method="post">
+             {% csrf_token %}
+             <th  style="text-align: center"><button type="submit" id="one" name="one">تعديل</button> </th>
+             <th  style="text-align: center">{{ one49.state }}</th>
+             <th  style="text-align: center"><input type="number" name="shif" id="shif" value="{{ one49.shift_id }}"></th>
+             <th  style="text-align: center">الكمية المتبقية</th>
+             <th  style="text-align: center"><input type="number" name="amot" id="amot" value="{{ one49.current_produced_amount }}"></th>
+             <th  style="text-align: center">{{ one49.getItemOrderInfo.item_weight }}</th>
+             <th  style="text-align: center">{{ one49.getItemOrderInfo.item_width }}</th>
+             <th  style="text-align: center">{{ one49.getPartingInfo.end_time }}</th>
+             <th  style="text-align: center">{{ one49.getPartingInfo.start_time }}</th>
+             <th  style="text-align: center">{{ one49.getPartingInfo.amount }}</th>
+             <th  style="text-align: center">{{ one49.getPartingInfo.parting_id }}</th>
+             <th  style="text-align: center">{{ one49.getOrderInfo.id }}-({{ one49.getCustomerInfo.customer_name }})</th>
+             <th  style="text-align: center"></th>
+           </form>
+           </tr>
+          <tr>
+          <form method="post">
+             {% csrf_token %}
+             <th  style="text-align: center"><button type="submit" id="one" name="one">تعديل</button> </th>
+             <th  style="text-align: center">{{ one50.state }}</th>
+             <th  style="text-align: center"><input type="number" name="shif" id="shif" value="{{ one50.shift_id }}"></th>
+             <th  style="text-align: center">الكمية المتبقية</th>
+             <th  style="text-align: center"><input type="number" name="amot" id="amot" value="{{ one50.current_produced_amount }}"></th>
+             <th  style="text-align: center">{{ one50.getItemOrderInfo.item_weight }}</th>
+             <th  style="text-align: center">{{ one50.getItemOrderInfo.item_width }}</th>
+             <th  style="text-align: center">{{ one50.getPartingInfo.end_time }}</th>
+             <th  style="text-align: center">{{ one50.getPartingInfo.start_time }}</th>
+             <th  style="text-align: center">{{ one50.getPartingInfo.amount }}</th>
+             <th  style="text-align: center">{{ one50.getPartingInfo.parting_id }}</th>
+             <th  style="text-align: center">{{ one50.getOrderInfo.id }}-({{ one50.getCustomerInfo.customer_name }})</th>
+             <th  style="text-align: center"></th>
+           </form>
+           </tr>
+                  </tbody>
+              </table>
+         </div>
+{% endblock %}

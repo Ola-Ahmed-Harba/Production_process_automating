@@ -1,0 +1,31 @@
+{% extends 'looms/base.html' %}
+{% block content %}
+     <div class="col-lg-12 table-responsive fontsize" >
+              <table  id="mytable" class="table table-bordred table-striped">
+         <thead class="thcolor">
+                            <th width="10%"style="text-align: center">تعديل</th>
+                              <th width="10%"style="text-align: center">ملاحظات</th>
+                            <th width="10%"style="text-align: center">تاريخ النهاية</th>
+                              <th width="10%"style="text-align: center">تاريخ البداية</th>
+                             <th width="7%" style="text-align: center">الكمية المطلوبة</th>
+                            <th width="7%" style="text-align: center">رقم النول</th>
+                             <th width="4%" style="text-align: center">رقم الطلب الداخلي</th>
+                               <th width="4%" style="text-align: center">رقم الطلب </th>
+                   </thead>
+    <tbody>
+{% for part in parts %}
+    <tr>
+  <td><p style="text-align: center" data-placement="top" data-toggle="tooltip" title="Edit"><button class="btn btn-primary btn-xs" data-title="Edit" data-toggle="modal" data-target="#edit" ><span class="glyphicon glyphicon-pencil"></span></button></p></td>
+             <td style="text-align: center">{{ part.notes}}</td>
+          <td style="text-align: center">{{ part.end_time}}</td>
+             <td style="text-align: center">{{ part.start_time}}</td>
+            <td style="text-align: center">{{ part.amount}}</td>
+          <td style="text-align: center">{{ part.loom_id}}</td>
+          <td  style="text-align: center">{{ part.inte_id }}</td>
+          <td width="5%"style="text-align: center">{{ part.parting_id}}</td>
+    </tr>
+{% endfor %}
+    </tbody>
+              </table>
+                    </div>
+{% endblock %}

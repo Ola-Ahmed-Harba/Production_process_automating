@@ -1,0 +1,66 @@
+{% extends 'looms/testBase.html' %}
+{% block content %}
+    <h3 align="center" ><font color="#cd5c5c">طلب داخلي لقسم الخيوط  </font> </h3>
+    </br>
+
+     <div class="container" align="center" >
+              <table  id="mytable" class="table-striped" border="2">
+         <thead class="thcolor">
+                               <th  style="text-align: center">اضافة ااسماء</th>
+                           <th  style="text-align: center">الواردية</th>
+                            <th style="text-align: center">تاريخ الطلب</th>
+                            <th  style="text-align: center">رقم العنصر</th>
+                            <th  style="text-align: center">رقم الطلبية</th>
+                            <th  style="text-align: center">عدد التبديلات</th>
+                            <th  style="text-align: center">خيط الكنار</th>
+                              <th  style="text-align: center">عدد التبديلات</th>
+                            <th  style="text-align: center">خيط السيبة</th>
+                              <th  style="text-align: center">عدد التبديلات</th>
+                            <th  style="text-align: center">خيط المكوك</th>
+                             <th  style="text-align: center">الالة المتوقعة</th>
+                               <th  style="text-align: center">رقم الطلب </th>
+                   </thead>
+    <tbody>
+{% for report in reports %}
+    <tr>
+             <td style="text-align: center"><a href="{% url 'add_names' report.pk%}"><button class="btn-danger"> اضافة اسماء</button>  </a></td>
+           <td style="text-align: center" >{{ report.shift_id}}</td>
+           <td style="text-align: center" >{{  report.order_date | date:"SHORT_DATE_FORMAT"}}</td>
+          <td style="text-align: center">{{ report.item_id}}</td>
+          <td style="text-align: center">{{ report.order_id}}</td>
+                  <td style="text-align: center">{{ report.num_kanar_lots}}</td>
+          <td style="text-align: center">{{ report.kanar_fiber_code}}</td>
+             <td style="text-align: center">{{ report.num_sdh_lots}}</td>
+          <td style="text-align: center">{{ report.sdh_fiber_code}}</td>
+             <td style="text-align: center">{{ report.num_makok_lots}}</td>
+          <td style="text-align: center">{{ report.makok_fiber_code}}</td>
+          <td  style="text-align: center">{{ report.expected_extruder }}</td>
+          <td width="5%"style="text-align: center">{{ report.daily_order_id}}</td>
+    </tr>
+{% endfor %}
+<form method="post" action="{% url 'add_daily_order_from_looms_to_extruder'  %} ">
+    {% csrf_token %}
+             <td style="text-align: center" >اضافة اسماء</td>
+           <td style="text-align: center" ></td>
+               <td style="text-align: center" >{{ form.order_date }}</td>
+           <td style="text-align: center" ><input name="item_id" style="width:50px " type="number"></td>
+          <td style="text-align: center">{{ form.order_id}}</td>
+     <td style="text-align: center">{{ 0}}</td>
+          <td style="text-align: center"><input name="kanar_fiber_code" style="width:50px " type="number"></td>
+     <td style="text-align: center">{{ 0}}</td>
+          <td style="text-align: center"><input name="sdh_fiber_code" style="width:50px " type="number"></td>
+            <td style="text-align: center">{{ 0}}</td>
+          <td style="text-align: center"><input name="makok_fiber_code" style="width:50px " type="number"></td>
+
+    <td  style="text-align: center"><select name="expected_extruder" >
+        <option>1400</option>
+        <option>1500/1</option>
+        <option>1500/2</option>
+    </select></td>
+
+          <td width="5%"style="text-align: center"><input type="submit" class="btn btn-primary" value="اضافة"> </td>
+</form>
+    </tbody>
+              </table>
+                    </div>
+{% endblock %}

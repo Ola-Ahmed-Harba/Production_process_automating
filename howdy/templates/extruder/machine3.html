@@ -1,0 +1,94 @@
+{% extends 'extruder/testHtml.html' %}
+{% block content %}
+<h1 align="center" ><font color="#cd5c5c"> طلبيات اليوم للآلة 1500/2</font> </h1>
+</br>
+    {% for order in orders %}
+        <br class="row">
+         <div align="center" >
+              <table  id="mytable" class=" table-striped" border="2">
+         <thead class="thcolor">
+                             <th  style="text-align: center">الالة </th>
+                           <th  style="text-align: center">وردية الانوال</th>
+                            <th style="text-align: center">تاريخ هذا الطلب</th>
+                            <th  style="text-align: center">رقم الطلبية</th>
+                            <th  style="text-align: center">عدد التبديلات</th>
+                            <th  style="text-align: center">خيط الكنار</th>
+                              <th  style="text-align: center">عدد التبديلات</th>
+                            <th  style="text-align: center">خيط السيبة</th>
+                              <th  style="text-align: center">عدد التبديلات</th>
+                            <th  style="text-align: center">خيط المكوك</th>
+                               <th  style="text-align: center">رقم الطلب </th>
+                   </thead>
+ <tbody>
+    <tr>
+        <td style="text-align: center">{{ order.expected_extruder}}</td>
+           <td style="text-align: center" >{{ order.shift_id}}</td>
+           <td style="text-align: center" >{{  order.order_date}}</td>
+          <td style="text-align: center">{{ order.order_id}}</td>
+                  <td style="text-align: center">{{ order.num_kanar_lots}}</td>
+          <td style="text-align: center">{{ order.kanar_fiber_code}}</td>
+             <td style="text-align: center">{{ order.num_sdh_lots}}</td>
+          <td style="text-align: center">{{ order.sdh_fiber_code}}</td>
+             <td style="text-align: center">{{ order.num_makok_lots}}</td>
+          <td style="text-align: center">{{ order.makok_fiber_code}}</td>
+          <td width="5%"style="text-align: center">{{ order.daily_order_id}}</td>
+    </tr>
+    </tbody>
+              </table></div>
+        </br>
+<div class="row" style="width: 100%">
+      <div class="col-lg-4 table-responsive fontsize" >
+                <h3 align="center" ><font color="#cd5c5c"> اسماء النوالين التابعين للطلب الداخلي</font> </h3>
+      </dr>
+              <table  id="mytable" class=" table-striped" border="2">
+         <thead class="thcolor">
+                            <th style="text-align: center" > عدد تبديلات الكنار</th>
+                            <th style="text-align: center" > عدد تبديلات المكوك</th>
+                            <th style="text-align: center" >عدد تبديلات السيب</th>
+                               <th style="text-align: center">اسم النوال</th>
+                   </thead>
+    <tbody>
+                  {% for name in order.get_names %}
+      <tr>
+         <td style="text-align: center"align="center" >{{ name.kanar_lots_num}}</td>
+         <td style="text-align: center" align="center" >{{ name.mkok_lots_num}}</td>
+         <td style="text-align: center" align="center" >{{ name.sebh_lots_num}}</td>
+         <td style="text-align: center" align="center">{{ name.loomer_name}}</td>
+    </tr>
+{% endfor %}
+  </tbody>
+              </table>
+     </div>
+      <div class="col-lg-8 table-responsive fontsize" >
+          <h3 align="center" ><font color="#cd5c5c"> تقرير الانتاج التابع للطلب الداخلي</font> </h3>
+      </dr>
+              <table  id="mytable" class="
+               table-striped" border="2">
+         <thead class="thcolor">
+                                  <th  style="text-align: center" >تاريخ التقرير</th>
+                  <th  style="text-align: center" >رقم الوردية</th>
+                               <th  style="text-align: center" >كمية الانتاج الكلي/كغ</th>
+                            <th  style="text-align: center" >كمية انتاج خيط كنار/كغ</th>
+                            <th  style="text-align: center" > كمية انتاج خيط سيبة/كغ</th>
+                            <th  style="text-align: center" >كمية انتاج خيط مكوك/كغ</th>
+                               <th  style="text-align: center">رقم التقرير</th>
+                                <th  style="text-align: center">رقم الطلب الداخلي</th>
+                   </thead>
+    <tbody>
+      <tr>
+         <td  align="center" >{{order.get_relted_report.report_date}}</td>
+         <td  align="center" >{{order.get_relted_report.shift_id}}</td>
+         <td  align="center" >{{order.get_relted_report.get_total_prooduction_amount}}</td>
+         <td  align="center" >{{order.get_relted_report.get_kanar_prooduction_amount }}</td>
+         <td  align="center" >{{order.get_relted_report.get_sebah_prooduction_amount}}</td>
+         <td  align="center" >{{order.get_relted_report.get_makok_prooduction_amount}}</td>
+         <td  align="center" >{{ order.get_relted_report.report_id}}</td>
+         <td  align="center">{{ order.get_relted_report.daily_order_id}}</td>
+    </tr>
+    </tbody>
+              </table>
+      </div>
+</div>
+</div>
+{% endfor %}
+{% endblock %}

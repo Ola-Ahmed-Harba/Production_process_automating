@@ -1,0 +1,46 @@
+{% extends 'looms/testBase.html' %}
+{% block content %}
+    <h3 align="center" ><font color="#cd5c5c">خطط الطلبيات الغير منتهية  </font> </h3>
+    </br>
+
+     <div   align="center">
+              <table  id="mytable" class="  table-striped" border="2">
+         <thead class="thcolor">
+                          <th   style="text-align: center">ملاحظات</th>
+                          <th   style="text-align: center">حالة الطلبية</th>
+                           <th   style="text-align: center">تاريخ نهاية الطلبية</th>
+                            <th  style="text-align: center">تاريخ بداية الطلبية</th>
+                           <th   style="text-align: center">تاريخ النهاية للقص</th>
+                            <th  style="text-align: center">تاريخ البداية للقص</th>
+                           <th   style="text-align: center">تاريخ النهاية للطباعة</th>
+                            <th  style="text-align: center">تاريخ البداية للطباعة</th>
+                           <th  style="text-align: center">تاريخ النهاية للطلي</th>
+                            <th style="text-align: center">تاريخ البداية للطلي</th>
+                            <th   style="text-align: center">تاريخ النهاية للنسيج</th>
+                            <th  style="text-align: center">تاريخ البداية للنسيج</th>
+                            <th   style="text-align: center">رقم الطلبية</th>
+                             <th   style="text-align: center">الكود</th>
+                   </thead>
+    <tbody>
+{% for laste in schds %}
+    <tr>
+        <td style="text-align: center" >{{ laste.notes}}</td>
+       <td style="text-align: center" >{{ laste.state}}</td>
+           <td style="text-align: center" >{{ laste.order_end_date | date:"SHORT_DATE_FORMAT"}}</td>
+          <td style="text-align: center">{{ laste.order_start_date | date:"SHORT_DATE_FORMAT"}}</td>
+          <td style="text-align: center">{{ laste.end_cutting_date | date:"SHORT_DATE_FORMAT"}}</td>
+          <td style="text-align: center">{{ laste.start_cutting_date | date:"SHORT_DATE_FORMAT"}}</td>
+          <td  style="text-align: center">{{ laste.end_printing_date  | date:"SHORT_DATE_FORMAT"}}</td>
+           <td style="text-align: center" >{{ laste.star_printing_date | date:"SHORT_DATE_FORMAT"}}</td>
+           <td style="text-align: center" >{{ laste.end_coating_date | date:"SHORT_DATE_FORMAT"}}</td>
+          <td style="text-align: center">{{ laste.start_coating_date | date:"SHORT_DATE_FORMAT"}}</td>
+          <td style="text-align: center">{{ laste.end_loom_date | date:"SHORT_DATE_FORMAT"}}</td>
+          <td style="text-align: center">{{ laste.start_loom_date | date:"SHORT_DATE_FORMAT"}}</td>
+          <td  style="text-align: center">{{ laste.order_id }}</td>
+        <td  style="text-align: center">{{ laste.sch_id }}</td>
+    </tr>
+{% endfor %}
+    </tbody>
+              </table>
+                    </div>
+{% endblock %}

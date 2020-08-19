@@ -1,0 +1,68 @@
+{% extends 'looms/testBase.html' %}
+{% block content %}
+    <h3 align="center"> اضافة اسماء للطلب الداخلي الموجه لقسم الخيوط</h3>
+     <div class="container" align="center">
+              <table  id="mytable" class="table table-bordred table-striped" border="2">
+         <thead class="thcolor">
+
+                            <th style="text-align: center">تاريخ  الطلب</th>
+                            <th  style="text-align: center">رقم الطلبية</th>
+                            <th  style="text-align: center">عدد التبديلات</th>
+                            <th  style="text-align: center">خيط الكنار</th>
+                              <th  style="text-align: center">عدد التبديلات</th>
+                            <th style="text-align: center">خيط السيبة</th>
+                              <th style="text-align: center">عدد التبديلات</th>
+                            <th  style="text-align: center">خيط المكوك</th>
+                             <th  style="text-align: center">الالة المتوقعة</th>
+                               <th  style="text-align: center">رقم الطلب </th>
+                   </thead>
+    <tbody>
+    </tbody>
+                      <tr>
+ 
+           <td style="text-align: center" >{{  order.order_date | date:"SHORT_DATE_FORMAT"}}</td>
+          <td style="text-align: center">{{ order.order_id}}</td>
+                  <td style="text-align: center">{{ order.num_kanar_lots}}</td>
+          <td style="text-align: center">{{ order.kanar_fiber_code}}</td>
+             <td style="text-align: center">{{ order.num_sdh_lots}}</td>
+          <td style="text-align: center">{{ order.sdh_fiber_code}}</td>
+             <td style="text-align: center">{{ order.num_makok_lots}}</td>
+          <td style="text-align: center">{{ order.makok_fiber_code}}</td>
+          <td  style="text-align: center">{{ order.expected_extruder }}</td>
+          <td width="5%"style="text-align: center">{{ order.daily_order_id}}</td>
+    </tr>
+              </table>
+     </div>
+<!------------------------------------------------------------------------------------------------>
+     <div class="row" >
+     <div class="col-lg-6 table-responsive fontsize">
+              <table  id="mytable" class="table table-bordred table-striped" border="2">
+         <thead class="thcolor">
+                            <th style="width: 60px" > عدد التبديلات الكنار</th>
+                            <th style="width: 60px" > عدد التبديلات المكوك</th>
+                            <th style="width: 60px" >عدد التبديلات السيب</th>
+                               <th style="width: 60px">اسم النوال</th>
+                   </thead>
+    <tbody>
+    </tbody>
+                  {% for name in names %}
+      <tr>
+         <td style="width: 60px" align="center" >{{ name.kanar_lots_num}}</td>
+         <td style="width: 60px" align="center" >{{ name.mkok_lots_num}}</td>
+         <td style="width: 60px" align="center" >{{ name.sebh_lots_num}}</td>
+         <td style="width: 60px" align="center">{{ name.loomer_name}}</td>
+    </tr>
+{% endfor %}
+              <form method="post" >
+                {% csrf_token %}
+                  <tr>
+                       <td  style="width: 60px" align="center" ><input name="kanar_lots_num" type="number" style="width: 100px" value="0"> </td>
+                       <td  style="width: 60px" align="center" ><input name="mkok_lots_num" type="number" style="width: 100px" >  </td>
+                       <td  style="width: 60px" align="center" ><input name="sebh_lots_num" type="number" style="width: 100px"> </td>
+                       <td   style="width: 60px" align="center" ><input name="loomer_name" type="text" style="width: 150px">   </td>
+                       <tr> <td colspan="4" ><input type="submit" class="btn btn-primary" value="اضافة"></td></tr>
+                    </form>
+              </table>
+     </div>
+</div>
+{% endblock %}

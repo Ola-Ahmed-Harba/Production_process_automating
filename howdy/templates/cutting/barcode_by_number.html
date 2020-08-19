@@ -1,0 +1,19 @@
+{% extends 'cutting/testBase.html' %}
+{% block content %}
+        {% if messages %}
+    {% for message in messages %}
+        <div class="alert {% if message.tags %}alert-{{ message.tags }}{% endif %}" role="alert"  style="width: 200px" align="center" ></div>
+        <script>
+          alert("{{ message }}!");
+        </script>
+    {% endfor %}
+{% endif %}
+    <div align="center">
+    <h3 align="center"> أدخل رقم الرول</h3>
+    <form method="post" action="{% url 'vc_handel_cutting_by_number' %}">
+        {% csrf_token %}
+    <input type="text" name="bar_id" style="width: 300px;" required>
+        <input type="submit" class="btn-primary" value="اضافة رول ">
+    </form>
+    </div>
+{% endblock %}

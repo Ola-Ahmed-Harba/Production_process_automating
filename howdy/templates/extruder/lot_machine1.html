@@ -1,0 +1,97 @@
+{% extends 'extruder/testHtml.html' %}
+{% block content %}
+    {% load widget_tweaks %}
+                        {% if messages %}
+    {% for message in messages %}
+        <div class="alert {% if message.tags %}alert-{{ message.tags }}{% endif %}" role="alert"  style="width: 200px" align="center" ></div>
+        <script>
+          alert("{{ message }}!");
+        </script>
+    {% endfor %}
+{% endif %}
+<h1 align="center" ><font color="#cd5c5c"> تبديلات اليوم للالة الاولى  1400</font> </h1>
+</br>
+
+
+         <div align="center" >
+              <table  id="mytable" class="container table-striped" border="2">
+         <thead class="thcolor">
+                             <th  style="text-align: center">الالة </th>
+
+                            <th style="text-align: center">تاريخ الطلب</th>
+                            <th  style="text-align: center">رقم الطلبية</th>
+                            <th  style="text-align: center">عدد التبديلات</th>
+                            <th  style="text-align: center">خيط الكنار</th>
+                              <th  style="text-align: center">عدد التبديلات</th>
+                            <th  style="text-align: center">خيط السيبة</th>
+                              <th  style="text-align: center">عدد التبديلات</th>
+                            <th  style="text-align: center">خيط المكوك</th>
+                               <th  style="text-align: center">رقم الطلب </th>
+                   </thead>
+
+ <tbody>
+  {% for order in orders %}
+    <tr>
+        <td style="text-align: center">{{ order.expected_extruder}}</td>
+
+           <td style="text-align: center" >{{  order.order_date | date:"SHORT_DATE_FORMAT"}}</td>
+          <td style="text-align: center">{{ order.order_id}}</td>
+                  <td style="text-align: center">{{ order.num_kanar_lots}}</td>
+          <td style="text-align: center">{{ order.kanar_fiber_code}}</td>
+             <td style="text-align: center">{{ order.num_sdh_lots}}</td>
+          <td style="text-align: center">{{ order.sdh_fiber_code}}</td>
+             <td style="text-align: center">{{ order.num_makok_lots}}</td>
+          <td style="text-align: center">{{ order.makok_fiber_code}}</td>
+          <td style="text-align: center">{{ order.daily_order_id}}</td>
+    </tr>
+ {% endfor %}
+    </tbody>
+              </table></div>
+        </br>
+
+<div class="container">
+     <div class="col-lg-12 table-responsive fontsize" >
+              <table  id="mytable" class="table-striped" border="2">
+         <thead class="thcolor">
+                              <th   style="text-align: center">رقم الطلب الداخلي</th>
+                            <th   style="text-align: center">تاريخ التبديلة</th>
+                           <th   style="text-align: center">اسم الموزع</th>
+                            <th   style="text-align: center">نوع الخيط</th>
+                            <th  style="text-align: center">كود الخيط</th>
+                            <th  style="text-align: center">رقم الالة</th>
+                             <th   style="text-align: center">رقم التبديلة</th>
+                   </thead>
+    <tbody>
+    <tr>
+<form method="post" action="{% url 'lots_machine1'  %} ">
+    {% csrf_token %}
+           <td style="text-align: center" ><input name="daily_order_id" value="{{ orders.last }}" style="width: 50px"></td>
+           <td style="text-align: center" >------------</td>
+           <td style="text-align: center" > <input type="text" name="delievry_id" value="لا" style="width: 100px"></td>
+          <td style="text-align: center"><select name="fiber_type" style="width: 100px">
+              <option name="seab" selected="selected">سيبة</option>
+              <option name="makok">مكوك</option>
+              <option name="knar">كنار</option>
+          </select></td>
+        <td style="text-align: center"> <input type="number" name="fiber_id" style="width: 100px"></td>
+          <td  style="text-align: center"><input type="text" name="extruder_id" value="1400" readonly style="width: 100px"></td>
+          <td width="5%"style="text-align: center"><input type="submit" class="btn btn-primary" value="اضافة"> </td>
+</form>
+</tr>
+{% for lot in lots %}
+    <tr>
+           <td style="text-align: center" >{{lot.daily_order_id }}</td>
+           <td style="text-align: center" >{{lot.lot_date | date:"SHORT_DATE_FORMAT"}}</td>
+           <td style="text-align: center" >{{ lot.delievry_id }}</td>
+          <td style="text-align: center">{{lot.fiber_type }}</td>
+          <td style="text-align: center">{{lot.fiber_id }}</td>
+          <td  style="text-align: center">{{ lot.extruder_id}}</td>
+          <td width="5%"style="text-align: center">{{lot.lot_id }}</td>
+    </tr>
+{% endfor %}
+
+    </tbody>
+              </table>
+                    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Latest compiled and minified CSS -->
+     {% load staticfiles %}
+<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}"
+      integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'sales/style.css' %}" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Satisfy' rel="stylesheet" type="text/css">
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <link href="{% static 'css/font-awesome.css' %}" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body background="{% static 'sales/images/bacc.jpg' %}">
+<nav class="navbar navbar-default nn ordersize">
+ <div class="container-fluid">
+     <!--logo-->
+     <div class="navbar-header" >
+         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#topNavbAR">
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+         </button>
+      <a class="navbar-brand" href="{% url 'logoutt' %}">
+                     <font color="black">
+                    تسجيل خروج
+                </font>
+         </a>
+     </div>
+     <!--items-->
+      <div class="collapse navbar-collapse " id="topNavbAR">
+          <ul class="nav navbar-nav">
+              <li class="">
+                  <a href="{% url 'orders_in_loom_page_view' %}">
+                      <span class="glyphicon glyphicon-cd active" aria-hidden="true"></span>&nbsp;
+                      <font color="black">
+                     طلبات التصنيع
+                </font>
+                  </a>
+              </li>
+     <li class="">
+                  <a href="{% url 'loom_internal_order_view' %}">
+                      <span class="glyphicon glyphicon-refresh" aria-hidden="true"></span>&nbsp;
+                              <font color="black">
+                    توصيف الطلبية              </font>
+                  </a>
+              </li>
+                   <li class="">
+                  <a href="{% url 'part_internal_order_between_loomers_view' %}">
+                      <span class="glyphicon glyphicon-refresh" aria-hidden="true"></span>&nbsp;
+                              <font color="black">
+                    توزيع التوصيف على الانوال               </font>
+                  </a>
+              </li>
+                   <li class="">
+                  <a href="{% url 'parting_reports_view' %}">
+                      <span class="glyphicon glyphicon-refresh" aria-hidden="true"></span>&nbsp;
+                              <font color="black">
+                    طلبات التوزيع               </font>
+                  </a>
+              </li>
+                <li class="">
+                  <a href="{% url 'shift_identifier_view' %}">
+                      <span class="glyphicon glyphicon-refresh" aria-hidden="true"></span>&nbsp;
+                              <font color="black">
+                                   الوردية</font>
+                  </a>
+              </li>
+                <li class="">
+                  <a href="{% url 'follow_up_first_group' %}">
+                      <span class="glyphicon glyphicon-refresh" aria-hidden="true"></span>&nbsp;
+                              <font color="black">
+                              المجموعة الأولى</font>
+                  </a>
+              </li>
+             <li class="">
+                  <a href="{% url 'add_daily_order_from_looms_to_extruder' %}">
+                      <span class="glyphicon glyphicon-refresh" aria-hidden="true"></span>&nbsp;
+                              <font color="black">
+                    طلب داخلي للخيوط                </font>
+                  </a>
+              </li>
+        <li class="">
+                  <a href="{% url 'take_image_looms' %}">
+                      <span class="glyphicon glyphicon-refresh" aria-hidden="true"></span>&nbsp;
+                              <font color="black">
+                    باركود رول               </font>
+                  </a>
+              </li>
+    <li class="">
+                  <a href="{% url 'fiber_tables_looms' %}">
+                      <span class="glyphicon glyphicon-refresh" aria-hidden="true"></span>&nbsp;
+                              <font color="black">
+                    اكواد الخيط</font>
+                  </a>
+              </li>
+    <li class="">
+                  <a href="{% url 'update_order_sch_view' %}">
+                      <span class="glyphicon glyphicon-refresh" aria-hidden="true"></span>&nbsp;
+                              <font color="black">
+                    تعديل خطة</font>
+                  </a>
+              </li>
+    <li class="">
+                  <a href="{% url 'all_order_sch_in_looms' %}">
+                      <span class="glyphicon glyphicon-refresh" aria-hidden="true"></span>&nbsp;
+                              <font color="black">
+                    خطط التصنيع</font>
+                  </a>
+              </li>
+          </ul>
+      </div>
+ </div>
+</nav>
+         <div class="container">
+            {% block content %}
+            {% endblock %}
+         <script src="{% static 'js/jquery-3.1.0.min.js' %}"></script>
+          <script src="{% static 'js/app.js' %}"></script>
+         {% block javascript %}
+         {% endblock %}
+</div>
+</body>
+</html>
