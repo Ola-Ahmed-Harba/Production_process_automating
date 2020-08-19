@@ -1,0 +1,66 @@
+{% extends 'quality/testBase.html' %}
+{% block content%}
+    <h1 align="center" ><font color="#cd5c5c">تقرير مخالفة لقسم الطباعة  </font> </h1>
+    </br>
+    </br>
+     <div class="container" align="center" >
+              <table  id="mytable" class="table table-bordred table-striped" border="2">
+         <thead class="thcolor">
+                            <th  style="text-align: center">مراقب الجودة</th>
+                            <th  style="text-align: center">وقت الاستقبال</th>
+                            <th  style="text-align: center">وقت الارسال</th>
+                             <th  style="text-align: center">ملاحظات</th>
+                            <th  style="text-align: center">تم التعديل</th>
+                            <th  style="text-align: center">وردية الطباعة</th>
+                            <th  style="text-align: center">رقم الرول</th>
+                            <th  style="text-align: center">العداد</th>
+                           <th  style="text-align: center">السبب</th>
+                            <th style="text-align: center">المشكلة</th>
+                            <th  style="text-align: center">البند</th>
+                            <th  style="text-align: center">الطلبية</th>
+                            <th  style="text-align: center">اسم المشغل</th>
+                            <th  style="text-align: center">رقم الالة</th>
+                             <th  style="text-align: center">رقم التقرير</th>
+                   </thead>
+    <tbody>
+    {% for report in reports %}
+<tr>
+                <td style="text-align: center" >{{ report.quality_monitor }}</td>
+               <td style="text-align: center" >{{ report.recived_time }}</td>
+         <td style="text-align: center" >{{ report.sending_time }}</td>
+           <td style="text-align: center" >{{ report.notes }}</td>
+          <td style="text-align: center">{{ report.is_updated }}</td>
+           <td style="text-align: center" >{{ report.printing_shift }}</td>
+           <td style="text-align: center" >{{ report.roll_id}}</td>
+       <td style="text-align: center" >{{ report.counter_point }}</td>
+           <td style="text-align: center" >{{ report.reason}}</td>
+          <td style="text-align: center">{{ report.problem}}</td>
+    <td style="text-align: center" >{{ report.item_id }}</td>
+          <td style="text-align: center">{{ report.order_id }}</td>
+          <td style="text-align: center">{{ report.worker_id}}</td>
+          <td  style="text-align: center">{{ report.machine_id }}</td>
+          <td width="5%"style="text-align: center">{{ report.report_id }}</td>
+</tr>
+{% endfor %}
+<form method="post" action="{% url 'printing_waste_view'  %} ">
+    {% csrf_token %}
+                <td style="text-align: center" ></td>
+               <td style="text-align: center" ></td>
+         <td style="text-align: center" ></td>
+           <td style="text-align: center" ><input type="text" name="notes" style="width: 100px" required></td>
+          <td style="text-align: center">{{ form.is_updated }}</td>
+           <td style="text-align: center" ></td>
+           <td style="text-align: center" ><input name="roll_id" style="width: 100px" type="text" required> </td>
+       <td style="text-align: center" ><input name="counter_point" style="width: 50px" type="number" required></td>
+              <td style="text-align: center" ><input name="reason" style="width: 100px" type="text" required> </td>
+          <td style="text-align: center"><input name="problem" style="width: 100px" type="text" required> </td>
+    <td style="text-align: center" ><input type="number" name="item_id" style="width: 50px" required></td>
+          <td style="text-align: center">{{ form.order_id }}</td>
+          <td style="text-align: center"><input type="text" name="worker_id" style="width: 100px" required></td>
+          <td  style="text-align: center"><input type="number" name="machine_id" style="width: 50px"  required></td>
+          <td width="5%"style="text-align: center"><input type="submit" class="btn btn-primary" value="اضافة"> </td>
+</form>
+    </tbody>
+              </table>
+                    </div>
+{% endblock %}

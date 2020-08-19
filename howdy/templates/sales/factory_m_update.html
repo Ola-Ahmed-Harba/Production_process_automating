@@ -1,0 +1,121 @@
+{% extends 'sales/testHtml.html' %}
+{% block content%}
+        {% if messages %}
+    {% for message in messages %}
+        <div class="alert {% if message.tags %}alert-{{ message.tags }}{% endif %}" role="alert"  style="width: 200px" align="center" >{{ message }}</div>
+        <script>
+          alert("{{ message }}!");
+        </script>
+    {% endfor %}
+{% endif %}
+{% for order in orders %}
+             <div class="col-lg-12 table-responsive fontsize" align="center" style="width: 100%">
+              <table   id="mytable" class="table-striped" align="center" border="2">
+                   <thead class="thcolor" align="center">
+                   <th   style="text-align: center">موافقة مدير المبيعات</th>
+                   <th   style="text-align: center">موافقة مدير الانتاج</th>
+
+                            <th   style="text-align: center">ملاحظات</th>
+                            <th   style="text-align: center">حالة الطلبية</th>
+                     <th   style="text-align: center">طريقة التسليم</th>
+                     <th  style="text-align: center">طريقة التسديد</th>
+                      <th  style="text-align: center">عملة الدفع</th>
+                        <th style="text-align: center">السعر الاجمالي</th>
+
+                       <th style="text-align: center">تاريخ التسليم</th>
+                        <th style="text-align: center">تاريخ البدء</th>
+                                <th style="text-align: center">تاريخ تقديم الطلب</th>
+                              <th style="text-align: center">اسم الزبون</th>
+                   <th  style="text-align: center">الرقم</th>
+                   </thead>
+    <tbody>
+   <tr>
+               <th  style="text-align: center">{{ order.sales_manager_agreement }}</th>
+                   <th  style="text-align: center">{{ order.production_manager_agreement }}</th>
+
+      <td  align="center">{{ order.notes }}</td>
+     <td  align="center">{{ order.order_status }} </td>
+      <td  align="center">{{ order.delivery_way }}</td>
+    <td  align="center">{{ order.payment_way }}</td>
+    <td  align="center">{{ order.payment_currency }}</td>
+    <td  align="center">{{ order.total_price }}</td>
+    <td  align="center">{{ order.delivery_time | date:"SHORT_DATE_FORMAT"}}</td>
+    <td  align="center">{{ order.start_time | date:"SHORT_DATE_FORMAT"}}</td>
+      <td  align="center">{{ order.order_date | date:"SHORT_DATE_FORMAT"}}</td>
+    <td  align="center">{{ order.customer_name }}</td>
+    <td  align="center">{{ order.id }}</td>
+</tr>
+
+   <tr>
+                 <th  style="text-align: center"></th>
+                   <th  style="text-align: center">{{ order.getTestOrder2.production_manager_agreement }}</th>
+
+      <td  align="center">{{ order.getTestOrder2.notes }}</td>
+     <td  align="center">{{ order.getTestOrder2.order_status }} </td>
+      <td  align="center">{{ order.getTestOrder2.delivery_way }}</td>
+    <td  align="center">{{ order.getTestOrder2.payment_way }}</td>
+    <td  align="center">{{ order.getTestOrder2.payment_currency }}</td>
+    <td  align="center">{{ order.getTestOrder2.total_price }}</td>
+    <td  align="center">{{ order.getTestOrder2.delivery_time | date:"SHORT_DATE_FORMAT"}}</td>
+    <td  align="center">{{ order.getTestOrder2.start_time | date:"SHORT_DATE_FORMAT"}}</td>
+      <td  align="center">{{ order.getTestOrder2.order_date| date:"SHORT_DATE_FORMAT" }}</td>
+    <td  align="center">{{ order.getTestOrder2.customer_name }}</td>
+    <td  align="center">مدير الانتاج</td>
+</tr>
+       <tr>
+<form method="post" id="ourform" action="{% url 'update_F_M_BY_sales_two' order.pk%}">
+{% csrf_token %}
+<th  style="text-align: center"><select name="ag" id="ag">
+                            <option  >نعم</option>
+                            <option selected="selected">لا</option>
+                         </select></th>
+      <td  align="center"></td>
+        <td  align="center"></td>
+     <td  align="center"> </td>
+      <td  align="center"></td>
+    <td  align="center"><input type="text" id="dw" name="dw" value="لا يوجد" style="width: 100px"></td>
+    <td  align="center"><input type="text" id="pw" name="pw" value="لا يوجد" style="width: 100px"></td>
+    <td  align="center"><select name=pcy id="pcy">
+                            <option value="$" >$</option>
+                            <option value="SP" selected="selected">SP</option>
+                            <option value="E" >E</option>
+                         </select> </td>
+    <td  align="center"><input type="number" id="pri" name="pri" value=0 style="width: 80px"></td>
+     <td  align="center"><input type="date" id="ddate" name="ddate" value="2000-11-11" style="width: 150px"></td>
+    <td align="center"><input type="date" id="sdate" name="sdate" value="2000-11-11" style="width: 150px"></td>
+      <td  align="center"></td>
+    <td  align="center"><input type="submit" class="btn btn-primary" value="تعديل"> </td>
+    <td  align="center"></td>
+    </form>
+   </tr>
+    </tbody>
+              </table>
+                 </div>
+  <hr style="text-align: center">
+{% endfor %}
+        <script>
+    $('#ourform').submit(function(event){
+        event.preventDefault();
+        console.log($(this).serialize());
+        var data = $(this).serialize();
+        var action = $(this).attr('action');
+        $.ajax({
+            url: action,
+            data:data,
+            dataType: 'json',
+            method: 'POST',
+            success: function(data){
+                console.log(data);
+                if (data.Success){
+                   alert(data.Success)
+                }
+                else if (data.Error){
+                    alert(data.Error)
+                }
+            },
+            error: function(data){
+            }
+        });
+    });
+    </script>
+{% endblock %}

@@ -1,0 +1,169 @@
+{% extends 'cutting/testBase.html' %}
+{% block content %}
+        <h1 align="center" ><font color="#cd5c5c">اضافة معلومات القص للرول</font> </h1>
+    </br>
+</br>
+    </br>
+<div class="row">
+    <div class="col-lg-7 table-responsive fontsize" align="center">
+                <h3 align="center" ><font color="#cd5c5c">معلومات قسم النسيج</font> </h3>
+    </br>
+              <table  id="mytable" class="table table-bordred table-striped" border="2">
+         <thead class="thcolor">
+                            <th  style="text-align: center">ملاحظات الجودة</th>
+                             <th  style="text-align: center">موافقة الجودة</th>
+                             <th  style="text-align: center">تاريخ الانتاج</th>
+                             <th  style="text-align: center">طول الرول</th>
+                            <th  style="text-align: center">وزن القماش غ/م2</th>
+                            <th  style="text-align: center">عرض القماش</th>
+                            <th  style="text-align: center">رقم الطلبية</th>
+                             <th  style="text-align: center">رقم الرول</th>
+                   </thead>
+    <tbody>
+    <tr>
+          <td style="text-align: center">{{roll_w.quality_notes}}</td>
+          <td  style="text-align: center">{{ roll_w.quality_agreement}}</td>
+          <td style="text-align: center">{{roll_w.weaving_date  | date:"SHORT_DATE_FORMAT"}}</td>
+          <td  style="text-align: center">{{ roll_w.roll_long}}</td>
+          <td style="text-align: center">{{roll_w.getItemInfo.item_weight}}</td>
+          <td  style="text-align: center">{{roll_w.getItemInfo.item_width }}</td>
+          <td  style="text-align: center">{{ roll.order_id}}</td>
+          <td width="5%"style="text-align: center" id="theroll">{{ roll.roll_id}}</td>
+    </tr>
+    </tbody>
+              </table>
+                    </div>
+     <div class="col-lg-5 table-responsive fontsize" align="center">
+                 <h3 align="center" ><font color="#cd5c5c">معلومات قسم الطلي</font> </h3>
+    </br>
+              <table  id="mytable" class="container table-striped" border="2">
+         <thead class="thcolor">
+         <thead class="thcolor">
+                             <th  style="text-align: center">ملاحظات الجودة</th>
+                             <th  style="text-align: center">موافقة الجودة</th>
+                             <th  style="text-align: center">تاريخ الانتاج</th>
+                            <th  style="text-align: center">اسم المشغل</th>
+                            <th  style="text-align: center">طول الجوب</th>
+                             <th  style="text-align: center">السماكة</th>
+                   </thead>
+    <tbody>
+    <tr>
+          <td style="text-align: center">{{roll_c.quality_notes}}</td>
+          <td  style="text-align: center">{{ roll_c.quality_agreement}}</td>
+          <td style="text-align: center">{{roll_c.coating_date  | date:"SHORT_DATE_FORMAT"}}</td>
+          <td  style="text-align: center">{{ roll_c.worker_id }}</td>
+          <td style="text-align: center">{{roll_c.waste_long}}</td>
+          <td style="text-align: center">{{roll_c.thikness}}</td>
+    </tr>
+    </tbody>
+              </table>
+                    </div>
+</div>
+    <br>
+   <div class="container" align="center">
+              <table  id="mytable" class="container table-striped" border="2">
+                          <h3 align="center" ><font color="#cd5c5c">معلومات قسم الطباعة</font> </h3>
+    </br>
+         <thead class="thcolor">
+                             <th  style="text-align: center">ملاحظات الجودة</th>
+                             <th  style="text-align: center">موافقة الجودة</th>
+                             <th  style="text-align: center">تاريخ الانتاج</th>
+                             <th  style="text-align: center">رقم الوردية</th>
+                            <th  style="text-align: center">اسم المشغل</th>
+                            <th  style="text-align: center">معلومات الحبر</th>
+                             <th  style="text-align: center">نوع الحبر</th>
+                             <th  style="text-align: center">رقم الرول</th>
+                   </thead>
+    <tbody>
+        <tr>
+          <td style="text-align: center" id="qn">{{ roll_p.quality_notes }}</td>
+          <td  style="text-align: center" id="qa">{{ roll_p.quality_agreement }}</td>
+          <td style="text-align: center" id="pdate">{{ roll_p.printing_date  | date:"SHORT_DATE_FORMAT"}}</td>
+                      <td style="text-align: center">{{ roll_p.shift_id }}</td>
+          <td  style="text-align: center">{{ roll_p.worker_id }}</td>
+          <td style="text-align: center">{{ roll_p.stain_info }}</td>
+          <td style="text-align: center">{{ roll_p.stain_type }}</td>
+          <td style="text-align: center">{{ roll_p.roll_id }}</td>
+    </tr>
+    </tbody>
+              </table>
+                    </div>
+    <br>
+   <div class="container" align="center">
+              <table  id="mytable" class="container table-striped" border="2">
+         <thead class="thcolor">
+                             <th width="7%" style="text-align: center">ملاحظات الجودة</th>
+                             <th width="4%" style="text-align: center">موافقة الجودة</th>
+                             <th width="4%" style="text-align: center">تاريخ الانتاج</th>
+                             <th width="4%" style="text-align: center">رقم الوردية</th>
+                              <th width="4%" style="text-align: center">رقم الالة</th>
+                            <th width="10%"style="text-align: center">اسم المشغل</th>
+                            <th width="7%" style="text-align: center">عدد لاكياس المنتجة</th>
+                             <th width="4%" style="text-align: center">رقم الرول</th>
+                         <td width="5%"style="text-align: center"> </td>
+                   </thead>
+    <tbody>
+<tr>
+    <div class="SaveState" style="color:red; font-weight:bold;"></div>
+  <form id="ourform" method="post" action="{% url 'roll_cutting_view' %} ">
+    {% csrf_token %}
+                  <td style="text-align: center">تحدد لاحقا</td>
+          <td  style="text-align: center">تحدد لاحقا</td>
+          <td style="text-align: center">الان</td>
+          <td style="text-align: center"></td>
+        <td  style="text-align: center"><input id="machine_id" type="number" name="machine_id" style="width: 100px;"  required></td>
+          <td  style="text-align: center"><input id="worker_id" type="text" name="worker_id" style="width: 100px;"  required></td>
+          <td style="text-align: center"><input id="produced_packages" type="number" name="produced_packages" style="width: 100px;"  required></td>
+          <td width="5%"style="text-align: center"><input id="roll_id" type="text" name="roll_id" style="width: 100px;" value="{{ roll.roll_id }}" readonly></td>
+          <td width="5%"style="text-align: center"><input type="submit" name="add_roll_weaving_info" class="btn btn-primary" value="اضافة"> </td>
+ </form>
+</tr>
+    </tbody>
+              </table>
+                    </div>
+
+
+
+
+
+    <br>
+    <br>
+
+    <a href="{% url 'roll_waste' roll.pk %}"><button class="btn-primary"> اضافة معلومات الهدر</button></a>
+
+
+
+
+
+
+
+    <script>
+    let the_id = $('#theroll').text();
+    let thefid = $('#rollinput').attr('value', the_id);
+    console.log(the_id);
+    $('#ourform').submit(function(event){
+        event.preventDefault();
+        var data = $(this).serialize();
+        var action = $(this).attr('action');
+        $.ajax({
+            url: action,
+            data:data,
+            dataType: 'json',
+            method: 'POST',
+            success: function(data){
+                var test = data;
+                console.log(data['roll_p3'].length);
+               /* if (data['roll_p3']){
+                   $('#qn').html(data.roll_p3.quality_notes);
+                }
+                else if (data.Error){
+                    $('.SaveState').html(data.Error);
+                }*/
+            },
+            error: function(data){
+                console.log(data);
+            }
+        });
+    });
+    </script>
+{% endblock %}

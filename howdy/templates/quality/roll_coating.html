@@ -1,0 +1,42 @@
+{% extends 'quality/testBase.html' %}
+{% block content %}
+<!----------------------------------------------------------------------------------------------------------------------->
+      <h1 align="center" ><font color="#cd5c5c">موافقة الجودة بمرحلة الطلي  </font> </h1>
+    </br>
+    </br>
+    <div class="container" align="center">
+              <table  id="mytable" class="table table-bordred table-striped" border="2">
+         <thead class="thcolor">
+                             <td style="text-align: center"> </td>
+                             <th  style="text-align: center">ملاحظات الجودة</th>
+                             <th  style="text-align: center">موافقة الجودة</th>
+                             <th  style="text-align: center">تاريخ الانتاج</th>
+                             <th  style="text-align: center">رقم الوردية الحالي</th>
+                            <th  style="text-align: center">اسم المشغل</th>
+                            <th  style="text-align: center">طول الجوب</th>
+                             <th  style="text-align: center">السماكة</th>
+                                  <th  style="text-align: center">رقم العنصر</th>
+                             <th  style="text-align: center">رقم الرول</th>
+                   </thead>
+    <tbody>
+{% for roll_c in rolls %}
+    <tr>
+    <form method="post" id="ourform" action="{% url 'update_coating_roll' roll_c.pk   %}" >
+        {% csrf_token %}
+          <td width="5%"style="text-align: center"><input type="submit" name="add_roll_weaving_info" class="btn btn-danger" value="اضافة"> </td>
+          <td style="text-align: center"> <input type="text" placeholder="{{roll_c.quality_notes}}" name="qn" id="qn" style="width:100px;" required></td>
+          <td  style="text-align: center"><input placeholder="{{ roll_c.quality_agreement}}" type="text" name="qa" id="qa" style="width:100px;" required></td>
+    </form>
+         <td style="text-align: center">{{roll_c.coating_date}}</td>
+          <td style="text-align: center">{{roll_c.shift_id}}</td>
+          <td  style="text-align: center">{{ roll_c.worker_id }}</td>
+          <td style="text-align: center">{{roll_c.waste_long}}</td>
+          <td style="text-align: center">{{roll_c.thikness}}</td>
+          <td width="5%"style="text-align: center">{{ roll_c.getRollInfo.item_id}}</td>
+          <td width="5%"style="text-align: center">{{ roll_c.roll_id}}</td>
+    </tr>
+{% endfor %}
+    </tbody>
+              </table>
+                    </div>
+{% endblock %}

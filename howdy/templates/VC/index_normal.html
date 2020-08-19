@@ -1,0 +1,71 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta content="stuff, to, help, search, engines, not" name="keywords">
+<meta content="What this page is about." name="description">
+<meta content="Display Webcam Stream" name="title">
+<title>Dm</title>
+	<link rel="stylesheet" href="{% static 'css/video.css' %}" type="text/css" media="all">
+    <script src="{% static 'js/capture.js' %}"></script>
+</head>
+<body>
+    {% if messages %}
+    {% for message in messages %}
+        <div class="alert {% if message.tags %}alert-{{ message.tags }}{% endif %}" role="alert"  style="width: 200px" align="center" ></div>
+        <script>
+          alert("{{ message }}!");
+        </script>
+    {% endfor %}
+{% endif %}
+<div id="container">
+<video autoplay></video>
+<script>
+var gum = mode =>
+  navigator.mediaDevices.getUserMedia({video: {facingMode: {exact: mode}}})
+  .then(stream => (video.srcObject = stream))
+  .catch(e => log(e));
+var stop = () => video.srcObject     && video.srcObject.getTracks().forEach(t => t.stop());
+var log = msg => div.innerHTML += msg + "<br>";
+</script>
+<button class="btn btn-danger" onclick="stop();gum('environment')">كاميرا خلفية</button>
+<div class="container" style="width: 60%" align="center">
+  <div class="camera">
+<video id="video" height="320" autoplay></video>
+     <button style="width: 50px;height: 50px" id="startbutton">التقاط</button>
+  </div>
+  <canvas id="canvas">
+  </canvas>
+      <div class="output">
+    <img name='uploader' id="photo" alt="The screen capture will appear in this box.">
+  </div>
+  <form class="ours" method="post">
+      {% csrf_token %}
+      <button class="btn-danger" style="width: 150px;height: 70px;background: #992331;margin-bottom: 20px" ><font color="white" size="30" >تحقق</font> </button>
+  </form>
+	<p>
+<a href="{% url 'view_roll_info' %}">
+    <button class="btn-danger" style="width: 150px;height: 70px;background: #258b47"><font color="white" size="30" >ارسال</font> </button>
+</a>
+	</p>
+</div>
+<script src="{% static 'js/adapter-latest.js' %}"></script>
+ <script src="{% static 'js/jquery.min.js' %}"></script>
+</div>
+<script>
+    $("form").submit(function(e) {
+        e.preventDefault();
+        var imgsrc = $('#photo').attr('src');
+      $.ajax({
+        url: "{% url 'vc_handel_normal_user' %}",
+        type: "POST",
+        data: {'imgsrc':imgsrc},
+        success: function (msg) {
+          alert(msg)
+        },
+      });
+    });
+</script>
+</body>
+</html>

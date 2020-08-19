@@ -1,0 +1,96 @@
+{% extends 'sales/testHtml.html' %}
+{% block content %}
+      <h1 align="center" ><font color="#cd5c5c">الطلبية كاملة  </font> </h1>
+    </br>
+    </br>
+             <div class="container" >
+              <table   id="mytable" class="table table-bordred table-striped" align="center" border="2">
+                   <thead class="thcolor" align="center">
+                            <th   style="text-align: center">ملاحظات</th>
+                            <th   style="text-align: center">حالة الطلبية</th>
+                     <th    style="text-align: center">طريقة التسليم</th>
+                              <th    style="text-align: center">طريقة التسديد</th>
+                              <th    style="text-align: center">عملة الدفع</th>
+                              <th    style="text-align: center">السعر الكلي</th>
+                              <th  style="text-align: center">تاريخ تقديم الطلب</th>
+                       <th  style="text-align: center">تاريخ التسليم</th>
+                        <th  style="text-align: center">تاريخ البدء</th>
+                        <th  style="text-align: center">اسم المنتج</th>
+                              <th  style="text-align: center">اسم الزبون</th>
+                   <th  style="text-align: center">الرقم</th>
+                   </thead>
+    <tbody>
+      <td  align="center">{{ order.notes }}</td>
+     <td  align="center">{{ order.order_status }} </td>
+      <td  align="center">{{ order.payment_way }}</td>
+      <td  align="center">{{ order.payment_currency }}</td>
+      <td  align="center">{{ order.total_price }}</td>
+      <td  align="center">{{ order.delivery_way }}</td>
+    <td  align="center">{{ order.delivery_time }}</td>
+    <td  align="center">{{ order.start_time }}</td>
+      <td  align="center">{{ order.order_date }}</td>
+    <td  align="center">{{ order.product_name }}</td>
+    <td  align="center">{{ order.customer_name }}</td>
+    <td  align="center">{{ order.id }}</td>
+    </tbody>
+              </table>
+                 </div>
+           <div class="col-lg-12 table-responsive fontsize" >
+              <table  id="mytable" class="table table-bordred table-striped" border="2">
+         <thead class="thcolor">
+                            <th width="15%" style="text-align: center">ملاحظات</th>
+                      <th width="10%"style="text-align: center">الكمية</th>
+                     <th  width="4%" style="text-align: center">الوزن</th>
+                     <th width="4%" style="text-align: center">الطول</th>
+                      <th width="4%" style="text-align: center">العرض</th>
+                               <th width="4%" style="text-align: center">الخياطة</th>
+                      <th width="15%" style="text-align: center">الوان الوجه الثاني</th>
+                                 <th width="15%" style="text-align: center">الوان الوجه الاول</th>
+                          <th width="5%" style="text-align: center">وجوه</th>
+                          <th width="15%" style="text-align: center">اسم الطبعة</th>
+                              <th width="5%" style="text-align: center">وزن البطانة</th>
+                              <th width="5%" style="text-align: center">عرض البطانة</th>
+                              <th width="5%" style="text-align: center">طول البطانة</th>
+                            <th width="5%" style="text-align: center">مدمج</th>
+                           <th width="5%" style="text-align: center">مبطن</th>
+                                    <th width="7%"style="text-align: center">القص</th>
+                    <th width="5%" style="text-align: center">مطلي</th>
+                        <th width="10%"style="text-align: center">الكنار</th>
+                        <th width="7%" style="text-align: center">مكوك</th>
+                   <th width="4%" style="text-align: center">العنصر</th>
+                   </thead>
+    <tbody>
+{% for item in order.getItems %}
+    <tr>
+      <td style="text-align: center" >{{ item.notes }}</td>
+        <td style="text-align: center" >{{ item.quantity }}</td>
+      <td style="text-align: center">{{ item.item_weight }}</td>
+    <td width="5%" style="text-align: center">{{ item.item_height }}</td>
+      <td width="5%" style="text-align: center">{{ item.item_width }}</td>
+              <td width="5%" style="text-align: center">{{ item.sewing_item }}</td>
+      <td style="text-align: center">{{ item.second_face_colors}}</td>
+        <td style="text-align: center">{{ item.first_face_colors}}</td>
+           <td style="text-align: center">{{ item.print_one_face_or_two }}</td>
+         <td style="text-align: center">{{ item.item_printing_name }}</td>
+           <td style="text-align: center" >{{ item.modmag }}</td>
+           <td style="text-align: center" >{{ item.mobatn_weight }}</td>
+        <td style="text-align: center" >{{ item.mobatn_width }}</td>
+        <td style="text-align: center" >{{ item.mobatn_height }}</td>
+        <td style="text-align: center" >{{ item.mobatn }}</td>
+          <td style="text-align: center">{{ item.cutting }}</td>
+          <td style="text-align: center">{{ item.coating_or_not }}</td>
+          <td style="text-align: center">{{ item.knar }}</td>
+          <td  style="text-align: center">{{ item.makok }}</td>
+     <td width="5%"style="text-align: center">{{ item.item_id }}</td>
+    </tr>
+{% endfor %}
+    </tbody>
+              </table>
+           </div>
+<table>
+<tr>
+    <td>موافقة مدير المعمل</td><td><button class="btn-danger" style="width: 50px">{{ order.manager_agreement }}</button></td></tr>
+ <tr> <td>موافقة مدير المبيعات </td><td><button class="btn-danger" style="width: 50px">{{ order.sales_manager_agreement }}</button> </td></tr>
+   <tr> <td>موافقة مدير الانتاج</td><td> <button class="btn-danger" style="width: 50px"> {{ order.production_manager_agreement }}</button></td></tr>
+</table>
+{% endblock %}

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Latest compiled and minified CSS -->
+     {% load staticfiles %}
+<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}"
+      integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'sales/style.css' %}" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Satisfy' rel="stylesheet" type="text/css">
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <link href="{% static 'css/font-awesome.css' %}" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body background="{% static 'sales/images/bacc.jpg' %}">
+<nav class="navbar navbar-default nn ordersize">
+ <div class="container-fluid">
+     <!--logo-->
+     <div class="navbar-header" >
+         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#topNavbAR">
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+         </button>
+         <a class="navbar-brand" href="{% url 'logoutt' %}">
+                     <font color="black">
+                    تسجيل خروج
+                </font>
+         </a>
+     </div>
+     <!--items-->
+      <div class="collapse navbar-collapse " id="topNavbAR">
+          <ul class="nav navbar-nav">
+              <li class="">
+                  <a href="{% url 'orders_in_sales_page' %}">
+                      <span class="glyphicon glyphicon-cd active" aria-hidden="true"></span>&nbsp;
+                      <font color="black">
+                     طلبيات
+                </font>
+                  </a>
+              </li>
+              <li class="">
+                  <a href="#">
+                      <span class="glyphicon glyphicon-globe" aria-hidden="true"></span>&nbsp;
+                              <font color="black">
+                     اشعارات
+                </font>
+                  </a>
+              </li>
+                <li class="">
+                  <a href="{% url 'add_order_view' %}">
+                      <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>&nbsp;
+                              <font color="black">
+                    إضافة طلبية
+                </font>
+                  </a>
+              </li>
+                 <li class="nav-item">
+                   <a class="nav-link" href="#">
+                               <font color="black">
+                     رسائل
+                </font>
+                       <span class="sr-only">(current)</span>
+                    <sup>
+                      <span class="nav-link badge badge-error nono">5</span>
+                    </sup>
+                   </a>
+                  </li>
+       <li class="">
+                  <a href="{% url 'add_new_customer' %}">
+                      <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>&nbsp;
+                              <font color="black">
+                    الزبائن
+                </font>
+                  </a>
+              </li>
+   <li class="">
+                  <a href="{% url 'update_F_M_BY_sales_one' %}">
+                      <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>&nbsp;
+                              <font color="black">
+                    الموافقات
+                </font>
+                  </a>
+              </li>
+          </ul>
+      </div>
+ </div>
+</nav>
+         <div class="container">
+            {% block content %}
+            {% endblock %}
+</div>
+</body>
+</html>

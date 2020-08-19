@@ -1,0 +1,117 @@
+{% extends 'sales/testHtml.html' %}
+{% block content %}
+        <h1 align="center" ><font color="#cd5c5c">اضافة عناصر للطلبية الجديدة  </font> </h1>
+<div class="container">
+     <br >
+         <div class="ordersize"align="right">
+             <p> {{ order.pk }}:  رقم الطلبية  <i class="fa fa-cog fa-spin"></i></p>
+             <p> اسم الزبون : {{ order.customer_name }} <i class="fa fa-cog fa-spin"></i></p>
+             <p> {{ order.order_date |date:"SHORT_DATE_FORMAT"}} : تاريخ الطلب <i class="fa fa-cog fa-spin"></i></p>
+</div>
+     </br>
+        <div class="col-lg-12 table-responsive fontsize" >
+              <table border="1" id="mytable" class="table table-bordred table-striped">
+                   <thead class="thcolor">
+  <td style="text-align: center" ></td>
+                            <th   style="text-align: center">ملاحظات</th>
+    <th   style="text-align: center">سعر الكيس</th>
+                      <th  style="text-align: center">الكمية</th>
+  <th  style="text-align: center">السماحية</th>
+                     <th    style="text-align: center">الوزن</th>
+    <th  style="text-align: center">السماحية</th>
+                     <th   style="text-align: center">الطول</th>
+    <th  style="text-align: center">السماحية</th>
+                      <th  style="text-align: center">العرض</th>
+                     <th   style="text-align: center">الخياطة</th>
+                     <th   style="text-align: center">الوان الوجه الثاني</th>
+                     <th   style="text-align: center">الوان الوجه الاول</th>
+                              <th  style="text-align: center">وجوه</th>
+                     <th  style="text-align: center">اسم الطبعة</th>
+                            <th   style="text-align: center">مدمج</th>
+                          <th  style="text-align: center">وزن البطانة</th>
+                          <th   style="text-align: center">عرض البطانة</th>
+                           <th   style="text-align: center">طول البطانة</th>
+                           <th   style="text-align: center">مبطن</th>
+
+                        <th  style="text-align: center">   طول الصمام</th>
+                            <th  style="text-align: center">عمق الصمام </th>
+                            <th  style="text-align: center">نوع القص</th>
+                                    <th  style="text-align: center">القص</th>
+                    <th   style="text-align: center">مطلي</th>
+                        <th  style="text-align: center">الكنار</th>
+                        <th   style="text-align: center">مكوك</th>
+                   <th  style="text-align: center">العنصر</th>
+                   </thead>
+    <tbody>
+{% for item in items %}
+    <tr>
+   <td style="text-align: center" ></td>
+      <td style="text-align: center" >{{ item.notes }}</td>
+        <td style="text-align: center" >{{ item.peice_price }}</td>
+    <td style="text-align: center" >{{ item.quantity }}</td>
+        <td   style="text-align: center">{{ item.tolerance_weight }}</td>
+    <td  style="text-align: center">{{ item.item_weight }}</td>
+        <td   style="text-align: center">{{ item.tolerance_height }}</td>
+      <td   style="text-align: center">{{ item.item_height }}</td>
+        <td   style="text-align: center">{{ item.tolerance_width }}</td>
+        <td   style="text-align: center">{{ item.item_width }}</td>
+              <td   style="text-align: center">{{ item.sewing_item }}</td>
+         <td style="text-align: center">{{ item.second_face_colors }}</td>
+        <td style="text-align: center">{{ item.first_face_colors }}</td>
+               <td style="text-align: center">{{ item.print_one_face_or_two }}</td>
+         <td style="text-align: center">{{ item.item_printing_name }}</td>
+           <td style="text-align: center" >{{ item.modmag }}</td>
+           <td style="text-align: center" >{{ item.mobatn_weight }}</td>
+           <td style="text-align: center" >{{ item.mobatn_width }}</td>
+           <td style="text-align: center" >{{ item.mobatn_height }}</td>
+           <td style="text-align: center" >{{ item.mobatn }}</td>
+         <td style="text-align: center" >{{ item.batch_height }}</td>
+         <td style="text-align: center" >{{ item.batch_depth}}</td>
+                <td style="text-align: center" >{{ item.cutting_kind }}</td>
+          <td style="text-align: center">{{ item.cutting }}</td>
+          <td style="text-align: center">{{ item.coating_or_not }}</td>
+          <td style="text-align: center">{{ item.knar }}</td>
+          <td  style="text-align: center">{{ item.makok }}</td>
+     <td style="text-align: center">{{ item.item_id }}</td>
+    </tr>
+{% endfor %}
+ <form method="post"  class="">
+     {% csrf_token %}
+        <tr>
+        <td  align="center"><input  class="btn btn-primary" name="add_item_btn" type="submit" value="اضافة" style="width: 50px;"/></td>
+     <td  align="center"><input type="text" name="notes" style="width:100px" required>  </td>
+                 <td  align="center"><input type="number"  step=any name="peice_price" style="width:100px" required>  </td>
+      <td  align="center"><input type="number" step=any  name="quantity" style="width:100px" required> </td>
+               <td  align="center"><input type="number" step=any name="tolerance_weight" style="width:60px" required> </td>
+     <td  align="center"><input type="number" step=any  name="item_weight" style="width:60px" required> </td>
+               <td  align="center"><input type="number" step=any name="tolerance_height" style="width:60px" required> </td>
+     <td  align="center"><input type="number" step=any   name="item_height" style="width:60px" required> </td>
+               <td  align="center"><input type="number" step=any name="tolerance_width" style="width:60px" required> </td>
+     <td  align="center"><input type="number" name="item_width"  step=any style="width:60px" required>  </td>
+    <td  align="center">{{ form.sewing_item }}</td>
+     <td  align="center"><input type="text" name="second_face_colors" style="width:150px" value="لا يوجد" required></td>
+     <td  align="center"><input type="text" name="first_face_colors" style="width:150px" value="لا يوجد" required>  </td>
+     <td  align="center">{{ form.print_one_face_or_two }}</td>
+     <td  align="center"><input type="text" name="item_printing_name" style="width:100px" required>  </td>
+     <td  align="center">{{ form.modmag }}</td>
+                 <td  align="center"><input type="number" step=any name="mobatn_weight" style="width:60px" value="0" required>  </td>
+                 <td  align="center"><input type="number" step=any  name="mobatn_width" style="width:60px" value="0" required> </td>
+                 <td  align="center"><input type="number" step=any  name="mobatn_height" style="width:60px" value="0" required> </td>
+     <td  align="center">{{ form.mobatn }} </td>
+                             <td  align="center"><input type="text" name="batch_height" style="width:100px" value="0" required>  </td>
+                             <td  align="center"><input type="text" name="batch_depth" style="width:100px" value="0" required>  </td>
+                 <td  align="center"><input type="text" name="cutting_kind" style="width:100px" required>  </td>
+     <td  align="center"><div >{{ form.cutting }}</div> </td>
+     <td  align="center">{{ form.coating_or_not }} </td>
+     <td  align="center"><input type="text" name="knar" style="width:100px" required> </td>
+     <td  align="center"><input type="text" name="makok" style="width:100px" required> </td>
+     <td  align="center"><input type="number" name="item_id" style="width:60px" required> </td>
+    </tr>
+</form>
+</tbody>
+</table></div></div>
+<form action="{% url 'show_total_order'  order.pk%}">
+     {% csrf_token %}
+<input type="submit" value=" انتهى" name="ok" class="btn btn-primary">
+</form>
+{% endblock %}

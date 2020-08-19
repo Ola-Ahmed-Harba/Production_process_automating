@@ -1,0 +1,52 @@
+{% extends 'quality/testBase.html' %}
+{% block content %}
+<div class="container" align="center">
+              <table  id="mytable" class="table table-bordred table-striped" border="2">
+         <thead class="thcolor">
+                           <td style="text-align: center"> </td>
+                             <th width="7%" style="text-align: center">ملاحظات الجودة</th>
+                             <th width="4%" style="text-align: center">موافقة الجودة</th>
+                             <th width="4%" style="text-align: center">تاريخ الطباعة</th>
+                             <th width="4%" style="text-align: center">رقم الوردية</th>
+                              <th width="4%" style="text-align: center">رقم الالة</th>
+                            <th width="10%"style="text-align: center">اسم المشغل</th>
+                            <th width="7%" style="text-align: center">نوع الحبر</th>
+                                    <th width="7%" style="text-align: center">معلومات الحبر</th>
+                                    <th width="7%" style="text-align: center">الوان الوجه الثاني</th>
+                                    <th width="7%" style="text-align: center">الوان الوجه الاول </th>
+                                    <th width="7%" style="text-align: center">اسم الطباعة</th>
+                              <th width="7%" style="text-align: center">وجوه الطباعة</th>
+                              <th width="7%" style="text-align: center">رقم العنصر</th>
+                                    <th width="7%" style="text-align: center">رقم الطلبية</th>
+                             <th width="4%" style="text-align: center">رقم الرول</th>
+                   </thead>
+    <tbody>
+    {% for roll_c in rolls %}
+<tr>
+    <div class="SaveState" style="color:red; font-weight:bold;"></div>
+    <form method="post" id="ourform" action="{% url 'update_printing_roll' roll_c.pk   %}" >
+        {% csrf_token %}
+          <td width="5%"style="text-align: center"><input type="submit" name="add_roll_weaving_info" class="btn btn-danger" value="اضافة"> </td>
+          <td style="text-align: center"> <input type="text" placeholder="{{roll_c.quality_notes}}" name="qn" id="qn" style="width:100px;" required></td>
+          <td  style="text-align: center"><input placeholder="{{ roll_c.quality_agreement}}" type="text" name="qa" id="qa" style="width:100px;" required></td>
+    </form>
+         <td style="text-align: center">{{roll_c.printing_date}}</td>
+          <td style="text-align: center">{{roll_c.shift_id}}</td>
+        <td style="text-align: center">{{roll_c.machine_id}}</td>
+          <td  style="text-align: center">{{ roll_c.worker_id }}</td>
+          <td style="text-align: center">{{roll_c.stain_type}}</td>
+          <td style="text-align: center">{{roll_c.stain_info}}</td>
+      <td style="text-align: center">{{roll_c.getItemInfo.second_face_colors}}</td>
+            <td style="text-align: center">{{roll_c.getItemInfo.first_face_colors}}</td>
+             <td style="text-align: center">{{roll_c.getItemInfo.item_printing_name}}</td>
+           <td style="text-align: center">{{roll_c.getItemInfo.print_one_face_or_two}}</td>
+          <td width="5%"style="text-align: center">{{ roll_c.getRollInfo.item_id}}</td>
+     <td width="5%"style="text-align: center">{{ roll_c.getRollInfo.item_id}}</td>
+         <td width="5%"style="text-align: center">{{ roll_c.getItemInfo.order_id}}</td>
+          <td width="5%"style="text-align: center">{{ roll_c.roll_id}}</td>
+</tr>
+    {% endfor %}
+    </tbody>
+              </table>
+                    </div>
+{% endblock %}

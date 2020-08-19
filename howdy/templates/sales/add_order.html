@@ -1,0 +1,26 @@
+{% extends 'sales/testHtml.html' %}
+{% block content %}
+    <h1 align="center">إضافة طلبية جديدة </h1>
+        {% if messages %}
+    {% for message in messages %}
+        <div class="alert {% if message.tags %}alert-{{ message.tags }}{% endif %}" role="alert"  style="width: 200px" align="center" ></div>
+        <script>
+          alert("{{ message }}!");
+        </script>
+    {% endfor %}
+{% endif %}
+
+
+        <form method="POST" class="post-form form-group" action="{% url 'add_order_view'  %}">{% csrf_token %}
+
+{{ form.as_ul }}
+<button type="submit" class="btn btn-primary" >إضافة الطلبية </button>
+</div>
+
+    </form>
+
+
+
+
+
+{% endblock %}

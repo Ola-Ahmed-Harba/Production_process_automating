@@ -1,0 +1,36 @@
+{% extends 'sales/testHtml.html' %}
+{% block content %}
+    <h1 align="center" ><font color="#cd5c5c">اضافة زبائن  </font> </h1>
+    </br>
+    </br>
+     <div class="container" align="center">
+              <table  id="mytable" class="table table-bordred table-striped" border="2">
+         <thead class="thcolor">
+                            <th width="7%"style="text-align: center">نسبة اهميته</th>
+                            <th width="5%" style="text-align: center">رقم هاتف الزبون</th>
+                            <th width="10%"style="text-align: center">ايميل الزبون</th>
+                            <th width="7%" style="text-align: center">اسم الزبون</th>
+                             <th width="4%" style="text-align: center">رقم الزبون</th>
+                   </thead>
+    <tbody>
+{% for customer in customers %}
+    <tr>
+          <td style="text-align: center">{{ customer.priority}}</td>
+          <td style="text-align: center">{{ customer.phones}}</td>
+          <td style="text-align: center">{{ customer.email}}</td>
+          <td  style="text-align: center">{{ customer.customer_name}}</td>
+          <td width="5%"style="text-align: center">{{ customer.customer_id}}</td>
+    </tr>
+{% endfor %}
+<form method="post" action="{% url 'add_new_customer'  %} ">
+    {% csrf_token %}
+          <td style="text-align: center"><input type="text" name="priority" style="width: 150px;" required></td>
+          <td style="text-align: center"><input type="number" name="phones" style="width: 150px;" required></td>
+          <td style="text-align: center"><input type="email" name="email" style="width: 150px;" value="no@no.com"></td>
+          <td  style="text-align: center"><input type="text" name="customer_name" style="width: 150px;" required></td>
+          <td width="5%"style="text-align: center"><input type="submit" class="btn btn-primary" value="اضافة"> </td>
+</form>
+    </tbody>
+              </table>
+                    </div>
+{% endblock %}

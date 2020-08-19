@@ -1,0 +1,43 @@
+{% extends 'cutting/testBase.html' %}
+{% block content %}
+<div class="container">
+<h1 align="center"><font color="#a52a2a">اضافة الهدر الناتج عن الرول</font></h1>
+<br>
+     <div class="col-lg-12 table-responsive fontsize" >
+              <table  id="mytable" class="table-striped" border="2">
+         <thead class="thcolor">
+
+                           <th  style="text-align: center">الوردية</th>
+                            <th style="text-align: center">هدر القص</th>
+                            <th style="text-align: center">هدر الطلي</th>
+                            <th style="text-align: center"> هدر الطباعة</th>
+                            <th  style="text-align: center">هدر النسيج</th>
+                             <th  style="text-align: center">باركود الرول</th>
+                   </thead>
+    <tbody>
+{% if roll %}
+    <tr>
+
+           <td style="text-align: center" >{{ roll.shift_id}}</td>
+          <td style="text-align: center">{{ roll.cutting_waste}}</td>
+          <td style="text-align: center">{{ roll.coating_waste}}</td>
+          <td style="text-align: center">{{ roll.printing_waste}}</td>
+          <td  style="text-align: center">{{ roll.weaving_waste}}</td>
+          <td width="5%"style="text-align: center">{{ roll.roll_id}}</td>
+    </tr>
+{% endif %}
+<form method="post">
+    {% csrf_token %}
+           <td style="text-align: center" ></td>
+           <td style="text-align: center" ><input type="number" name="cuw" style="width: 100px" required></td>
+          <td style="text-align: center"><input type="number" name="co" value="0" style="width: 100px" required></td>
+          <td style="text-align: center"><input type="number" name="pw" value="0" style="width: 100px" required></td>
+          <td style="text-align: center"><input type="number" name="ww" style="width: 100px" required></td>
+          <td  style="text-align: center"><input name="roll_id" style="width: 100px" value="{{ test.roll_id }}" readonly></td>
+          <td width="5%"style="text-align: center"><input type="submit" class="btn btn-primary" value="اضافة"> </td>
+</form>
+    </tbody>
+              </table>
+                    </div>
+</div>
+{% endblock %}
