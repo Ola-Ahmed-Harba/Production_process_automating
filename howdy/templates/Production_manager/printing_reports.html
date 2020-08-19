@@ -1,0 +1,84 @@
+{% extends 'Production_manager/testBase.html' %}
+{% block content %}
+          <h3 align="center" ><font color="#cd5c5c">تقرير انتاج قسم الطباعة لاخر وردية  </font> </h3>
+    </br>
+
+    {% for rep in reports %}
+<div class="row">
+    <div class="col-lg-4 table-responsive fontsize" align="center">
+              <table  id="mytable" class="container table-striped" border="2">
+         <thead class="thcolor">
+                            <th width="10%"style="text-align: center">رقم الوردية</th>
+                            <th width="7%" style="text-align: center">المشغل</th>
+                            <th width="7%" style="text-align: center">رقم الالة</th>
+                             <th width="4%" style="text-align: center">رقم التقرير</th>
+                   </thead>
+    <tbody>
+    <tr>
+          <td style="text-align: center">{{rep.shift_id}}</td>
+          <td  style="text-align: center">{{rep.worker_id }}</td>
+          <td  style="text-align: center">{{ rep.machine_id}}</td>
+          <td style="text-align: center" id="theroll">{{ rep.report_id}}</td>
+    </tr>
+    </tbody>
+              </table>
+                    </div>
+   <div class="col-lg-8 table-responsive fontsize" align="center">
+              <table  id="mytable" class="container table-striped" border="2">
+         <thead class="thcolor">
+                                <th  style="text-align: center">المذيب المستهلك</th>
+                             <th  style="text-align: center">الحبر المستهلك</th>
+                            <th  style="text-align: center">عدد الامتار المنتجة</th>
+                            <th  style="text-align: center">رقم العنصر</th>
+                             <th  style="text-align: center">رقم الطلبية</th>
+                             <th  style="text-align: center">رقم التقرير</th>
+                   </thead>
+    <tbody>
+    {% for r in rep.getOrdersDetails %}
+        <tr>
+             <td style="text-align: center">{{r.consumed_solvent}}</td>
+          <td style="text-align: center">{{r.consumed_stain}}</td>
+          <td  style="text-align: center">{{ r.meters }}</td>
+          <td style="text-align: center">{{r.item_id}}</td>
+          <td style="text-align: center">{{r.order_id}}</td>
+          <td style="text-align: center">{{ r.report_id}}</td>
+    </tr>
+{% endfor %}
+    </tbody>
+              </table>
+                    </div>
+</div>
+{% endfor %}
+
+    <br>
+<div class="container" align="center">
+          <h2 align="center" ><font color="#cd5c5c">الرولات المنتجة في اخر وردية</font> </h2>
+    </br>
+ {% if rolls %}
+   <div class="col-lg-8 table-responsive fontsize" align="center">
+              <table  id="mytable" class="container table-striped" border="2">
+         <thead class="thcolor">
+                         <th  style="text-align: center">ملاحظات الجودة</th>
+                             <th  style="text-align: center">موافقة الجودة</th>
+                            <th  style="text-align: center">اسم المشغل</th>
+                            <th  style="text-align: center">البند</th>
+                             <th  style="text-align: center">رقم الطلبية</th>
+                             <th  style="text-align: center">رقم الرول</th>
+                   </thead>
+    <tbody>
+    {% for roll_p in rolls %}
+        <tr>
+          <td style="text-align: center">{{roll_p.quality_notes}}</td>
+          <td  style="text-align: center">{{ roll_p.quality_agreement}}</td>
+          <td  style="text-align: center">{{ roll_p.worker_id }}</td>
+          <td style="text-align: center">{{roll_p.getRollInfo.item_id}}</td>
+          <td style="text-align: center">{{roll_p.getRollInfo.order_id}}</td>
+          <td style="text-align: center">{{ roll_p.roll_id}}</td>
+    </tr>
+{% endfor %}
+</tbody>
+              </table>
+   </div>
+{% endif %}
+</div>
+{% endblock %}

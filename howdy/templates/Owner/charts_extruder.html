@@ -1,0 +1,240 @@
+{% extends 'Owner/base.html' %}
+<script>
+{% block jquery %}
+var endpoint = '/api/chart/data/extruder/'
+var items_lots = []
+var labels = [];
+var items_stain=[];
+var items_pp=[];
+var items_ca=[];
+var items_extruder_waste=[]
+$.ajax({
+    method: "GET",
+    url: endpoint,
+    success: function(data){
+        labels = data.labels_shifts
+        items_pp = data.items_pp
+        items_stain = data.items_stain
+        items_ca = data.items_ca
+        items_lots=data.items_lots
+        items_extruder_waste=data.extruder_waste
+        setChart()
+    },
+    error: function(error_data){
+        console.log("error")
+        console.log(error_data)
+    }
+})
+function setChart(){
+    var stain = document.getElementById("stain");
+    var lots = document.getElementById("lots");
+    var pp = document.getElementById("pp");
+    var ca = document.getElementById("ca");
+    var waste = document.getElementById("waste");
+    var myChart = new Chart(lots, {
+    type: 'bar',
+    data: {
+        labels: labels,
+        datasets: [{
+            data: items_lots,
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)'
+            ],
+            borderColor: [
+                'rgba(255,99,132,1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)'
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero:true
+                }
+            }]
+        }
+    }
+});
+    var myChart2 = new Chart(pp, {
+    type: 'bar',
+    data: {
+        labels: labels,
+        datasets: [{
+            data: items_pp,
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)'
+            ],
+            borderColor: [
+                'rgba(255,99,132,1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)'
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero:true
+                }
+            }]
+        }
+    }
+});
+        var myChart3 = new Chart(ca, {
+    type: 'bar',
+    data: {
+        labels: labels,
+        datasets: [{
+            data: items_ca,
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)'
+            ],
+            borderColor: [
+                'rgba(255,99,132,1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)'
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero:true
+                }
+            }]
+        }
+    }
+});
+ var myChart4 = new Chart(stain, {
+    type: 'bar',
+    data: {
+        labels: labels,
+        datasets: [{
+            data: items_stain,
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)'
+            ],
+            borderColor: [
+                'rgba(255,99,132,1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)'
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero:true
+                }
+            }]
+        }
+    }
+});
+ var myChart5 = new Chart(waste, {
+    type: 'bar',
+    data: {
+        labels: labels,
+        datasets: [{
+            data: items_extruder_waste,
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)'
+            ],
+            borderColor: [
+                'rgba(255,99,132,1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)'
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero:true
+                }
+            }]
+        }
+    }
+});
+}
+// var ctx = document.getElementById("myChart");
+{% endblock %}
+</script>
+{% block content %}
+<div class='row'>
+        <div class='col-sm-6'>
+            <h1 align="center">التبديلات المنتجة تبعا للورديات</h1>
+            <canvas id="lots" width="400" height="400"></canvas>
+        </div>
+        <div class='col-sm-6'>
+            <h1 align="center">كمية بولي بروبلين المستهلكة تبعا للورديات</h1>
+            <canvas id="pp" width="400" height="400"></canvas>
+        </div>
+</div>
+    <div class='row'>
+        <div class='col-sm-6'>
+            <h1 align="center">كمية الصباغ المستهلكة تبعا للورديات</h1>
+            <canvas id="stain" width="400" height="400"></canvas>
+        </div>
+        <div class='col-sm-6'>
+            <h1 align="center">كمية الكربونات المستهلكة تبعا للورديات</h1>
+            <canvas id="ca" width="400" height="400"></canvas>
+        </div>
+</div>
+        <div class='row'>
+        <div class='col-sm-6'>
+            <h1 align="center">كمية الهدر تبعا للورديات</h1>
+            <canvas id="waste" width="400" height="400"></canvas>
+        </div>
+</div>
+{% endblock content %}

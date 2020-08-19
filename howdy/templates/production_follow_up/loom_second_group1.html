@@ -1,0 +1,54 @@
+{% extends 'production_follow_up/testBase.html' %}
+{% block content %}
+                                    <h3 align="center" ><font color="#cd5c5c"> انتاج المجموعة الثانية</font> </h3>
+    </br>
+<table border="2" style="width: 80%" align="center">
+<tr>
+<td style="padding-right: 10px">
+    <div class="" >
+                                    <h3 align="center" ><font color="#cd5c5c"> انتاج الوردية الصباحية</font> </h3>
+
+              <table  id="mytable" class=" table-striped" border="2">
+         <thead class="thcolor">
+                           <th  style="text-align: center">حالة النول</th>
+                              <th  style="text-align: center">العداد</th>
+                            <th  style="text-align: center">اسم العامل</th>
+                               <th  style="text-align: center">رقم النول </th>
+                   </thead>
+                  <tbody>
+               {% for ll in looms1 %}
+                                <tr>
+                            <th  style="text-align: center"> {{ ll.tate }} </th>
+                            <th  style="text-align: center">{{ ll.current_produced_amount }}</th>
+                            <th  style="text-align: center">{{ ll.worker_id }}</th>
+                                    <th  style="text-align: center">{{ ll.loom_id }}</th>
+                             </tr>
+                  {% endfor %}
+                  </tbody></table></div>
+</td>
+<!------------------------------------------------------------------------------->
+<td style="padding-right: 10px">
+    <div class="" >
+                                         <h3 align="center" ><font color="#cd5c5c"> انتاج الوردية المسائية</font> </h3>
+
+              <table  id="mytable" class=" table-striped" border="2">
+         <thead class="thcolor">
+                           <th  style="text-align: center">حالة النول</th>
+                              <th  style="text-align: center">العداد</th>
+                            <th  style="text-align: center">اسم العامل</th>
+                               <th  style="text-align: center">رقم النول </th>
+                   </thead>
+                  <tbody>
+                  {% for ll in looms2 %}
+                                <tr>
+                            <th  style="text-align: center"> {{ ll.tate }} </th>
+                            <th  style="text-align: center">{{ ll.current_produced_amount }}</th>
+                            <th  style="text-align: center">{{ ll.worker_id }}</th>
+                                    <th  style="text-align: center">{{ ll.loom_id }}</th>
+                             </tr>
+                  {% endfor %}
+                  </tbody></table></div>
+</td>
+</tr>
+</table>
+{% endblock %}

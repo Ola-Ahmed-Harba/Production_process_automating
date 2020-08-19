@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Latest compiled and minified CSS -->
+     {% load staticfiles %}
+<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}"
+      integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" href="{% static 'sales/style.css' %}" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Satisfy' rel="stylesheet" type="text/css">
+    <script src="{% static 'js/jquery.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <link href="{% static 'css/font-awesome.css' %}" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body background="{% static 'sales/images/bacc.jpg' %}">
+<nav class="navbar navbar-default nn ordersize">
+ <div class="container-fluid">
+     <!--logo-->
+     <div class="navbar-header" >
+         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#topNavbAR">
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+             <span class="icon-bar"></span>
+         </button>
+        <a class="navbar-brand" href="{% url 'logoutt' %}">
+                     <font color="black">
+                    تسجيل خروج
+                </font>
+         </a>
+     </div>
+     <!--items-->
+      <div class="collapse navbar-collapse " id="topNavbAR">
+          <ul class="nav navbar-nav">
+              <li class="">
+                  <a href="{% url 'orders_in_p_manager_page' %}">
+                      <span class="glyphicon glyphicon-cd active" aria-hidden="true"></span>&nbsp;
+                      <font color="black">
+                     طلبيات
+                </font>
+                  </a>
+              </li>
+              <li class="">
+                  <a href="#">
+                      <span class="glyphicon glyphicon-globe" aria-hidden="true"></span>&nbsp;
+                              <font color="black">
+                     اشعارات
+                </font>
+                  </a>
+              </li>
+   <li class="">
+                  <a href="{% url 'production_m_order_update_page' %}">
+                      <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>&nbsp;
+                              <font color="black">
+                    طلبات جديدة
+                </font>
+                  </a>
+              </li>
+   <li class="">
+                  <a href="{% url 'order_sch_view' %}">
+                      <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>&nbsp;
+                              <font color="black">
+                    اضافة خطة
+                </font>
+                  </a>
+              </li>
+   <li class="">
+                  <a href="{% url 'update_order_sch_view_manager' %}">
+                      <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>&nbsp;
+                              <font color="black">
+                    تعديل خطة
+                </font>
+                  </a>
+              </li>
+                <li class="">
+                  <a href="{% url 'coating_internal_order_view' %}">
+                      <span class="glyphicon glyphicon-refresh" aria-hidden="true"></span>&nbsp;
+                              <font color="black">
+                    طلب داخلي للطلي                </font>
+                  </a>
+              </li>
+             <li class="">
+                  <a href="{% url 'printing_internal_order_view' %}">
+                      <span class="glyphicon glyphicon-refresh" aria-hidden="true"></span>&nbsp;
+                              <font color="black">
+                    طلب داخلي للطباعة                </font>
+                  </a>
+              </li>
+             <li class="">
+                  <a href="{% url 'cutting_internal_order_view' %}">
+                      <span class="glyphicon glyphicon-refresh" aria-hidden="true"></span>&nbsp;
+                              <font color="black">
+                    طلب داخلي للقص                </font>
+                  </a>
+              </li>
+     <li class="">
+                  <a href="{% url 'fiber_tables_manager' %}">
+                      <span class="glyphicon glyphicon-refresh" aria-hidden="true"></span>&nbsp;
+                              <font color="black">
+                    كود الخيط               </font>
+                  </a>
+              </li>
+              <li class="">
+                  <a href="{% url 'order_plan_state_Summery' %}">
+                      <span class="glyphicon glyphicon-refresh" aria-hidden="true"></span>&nbsp;
+                              <font color="black">
+                    حالة الطلبيات               </font>
+                  </a>
+              </li>
+            <li class="">
+                  <a href="{% url 'update_order_sch_view_manager' %}">
+                      <span class="glyphicon glyphicon-refresh" aria-hidden="true"></span>&nbsp;
+                              <font color="black">
+                    تتعديييييييل</font>
+                  </a>
+              </li>
+                    <li class="nav-item dropdown dmenu">
+                         <a data-target="#" href="#" data-toggle="dropdown" class="dropdown-toggle">
+                                      <span class="glyphicon glyphicon-search brown" aria-hidden="true"></span>&nbsp;
+                                     <font color="black">
+                                      تقارير انتاج
+                                        </font>
+                             <b class="caret"></b></a>
+                             <ul class="dropdown-menu" >
+                                 <li><a href="{% url 'coating_reports' %}">تقارير الطلي</a></li>
+                                <li><a href="{% url 'printing_reports' %}">تقارير الطباعة</a></li>
+                                <li><a href="{% url 'cutting_reports' %}">تقارير القص والطباعة</a></li>
+                             </ul>
+                </li>
+          </ul>
+      </div>
+ </div>
+</nav>
+         <div class="container">
+            {% block content %}
+            {% endblock %}
+</div>
+</body>
+</html>

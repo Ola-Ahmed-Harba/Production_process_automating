@@ -1,0 +1,137 @@
+{% extends 'Production_manager/testBase.html' %}
+{% block content %}
+    <h1 align="center" ><font color="#cd5c5c">تعديل خطة طلبية جديدة تبعا لتعديلات الاقسام  </font> </h1>
+    {% if messages %}
+    {% for message in messages %}
+        <div class="alert {% if message.tags %}alert-{{ message.tags }}{% endif %}" role="alert"  style="width: 200px" align="center" >{{ message }}</div>
+        <script>
+          alert("{{ message }}!");
+        </script>
+    {% endfor %}
+{% endif %}
+{% for laste in schs %}
+
+              <table    class="container table-striped" align="center" border="2">
+      <thead class="thcolor" align="center">
+                                   <th    style="text-align: center">تم تثبيت الطلبية</th>
+                          <th    style="text-align: center">ملاحظات</th>
+                          <th    style="text-align: center">حالة الطلبية</th>
+                           <th    style="text-align: center">تاريخ نهاية الطلبية</th>
+                            <th   style="text-align: center">تاريخ بداية الطلبية</th>
+                    <td  style="text-align: center">سبب التعديل</td>
+                           <th    style="text-align: center">تاريخ النهاية للقص</th>
+                            <th   style="text-align: center">تاريخ البداية للقص</th>
+                    <td  style="text-align: center">سبب التعديل</td>
+                           <th    style="text-align: center">تاريخ النهاية للطباعة</th>
+                            <th   style="text-align: center">تاريخ البداية للطباعة</th>
+                    <td  style="text-align: center">سبب التعديل</td>
+                           <th    style="text-align: center">تاريخ النهاية للطلي</th>
+                            <th   style="text-align: center">تاريخ البداية للطلي</th>
+                                <th   style="text-align: center">تم تثبيت خطة الانوال</th>
+                    <td  style="text-align: center">سبب التعديل</td>
+                            <th    style="text-align: center">تاريخ النهاية للنسيج</th>
+                            <th   style="text-align: center">تاريخ البداية للنسيج</th>
+                            <th    style="text-align: center">رقم الطلبية</th>
+                             <th    style="text-align: center">رقم الخطة</th>
+                   </thead>
+    <tbody>
+    <tr>
+                <td style="text-align: center" >{{ laste.fixedd}}</td>
+        <td style="text-align: center" >{{ laste.notes}}</td>
+       <td style="text-align: center" >{{ laste.state}}</td>
+           <td style="text-align: center" >{{ laste.order_end_date | date:"SHORT_DATE_FORMAT"}}</td>
+          <td style="text-align: center">{{ laste.order_start_date   | date:"SHORT_DATE_FORMAT" }}</td>
+                <td  style="text-align: center"></td>
+          <td style="text-align: center">{{ laste.end_cutting_date  | date:"SHORT_DATE_FORMAT"}}</td>
+          <td style="text-align: center">{{ laste.start_cutting_date  | date:"SHORT_DATE_FORMAT"}}</td>
+                <td  style="text-align: center"></td>
+          <td  style="text-align: center">{{ laste.end_printing_date   | date:"SHORT_DATE_FORMAT"}}</td>
+           <td style="text-align: center" >{{ laste.star_printing_date  | date:"SHORT_DATE_FORMAT"}}</td>
+                <td  style="text-align: center"></td>
+           <td style="text-align: center" >{{ laste.end_coating_date  | date:"SHORT_DATE_FORMAT"}}</td>
+          <td style="text-align: center">{{ laste.start_coating_date  | date:"SHORT_DATE_FORMAT"}}</td>
+                                <td  style="text-align: center">{{ laste.loom_fixed }}</td>
+                <td  style="text-align: center"></td>
+          <td style="text-align: center">{{ laste.end_loom_date  | date:"SHORT_DATE_FORMAT"}}</td>
+          <td style="text-align: center">{{ laste.start_loom_date  | date:"SHORT_DATE_FORMAT"}}</td>
+          <td  style="text-align: center">{{ laste.order_id }}</td>
+        <td  style="text-align: center">{{ laste.sch_id }}</td>
+    </tr>
+       <tr>
+                       <td  style="text-align: center"></td>
+           <td  style="text-align: center"></td>
+           <td  style="text-align: center"></td>
+           <td  style="text-align: center"></td>
+           <td  style="text-align: center"></td>
+          <td style="text-align: center">{{ laste.getAgrees.cut_reason}}</td>
+          <td style="text-align: center">{{ laste.getAgrees.cute  | date:"SHORT_DATE_FORMAT"}}</td>
+          <td style="text-align: center">{{ laste.getAgrees.cuts}}</td>
+                   <td style="text-align: center" >{{ laste.getAgrees.pr_reason}}</td>
+       <td style="text-align: center" >{{ laste.getAgrees.pre  | date:"SHORT_DATE_FORMAT"}}</td>
+           <td style="text-align: center" >{{ laste.getAgrees.prs  | date:"SHORT_DATE_FORMAT"}}</td>
+          <td  style="text-align: center">{{ laste.getAgrees.cot_reason }}</td>
+           <td style="text-align: center" >{{ laste.getAgrees.cote  | date:"SHORT_DATE_FORMAT"}}</td>
+           <td style="text-align: center" >{{laste.getAgrees.cots  | date:"SHORT_DATE_FORMAT"}}</td>
+                      <td style="text-align: center" ></td>
+          <td style="text-align: center">{{ laste.getAgrees.l_reason}}</td>
+          <td style="text-align: center">{{ laste.getAgrees.le  | date:"SHORT_DATE_FORMAT"}}</td>
+          <td style="text-align: center">{{ laste.getAgrees.ls  | date:"SHORT_DATE_FORMAT"}}</td>
+          <td  style="text-align: center"></td>
+        <td  style="text-align: center"></td>
+    </tr>
+    <tr>
+        <form name="ourform" action="{% url 'update_order_sch_view_manager_two' laste.pk  %}" method="post">
+{% csrf_token %}
+            <td style="text-align: center" ><select name="fixed">
+                <option>نعم</option>
+                <option selected="selected">لا</option>
+            </select> </td>
+        <td style="text-align: center" ></td>
+       <td style="text-align: center" ><input type="submit" class="btn btn-primary" value="تعديل"></td>
+           <td style="text-align: center" ></td>
+            <td style="text-align: center" ></td>
+           <td style="text-align: center"></td>
+          <td style="text-align: center"><input style="width: 125px" type="date" id="cei" name="cei" placeholder="عدل هنا تاريخ الانتهاء"  value="2000-11-11"></td>
+          <td style="text-align: center"><input  style="width: 125px" type="date" id="csi" name="csi" placeholder="عدل هنا تاريخ البدء" value="2000-11-11"> </td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"><input style="width: 125px" type="date" id="pei" name="pei" placeholder="عدل هنا تاريخ الانتهاء"  value="2000-11-11"></td>
+          <td style="text-align: center"><input  style="width: 125px" type="date" id="psi" name="psi" placeholder="عدل هنا تاريخ البدء" value="2000-11-11"> </td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"><input  style="width: 125px" type="date" id="coei" name="coei" placeholder="عدل هنا تاريخ الانتهاء"  value="2000-11-11"></td>
+          <td style="text-align: center"><input  style="width: 125px" type="date" id="cosi" name="cosi" placeholder="عدل هنا تاريخ البدء" value="2000-11-11"> </td>
+          <td style="text-align: center"><select name="l_fx" id="l_fx">
+                            <option value="نعم" >نعم</option>
+                            <option value="لا" selected="selected">لا</option>
+                         </select></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"><input  style="width: 125px" type="date" id="lei" name="lei" placeholder="عدل هنا تاريخ الانتهاء"  value="2000-11-11"></td>
+          <td style="text-align: center"><input style="width: 125px" type="date" id="lsi" name="lsi" placeholder="عدل هنا تاريخ البدء" value="2000-11-11"> </td>
+          </form>
+            <td  style="text-align: center"></td>
+        <td  style="text-align: center"></td>
+    </tr>
+    </tbody>
+              </table>
+    </br>
+        <hr style="text-align: center">
+ </br>
+{% endfor %}
+<script>
+        $('#ourform').submit(function(event){
+        event.preventDefault();
+        console.log($(this).serialize());
+        var data = $(this).serialize();
+        var action = $(this).attr('action');
+        $.ajax({
+            url: action,
+            data:data,
+            dataType: 'json',
+            method: 'POST',
+            success: function(msg){
+            },
+            error: function(data){
+            }
+        });
+    });
+</script>
+{% endblock %}

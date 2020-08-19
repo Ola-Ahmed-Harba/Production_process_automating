@@ -1,0 +1,41 @@
+{% extends 'printing/testBase.html' %}
+{% block content %}
+      <h1 align="center" ><font color="#cd5c5c">طلبات التصنيع  </font> </h1>
+    </br>
+    {% for order in orders %}
+    <div class="container" >
+              <table   id="mytable" class="container table-striped" align="center" border="2">
+                   <thead class="thcolor" align="center">
+                            <th   style="text-align: center">ملاحظات</th>
+                            <th   style="text-align: center">حالة الطلبية</th>
+
+                     <th    style="text-align: center">طريقة التسليم</th>
+
+                       <th  style="text-align: center">تاريخ التسليم</th>
+                        <th  style="text-align: center">تاريخ البدء</th>
+                                    <th  style="text-align: center">تاريخ تقديم الطلب</th>
+                        <th  style="text-align: center">اسم المنتج</th>
+                              <th  style="text-align: center">اسم الزبون</th>
+                   <th  style="text-align: center">الرقم</th>
+                   <th  style="text-align: center"></th>
+                   </thead>
+    <tbody>
+      <td  align="center">{{ order.notes }}</td>
+     <td  align="center">{{ order.order_status }} </td>
+           <td  align="center">{{ order.delivery_way }}</td>
+
+    <td  align="center">{{ order.delivery_time | date:"SHORT_DATE_FORMAT"}}</td>
+    <td  align="center">{{ order.start_time | date:"SHORT_DATE_FORMAT"}}</td>
+      <td  align="center">{{ order.order_date| date:"SHORT_DATE_FORMAT" }}</td>
+    <td  align="center">{{ order.product_name }}</td>
+    <td  align="center">{{ order.customer_name }}</td>
+    <td  align="center">{{ order.id }}</td>
+      <td  align="center"><a href="{% url 'orders_printing' order.pk%}"><button class="btn-danger">تفاصيل</button></a></td>
+    </tbody>
+              </table>
+                 </div>
+
+<br>
+        <hr style="text-align: center">
+{% endfor %}
+{% endblock %}

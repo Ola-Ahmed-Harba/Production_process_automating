@@ -1,0 +1,31 @@
+{% extends 'production_follow_up/testBase.html' %}
+{% block content %}
+            <h1 align="center" ><font color="#cd5c5c">اضافة تقرير انتاج الالة الاولى بقسم الطباعة  </font> </h1>
+    </br>
+    </br>
+     <div class="container" align="center" >
+              <table  id="mytable" class="table table-bordred table-striped">
+         <thead class="thcolor">
+                           <th  style="text-align: center"></th>
+                            <th style="text-align: center">حالة الالة</th>
+                            <th  style="text-align: center">الامتار المنتجة</th>
+                            <th  style="text-align: center">اسم المشغل</th>
+                            <th  style="text-align: center">رقم الالة</th>
+                   </thead>
+                      <tbody>
+    <tr>
+        <form method="post">
+             <th  style="text-align: center"><input type="submit" class="btn-danger" value="اضافة"></th>
+          <td style="text-align: center"><select name="machine_state">
+              <option name="يعمل">يعمل</option>
+               <option name="متوقف">متوقف</option>
+          </select></td>
+          <td style="text-align: center"><input type="number" name="meters"></td>
+          <td  style="text-align: center"><input type="text" name="worker_id" ></td>
+        <td  style="text-align: center">1</td>
+            </form>
+    </tr>
+    </tbody>
+              </table>
+                    </div>
+{% endblock %}

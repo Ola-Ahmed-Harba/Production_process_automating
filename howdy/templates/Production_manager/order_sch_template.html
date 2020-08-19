@@ -1,0 +1,52 @@
+{% extends 'Production_manager/testBase.html' %}
+{% block content %}
+            {% if messages %}
+    {% for message in messages %}
+        <div class="alert {% if message.tags %}alert-{{ message.tags }}{% endif %}" role="alert"  style="width: 200px" align="center" ></div>
+        <script>
+          alert("{{ message }}!");
+        </script>
+    {% endfor %}
+{% endif %}
+    <h1 align="center" ><font color="#cd5c5c">اضافة خطة تصنيع لطلبية جديدة  </font> </h1>
+    </br>
+    </br>
+    <div class="container" align="center">
+     <div class="col-lg-6 table-responsive fontsize" >
+              <table  id="mytable" class="table table-bordred table-striped" border="2">
+         <thead class="thcolor">
+                   </thead>
+<form method="post" action="{% url 'order_sch_view'  %} ">
+    {% csrf_token %}
+      <tr> <td  style="text-align: center">تم تثبيت الطلبية</td>  <td style="text-align: center"><select name="fixedd">
+             <option name="نعم">نعم</option>
+              <option name="لا" selected="selected">لا</option>
+      </select></td></tr>
+    <tr> <td  style="text-align: center">ملاحظات</td> <td style="text-align: center" ><input type="text" name="notes" style="width:150px" value="لايوجد"></td></tr>
+    <tr> <td  style="text-align: center">حالة الطلبية</td> <td style="text-align: center" ><select name="state">
+        <option value="جاري التصنيع">جاري التصنيع</option>
+        <option name="متوقف">متوقف</option>
+        <option name="انتهى">انتهى</option>
+    </select></td></tr>
+         <tr> <td  style="text-align: center">تاريخ  نهاية التصنيع</td>  <td style="text-align: center" ><input type="date" name="order_end_date" style="width:150px" value="2000-11-11"></td></tr>
+        <tr> <td  style="text-align: center">تاريخ بداية التصنيع</td>  <td style="text-align: center"><input type="date" name="order_start_date" style="width:150px" value="2000-11-11"></td></tr>
+      <tr> <td  style="text-align: center">تاريخ نهاية القص</td>    <td style="text-align: center"><input type="date" name="end_cutting_date" style="width:150px" value="2000-11-11"></td></tr>
+         <tr> <td  style="text-align: center">تاريخ بداية القص</td> <td style="text-align: center"><input type="date" name="start_cutting_date" style="width:150px" value="2000-11-11"></td></tr>
+         <tr> <td  style="text-align: center">تاريخ نهاية الطباعة</td> <td  style="text-align: center"><input type="date" name="end_printing_date" style="width:150px" value="2000-11-11"></td></tr>
+        <tr> <td  style="text-align: center">تاريخ بداية الطباعة</td>   <td style="text-align: center" ><input type="date" name="star_printing_date" style="width:150px" value="2000-11-11"></td></tr>
+        <tr> <td  style="text-align: center">تاريخ نهاية الطلي</td>   <td style="text-align: center" ><input type="date" name="end_coating_date" style="width:150px" value="2000-11-11"></td></tr>
+         <tr> <td  style="text-align: center">تاريخ بداية الطلي</td>  <td style="text-align: center"><input type="date" name="start_coating_date" style="width:150px" value="2000-11-11"></td></tr>
+         <tr> <td  style="text-align: center">تثبيت تاريخ النسيج</td>  <td style="text-align: center"><select name="loom_fixed">
+             <option name="نعم">نعم</option>
+              <option name="لا">لا</option>
+          </select></td></tr>
+          <tr> <td  style="text-align: center">تاريخ نهاية النسيج</td><td style="text-align: center"><input type="date" name="end_loom_date" style="width:150px" value="2000-11-11"></td></tr>
+         <tr> <td  style="text-align: center">تاريخ بدية النسيج</td> <td style="text-align: center"><input type="date" name="start_loom_date" style="width:150px" value="2000-11-11"></td></tr>
+    <tr> <td  style="text-align: center">رقم الطلبية</td> <td  style="text-align: center">{{ form.order_id }}</td></tr></tr>
+    <tr>  <td  style="text-align: center"> <input type="submit" class="btn btn-primary" value="اضافة"></td><td></td>
+    </form>
+    </tbody>
+              </table>
+                    </div>
+</div>
+{% endblock %}

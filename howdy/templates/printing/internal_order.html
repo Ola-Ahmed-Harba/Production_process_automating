@@ -1,0 +1,42 @@
+{% extends 'printing/testBase.html' %}
+{% block content %}
+        <h3 align="center" ><font color="#cd5c5c">الطلبات الداخلية للطباعة</font> </h3>
+    </br>
+
+     <div class="col-lg-12 table-responsive fontsize" >
+              <table  id="mytable" class="  table-striped" border="2">
+         <thead class="thcolor">
+                           <th  style="text-align: center">ملاحظات</th>
+                            <th  style="text-align: center">تاريخ الانتهاء</th>
+                                 <th  style="text-align: center">تاريخ البدء</th>
+                              <th  style="text-align: center">الكمية</th>
+                              <th style="text-align: center">الوان الوجه الثاني</th>
+                             <th style="text-align: center">الوان الوجه الاول</th>
+                             <th style="text-align: center">وجه ام وجهين</th>
+                            <th style="text-align: center">اسم الطبعة</th>
+                            <th  style="text-align: center">رقم العنصر</th>
+                            <th  style="text-align: center">رقم الطلبية</th>
+                             <th  style="text-align: center">رقم الخطة</th>
+             <th  style="text-align: center">رقم الطلب</th>
+                   </thead>
+    <tbody>
+{% for o in oo %}
+    <tr>
+        <td style="text-align: center" >{{ o.notes}}</td>
+         <td style="text-align: center" >{{ o.getSchId.end_printing_date | date:"SHORT_DATE_FORMAT"}}</td>
+       <td style="text-align: center" >{{ o.getSchId.start_printing_date| date:"SHORT_DATE_FORMAT"}}</td>
+         <td style="text-align: center" >{{ o.amount}}</td>
+            <td style="text-align: center" >{{ o.getItemOrder.second_face_colors}}</td>
+           <td style="text-align: center" >{{ o.getItemOrder.first_face_colors}}</td>
+  <td style="text-align: center" >{{ o.getItemOrder.print_one_face_or_two}}</td>
+                   <td style="text-align: center" >{{ o.getItemOrder.item_printing_name}}</td>
+          <td style="text-align: center">{{ o.item_id}}</td>
+          <td  style="text-align: center">{{ o.order_id }}</td>
+        <td  style="text-align: center">{{ o.sch_id }}</td>
+       <td  style="text-align: center">{{ o.inte_id }}</td>
+    </tr>
+{% endfor %}
+    </tbody>
+              </table>
+                    </div>
+{% endblock %}

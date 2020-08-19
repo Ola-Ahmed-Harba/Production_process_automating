@@ -1,0 +1,47 @@
+{% extends 'packing/testBase.html' %}
+{% block content %}
+    <div class="container" align="center">
+              <table  id="mytable" class="table table-bordred table-striped" border="2">
+         <thead class="thcolor">
+                           <th style="text-align: center">الوقت</th>
+                            <th style="text-align: center">المسجل</th>
+                            <th style="text-align: center">اسم العامل</th>
+                            <th style="text-align: center">المكبس</th>
+                            <th  style="text-align: center">باركود الرول</th>
+                             <th  style="text-align: center"></th>
+                   </thead>
+    <tbody>
+<tr>
+    <form method="post" action="#">
+    {% csrf_token %}
+            <td style="text-align: center"></td>
+          <td style="text-align: center"></td>
+          <td style="text-align: center"><input name="worker_id" style="width: 100px" required></td>
+        <td style="text-align: center"><select name="packer_id" >
+            <option>أول</option>
+            <option>ثاني</option>
+            <option>ثالث</option>
+        </select></td>
+        <td  style="text-align: center"><select name="roll_id" style="width: 200px">
+        <option></option>
+            {% for r in rr %}
+                <option>{{ r}}</option>
+            {% endfor %}
+        </select></td>
+          <td width="5%"style="text-align: center"><input type="submit" class="btn btn-primary" value="اضافة"> </td>
+</form>
+   </tr>
+{% for roll in rolls %}
+    <tr>
+      <td style="text-align: center">{{ roll.packing_date}}</td>
+          <td style="text-align: center">{{ roll.recorder_id}}</td>
+          <td style="text-align: center">{{ roll.worker_id}}</td>
+          <td style="text-align: center">{{ roll.packer_id}}</td>
+          <td  style="text-align: center">{{ roll.roll_id}}</td>
+          <td width="5%"style="text-align: center"></td>
+    </tr>
+{% endfor %}
+    </tbody>
+              </table>
+                    </div>
+{% endblock %}

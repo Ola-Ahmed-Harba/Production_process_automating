@@ -1,0 +1,78 @@
+{% extends 'production_follow_up/testBase.html' %}
+{% block content %}
+                                    <h3 align="center" ><font color="#cd5c5c"> انتاج المجموعة الاولى</font> </h3>
+    </br>
+        {% if messages %}
+    {% for message in messages %}
+        <div class="alert {% if message.tags %}alert-{{ message.tags }}{% endif %}" role="alert"  style="width: 200px" align="center" ></div>
+        <script>
+          alert("{{ message }}!");
+        </script>
+    {% endfor %}
+{% endif %}
+<table border="2" align="center">
+<tr>
+<td style="padding-right: 10px">
+    <div class="" >
+                       <h3 align="center" ><font color="#cd5c5c"> انتاج الوردية الصباحية</font> </h3>
+
+              <table  id="mytable" class=" table-striped" border="2">
+         <thead class="thcolor">
+                            <th style="text-align: center">تعديل</th>
+                           <th  style="text-align: center">حالة النول</th>
+                              <th  style="text-align: center">العداد</th>
+                            <th  style="text-align: center">اسم العامل</th>
+                               <th  style="text-align: center">رقم النول </th>
+                   </thead>
+                  <tbody>
+                  <tr>
+                           <form method="post">
+                            {% csrf_token %}
+                            <th  style="text-align: center"><button type="submit" id="two" name="two">تعديل</button> </th>
+                            <th  style="text-align: center">
+                            <select name="state" id="state" >
+                                    <option > {{ one.state }}</option>
+                                <option name="work" id="work"> يعمل</option>
+                                <option name="not_work"  id="not_work">لا يعمل</option>
+                            </select>
+                            </th>
+                            <th  style="text-align: center"><input style="width: 100px"  type="number" name="current_produced_amount" id="current_produced_amount" value="{{ one.current_produced_amount }}" required></th>
+                            <th  style="text-align: center"><input style="width: 100px"  type="text" name="worker_id" id="worker_id" value="{{ one.worker_id }}" required></th>
+                             <th  style="text-align: center"><input style="width: 100px"  type="number" name="loom" id="loom" required></th>
+                             </form>   </tr>
+                  </tbody></table></div>
+</td>
+<!------------------------------------------------------------------------------->
+<td style="padding-right: 10px">
+    <div class="" >
+                                          <h3 align="center" ><font color="#cd5c5c"> انتاج الوردية المسائية</font> </h3>
+
+              <table  id="mytable" class=" table-striped" border="2">
+         <thead class="thcolor">
+                            <th style="text-align: center">تعديل</th>
+                           <th  style="text-align: center">حالة النول</th>
+                              <th  style="text-align: center">العداد</th>
+                            <th  style="text-align: center">اسم العامل</th>
+                               <th  style="text-align: center">رقم النول </th>
+                   </thead>
+                  <tbody>
+                  <tr>
+                           <form method="post">
+                            {% csrf_token %}
+                            <th  style="text-align: center"><button type="submit" id="one" name="one">تعديل</button> </th>
+                            <th  style="text-align: center">
+                            <select name="state" id="state" >
+                                    <option > {{ one.state }}</option>
+                                <option name="work" id="work"> يعمل</option>
+                                <option name="not_work"  id="not_work">لا يعمل</option>
+                            </select>
+                            </th>
+                            <th  style="text-align: center"><input style="width: 100px"  type="number" name="current_produced_amount" id="current_produced_amount" value="{{ one.current_produced_amount }}" required></th>
+                            <th  style="text-align: center"><input style="width: 100px"  type="text" name="worker_id" id="worker_id" value="{{ one.worker_id }}" required></th>
+                             <th  style="text-align: center"><input style="width: 100px"  type="number" name="loom" id="loom" required></th>
+                             </form>   </tr>
+                  </tbody></table></div>
+</td>
+</tr>
+</table>
+{% endblock %}

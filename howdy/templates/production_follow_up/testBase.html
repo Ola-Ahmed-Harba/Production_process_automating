@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {% load staticfiles %}
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>OlaAh</title>
+    <!-- Bootstrap CSS CDN -->
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <!-- Our Custom CSS -->
+    <link rel="stylesheet" href="{% static 'style3.css' %}">
+    <!-- Scrollbar Custom CSS -->
+    <link rel="stylesheet" href="{% static 'css/jquery.mCustomScrollbar.min.css' %}">
+    <!-- Font Awesome JS -->
+    <script defer src="{% static 'js/solid.js' %}" integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous"></script>
+    <script defer src="{% static 'js/fontawesome.js' %}" integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="wrapper">
+        <!-- Sidebar  -->
+        <nav id="sidebar">
+            <div id="dismiss">
+                <i class="fas fa-arrow-left"></i>
+            </div>
+            <div class="sidebar-header">
+                <h3>MOPICA</h3>
+            </div>
+            <ul class="list-unstyled components">
+                <p>قسم الطباعة</p>
+                <li class="active">
+                    <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false">    <font color="white" size="5"> تقارير الانتاج للطباعة </font></a>
+                    <ul class="collapse list-unstyled" id="homeSubmenu">
+                        <li>
+                            <a href="{% url 'printing1' %}">
+                                <font color="white" size="4">  تقرير انتاج الالة 1</font>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{% url 'printing2' %}"> <font color="white" size="4"> تقرير انتاج الالة 2 </font></a>
+                        </li>
+                        <li>
+                            <a href="{% url 'printing3' %}"><font color="white" size="4">تقرير انتاج الالة 3 </font></a>
+                        </li>
+                         <li>
+                            <a href="{% url 'printing4' %}"><font color="white" size="4">تقرير انتاج الالة 4 </font></a>
+                        </li>
+                    </ul>
+                </li>
+                        <li >
+                    <a href="#rr" data-toggle="collapse" aria-expanded="false">    <font color="white" size="5"> تقارير الانتاج للطلي </font></a>
+                    <ul class="collapse list-unstyled" id="rr">
+                        <li>
+                            <a href="{% url 'coating1' 1 %}">
+                                <font color="white" size="4">  تقرير انتاج الالة 1</font>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{% url 'coating2' 2 %}"> <font color="white" size="4"> تقرير انتاج الالة 2 </font></a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false"> <font color="white" size="5">  تقارير انتاج للقص</font></a>
+                    <ul class="collapse list-unstyled" id="pageSubmenu">
+                        <li>
+                            <a href="{% url 'cutting1' 1 %}">   <font color="white" size="4"> تقرير انتاج الة 1 </font></a>
+                        </li>
+                        <li>
+                            <a href="{% url 'cutting2' 2 %}">   <font color="white" size="4"> تقرير انتاج الة 2  </font></a>
+                        </li>
+                                                <li>
+                            <a href="{% url 'cutting3' 3 %}">   <font color="white" size="4"> تقرير انتاج الة 3 </font></a>
+                        </li>
+                                                <li>
+                            <a href="{% url 'cutting4' 4 %}">   <font color="white" size="4"> تقرير انتاج الة 4 </font></a>
+                        </li>
+                                                <li>
+                            <a href="{% url 'cutting5' 5 %}">   <font color="white" size="4"> تقرير انتاج الة 5 </font></a>
+                        </li>
+                                                <li>
+                            <a href="{% url 'cutting6' 6 %}">   <font color="white" size="4"> تقرير انتاج الة 6 </font></a>
+                        </li>
+                                                <li>
+                            <a href="{% url 'cutting7' 7 %}">   <font color="white" size="4"> تقرير انتاج الة 7 </font></a>
+                        </li>
+                                                <li>
+                            <a href="{% url 'cutting8' 8 %}">   <font color="white" size="4"> تقرير انتاج الة 8 </font></a>
+                        </li>
+                    </ul>
+                </li>
+               <li>
+                 <a href="#ww" data-toggle="collapse" aria-expanded="false">    <font color="white" size="5"> انتاج الانوال مجموعة 1 </font></a>
+                    <ul class="collapse list-unstyled" id="ww">
+                        <li>
+                            <a href="{% url 'weaving1'  %}">
+                                <font color="white" size="4"> اضافة تقرير</font>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{% url 'show_weaving1'  %}"> <font color="white" size="4"> عرض التقرير </font></a>
+                        </li>
+                    </ul>
+                </li>
+       <li>
+                 <a href="#ww2" data-toggle="collapse" aria-expanded="false">    <font color="white" size="5"> انتاج الانوال مجموعة 2 </font></a>
+                    <ul class="collapse list-unstyled" id="ww2">
+                        <li>
+                            <a href="{% url 'weaving2'  %}">
+                                <font color="white" size="4"> اضافة تقرير</font>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{% url 'show_weaving2'  %}"> <font color="white" size="4"> عرض التقرير </font></a>
+                        </li>
+                    </ul>
+                </li>
+       <li>
+                 <a href="#ww3" data-toggle="collapse" aria-expanded="false">    <font color="white" size="5"> انتاج الانوال مجموعة 3 </font></a>
+                    <ul class="collapse list-unstyled" id="ww3">
+                        <li>
+                            <a href="{% url 'weaving3'  %}">
+                                <font color="white" size="4"> اضافة تقرير</font>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{% url 'show_weaving3'  %}"> <font color="white" size="4"> عرض التقرير </font></a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <ul class="list-unstyled CTAs">
+                <li>
+                    <a class="navbar-brand" href="{% url 'logoutt' %}">
+                     <font color="#f5deb3" size="4">
+                    تسجيل خروج
+                </font>
+                      </a>
+                </li>
+            </ul>
+        </nav>
+        <!-- Page Content  -->
+        <div id="content">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid">
+                    <button type="button" id="sidebarCollapse" class="btn btn-info">
+                        <i class="fas fa-align-left"></i>
+                        <span>القائمة</span>
+                    </button>
+                    <button class="btn btn-dark d-inline-block d-lg-none ml-auto" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <i class="fas fa-align-justify"></i>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="nav navbar-nav ml-auto">
+                                                  <li>
+                    <a class="btn btn-danger" style="background: #9b2b26;width: 100px;padding-left: 10px;padding-right: 10px" href="{% url 'logoutt' %}">
+                     <font color="white" size="4">
+                    تسجيل خروج
+                </font>
+                      </a>
+                </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+{% block content %}
+ {% endblock %}
+        </div></div>
+    <!-- jQuery CDN - Slim version (=without AJAX) -->
+    <script src="{% static 'js/jquery-3.3.1.slim.min.js' %}" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <!-- Popper.JS -->
+    <script src="{% static 'js/popper.min.js' %}" integrity="sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ" crossorigin="anonymous"></script>
+    <!-- Bootstrap JS -->
+    <script src="{% static 'js/bootstrap.min.js' %}" integrity="sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm" crossorigin="anonymous"></script>
+    <!-- jQuery Custom Scroller CDN -->
+    <script src="{% static 'js/jquery.mCustomScrollbar.concat.min.js' %}"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#sidebar").mCustomScrollbar({
+                theme: "minimal"
+            });
+            $('#dismiss, .overlay').on('click', function () {
+                $('#sidebar').removeClass('active');
+                $('.overlay').removeClass('active');
+            });
+            $('#sidebarCollapse').on('click', function () {
+                $('#sidebar').addClass('active');
+                $('.overlay').addClass('active');
+                $('.collapse.in').toggleClass('in');
+                $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+            });
+        });
+    </script>
+</body>
+</html>
